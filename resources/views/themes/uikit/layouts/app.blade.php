@@ -70,7 +70,7 @@
                         <ul class="uk-navbar-nav @if(!Auth::guest()){{ 'uk-navbar-auth' }}@endif" id="uk-nav-right">
                             @if(Auth::guest())
                                 {{-- {!! menu('guest-menu', 'theme::menus.uikit') !!} --}}
-                                <li class="uk-login"><a href="/login">Login</a></li>
+                                <li class="uk-login"><a href="/login">Login1</a></li>
                                 <li>
                                     <a href="/register"><button class="uk-button uk-button-primary">Sign Up</button></a>
                                 </li>
