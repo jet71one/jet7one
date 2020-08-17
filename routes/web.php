@@ -25,3 +25,9 @@ Wave::routes();
 Route::get('/pay-subscr',  function() {
     return view('pay');
 });
+Route::get('/about-us',   'FrontController@aboutUs')->name('about');
+Route::get('/support',   'FrontController@support')->name('support');
+Route::get('/news',   'FrontController@news')->name('news');
+Route::get('/events',   'FrontController@events')->name('events');
+Route::get('/hot-tour',   'FrontController@hotTour')->name('hot-tour');
+Route::get('/contact',   'FrontController@contact')->name('contact');

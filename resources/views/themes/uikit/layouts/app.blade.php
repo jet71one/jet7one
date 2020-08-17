@@ -49,104 +49,27 @@
 <body class="@if(Request::is('/')){{ 'home' }}@else{{ str_slug(str_replace('/', '-', Request::path())) }}@endif">
     <div id="app" data-sticky-wrap>
 
-        <div class="uk-nav-container" @if(Request::is('/')){{ 'uk-sticky' }}@endif>
-            <div class="uk-container">
-                <nav class="uk-navbar-container uk-margin uk-navbar-transparent" uk-navbar>
-                    {{-- <div class="uk-navbar-left uk-logo-container">
-                        <a class="uk-navbar-item uk-logo" href="/"><img src="{{ Voyager::image(theme('logo')) }}" style="height:35px;"></a>
-                    </div> --}}
-
-                    @if(!Auth::guest())
-                        <div id="uk-nav-left-mobile"><span class="more-btn" uk-icon="menu"></span><span class="close-btn uk-icon" uk-icon="close"></span></div>
-                        <div class="uk-navbar-left uk-margin-left">
-                            {{-- <ul class="uk-navbar-nav" id="uk-nav-left">
-                                {!! menu('authenticated-menu', 'theme::menus.uikit') !!}
-                            </ul> --}}
-                        </div>
-                    @endif
-
-                    <div class="uk-navbar-right">
-
-                        <ul class="uk-navbar-nav @if(!Auth::guest()){{ 'uk-navbar-auth' }}@endif" id="uk-nav-right">
-                            @if(Auth::guest())
-                                {{-- {!! menu('guest-menu', 'theme::menus.uikit') !!} --}}
-                                <li class="uk-login"><a href="/login">Login1</a></li>
-                                <li>
-                                    <a href="/register"><button class="uk-button uk-button-primary">Sign Up</button></a>
-                                </li>
-                            @else
-
-
-                                @if( auth()->user()->onTrial() )
-                                    <li><span class="trial-days">You have {{ auth()->user()->daysLeftOnTrial() }} @if(auth()->user()->daysLeftOnTrial() > 1){{ 'Days' }}@else{{ 'Day' }}@endif left on your @if(auth()->user()->subscription('main') && auth()->user()->subscription('main')->onTrial()){{ ucfirst(auth()->user()->role->name) . ' Plan' }}@else{{ 'Free' }}@endif Trial</span></li>
-                                @endif
-
-                                @if( auth()->user()->subscribed('main') && auth()->user()->subscription('main')->onGracePeriod() && !auth()->user()->onTrial() )
-                                    <li><span class="trial-days">You have {{ auth()->user()->daysLeftOnGrace() }} @if(auth()->user()->daysLeftOnTrial() > 1){{ 'Days' }}@else{{ 'Day' }}@endif left on your {{ ucfirst(auth()->user()->role->name) . ' Plan' }}</span></li>
-                                @endif
-
-                                @if(!Request::is('notifications'))
-                                    @include('theme::partials.notifications')
-                                @endif
-
-                                <li>
-                                    <a href="#_" class="user-icon">
-                                        <img src="{{ Voyager::image(Auth::user()->avatar) }}">
-                                        <span uk-icon="icon: triangle-down"></span>
-                                    </a>
-                                    <div class="uk-navbar-dropdown uk-user-dropdown" id="user-dropdown">
-                                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                                            <li class="user-dropdown-info">
-                                                <img src="{{ Voyager::image(Auth::user()->avatar) }}">
-                                                <div>
-                                                    <p>{{ Auth::user()->name }}</p>
-                                                    <span>{{ Auth::user()->username }}</span>
-                                                </div>
-                                            </li>
-                                            <li><div class="uk-label uk-label-success uk-label-plan"  style="background:#{{ stringToColorCode(auth()->user()->role->display_name) }}">{{ auth()->user()->role->display_name }}</div></li>
-                                            @if( auth()->user()->onTrial() && !auth()->user()->subscription('main') )
-                                                <li><a href="{{ route('wave.settings', 'plans') }}"><span uk-icon="icon: cloud-upload"></span>Upgrade My Account</a></li>
-                                            @endif
-                                            @if( !auth()->guest() && auth()->user()->can('browse_admin') )
-                                                <li><a href="{{ route('voyager.dashboard') }}"><span uk-icon="icon: bolt"></span>Admin</a></li>
-                                            @endif
-                                            <li><a href="{{ route('wave.profile', Auth::user()->username) }}"><span uk-icon="icon: user"></span>My Profile</a></li>
-                                            <li><a href="{{ route('wave.settings') }}"><span uk-icon="icon: cog"></span>Settings</a></li>
-                                            <li class="uk-hidden@m"><a href="{{ route('wave.notifications') }}"><span uk-icon="icon: bell"></span>My Notifications</a></li>
-                                            <li><a href="{{ route('logout') }}"><span uk-icon="icon: sign-out"></span>Logout</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-
-                            @endif
-                        </ul>
-                        <div id="uk-nav-right-mobile"><span class="more-btn" uk-icon="more-vertical"></span><span class="close-btn uk-icon" uk-icon="close"></span></div>
-                    </div>
-
-                </nav>
-            </div>
-        </div>
-        {{-- <header class="header">
+        <header class="header">
             <div class="container">
                 <div class="header__inner">
                     <div class="header__logo">
                         <a href="#" class="logo__link">Jet 7 One</a>
                     </div>
                     <nav class="nav">
-                        <a href="#" class="nav__link">Home</a>
-                        <a href="/about-us.html" class="nav__link">About us</a>
-                        <a href="/support.html" class="nav__link">Support</a>
-                        <a href="/news.html" class="nav__link">News</a>
-                        <a href="/events.html" class="nav__link">Events</a>
-                        <a href="/hot-tour.html" class="nav__link">Hot tour</a>
-                        <a href="/contact.html" class="nav__link">Contact</a>
+                        <a href="/" class="nav__link">Home</a>
+                        <a href="{{route('about')}}" class="nav__link">About us</a>
+                        <a href="{{route('support')}}" class="nav__link">Support</a>
+                        <a href="{{route('news')}}" class="nav__link">News</a>
+                        <a href="{{route('events')}}" class="nav__link">Events</a>
+                        <a href="{{route('hot-tour')}}" class="nav__link">Hot tour</a>
+                        <a href="{{route('contact')}}" class="nav__link">Contact</a>
                     </nav>
                     <div class="header__btn btn btn-header">
                         <a href="#" class="nav__link">guest information</a>
                     </div>
                 </div>
             </div>
-        </header> --}}
+        </header>
 
         @yield('content')
     </div>
