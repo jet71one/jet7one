@@ -102,11 +102,11 @@
                 <div class="footer__links">
                     <div class="footer__links-title">Quick Links</div>
                     <nav class="list__links">
-                        <a href="#" class="list__link">About</a>
-                        <a href="/support.html" class="list__link">Support Us</a>
-                        <a href="/new.html" class="list__link">News</a>
-                        <a href="/events.html" class="list__link">Events</a>
-                        <a href="#" class="list__link">Contact</a>
+                        <a href="{{route('about')}}" class="list__link">About</a>
+                        <a href="{{route('support')}}" class="list__link">Support Us</a>
+                        <a href="{{route('news')}}" class="list__link">News</a>
+                        <a href="{{route('events')}}" class="list__link">Events</a>
+                        <a href="{{route('contact')}}" class="list__link">Contact</a>
                     </nav>
                 </div>
             </div>
