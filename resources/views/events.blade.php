@@ -10,15 +10,21 @@
 <div class="events">
     <div class="container">
         <div class="events__inner">
-            <div class="events__date">18</div>
-            <div class="events__content">
-                <div class="events__day">Пн</div>
-                <div class="events__month">Вересень</div>
-            </div>
-            <div class="events__text">
-                <a href="#">Wine tour at Asconi winery</a>
+         
+            @foreach($events as $event)
+            <div class="events__item">
+                <div class="events__date">18</div>
+                <div class="events__content">
+                    <div class="events__day">Пн</div>
+                    <div class="events__month">Вересень</div>
                 </div>
-            <a href="#" class="btn">Register Now</a>
+                <div class="events__text">
+                    <a href="#">{{ $event->title}}</a>
+                    </div>
+                <a href="#" class="btn">Register Now</a>
+            </div>
+               
+            @endforeach
         </div>
     </div>
 </div>

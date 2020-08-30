@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Event;
 use Wave\Post;
 use Wave\Category;
 
@@ -27,7 +28,14 @@ class FrontController extends Controller
     }
 
     public function events () {
-        return view('events');
+        $events = Event::orderBy('created_at', 'DESC')->paginate(6);
+        
+
+    	$seo = [
+    		'seo_title' => 'Events',
+            'seo_description' => 'Our Events',
+       	];
+        return view('events',compact('events',  'seo'));
     }
 
     public function hotTour () {
