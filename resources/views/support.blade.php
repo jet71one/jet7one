@@ -3,7 +3,7 @@
 @section('content')
 <div class="header__text">
     <h1 class="header__title">
-        Support Us
+        Get Involved
     </h1>
 </div>
 

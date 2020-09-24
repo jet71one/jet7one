@@ -159,10 +159,10 @@
 	<div class="join-us__inner">
 		<div class="join-us__content">
 			<h4 class="join-us__title">Join Us</h4>
-			<p class="join-us__text">We are looking for girl guides in different countries and cities. Contact us</p>
+			<p class="join-us__text">We are looking for girl guides in different countries and cities.<br> Contact us<br></p>
 			<a href="#" class="btn">Donate now</a>
 		</div>
-		<img src="images/join-us-bg.jpg" alt="Join us">
+		<img class="join-us-image" src="images/join-us-bg.jpg" style="height: 479px" alt="Join us">
 	</div>
 	
 </div>
