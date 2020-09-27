@@ -76,11 +76,12 @@
 	</div>
 </div>
 
-<div class="consultant">
+<div class="consultant" style="background: linear-gradient(#0006,#00000080),url(images/consultant-bg.jpg) no-repeat center center;background-size: cover">
+	
 	<div class="container">
 		<h2 class="consultant__title">constant offers</h2>
 		<div class="consultant__inner">
-			<div class="consultant__item">
+			<div class="consultant__item " style="background-color: #ddd">
 				<img class="consultant__image" src="images/file-1.jpg" alt="Consultant image">
 				<h3 class="consultant__text">Kiev-Pechersk Lavra</h3>
 
@@ -98,7 +99,7 @@
 				</div>
 			</div>
 
-			<div class="consultant__item">
+			<div class="consultant__item" style="background-color: #ddd" >
 				<img class="consultant__image" src="images/file-2.jpg" alt="Consultant image">
 				<h3 class="consultant__text">Kiev-Pechersk Lavra</h3>
 
@@ -116,7 +117,7 @@
 				</div>
 			</div>
 
-			<div class="consultant__item">
+			<div class="consultant__item" style="background-color: #ddd">
 				<img class="consultant__image" src="images/file-3.jpg" alt="Consultant image">
 				<h3 class="consultant__text">Kiev-Pechersk Lavra</h3>
 
