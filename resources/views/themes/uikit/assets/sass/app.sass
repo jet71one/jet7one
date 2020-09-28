@@ -1,0 +1,551 @@
+@import config
+
+// CUSTOM USER STYLES & IMPORTS
+.container
+    width: 100%
+    max-width: 1200px
+    margin: 0 auto
+    padding: 0 15px
+/* Header ======== */
+.header
+    width: 100%
+    height: 70px
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 1000
+
+
+.header__inner
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 20px 0
+
+
+.header.fixed
+    position: fixed
+    height: auto
+    background-color: #2e324c
+
+
+.header.fixed .header__inner
+    padding-bottom: 15px
+    padding-top: 15px
+    border-bottom: 0
+
+    /* Nav ======== */
+.logo__link
+    font-size: 20px
+    display: inline-block
+    background: linear-gradient(135deg, $rose 20%, $blue 70%)
+    //color: #ffffff
+    font-weight: bold
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    display: inline-block
+
+.nav
+    display: flex
+    font-size: 13px
+    font-weight: 700
+    text-transform: capitalize
+
+
+.nav__link
+    padding: 0 10px
+    font-size: 16px
+    color: #fff
+    text-decoration: none
+    transition: opacity .1s linear
+
+
+.nav__link:hover
+    color: $blue
+    opacity: 1
+
+.intro
+    display: flex
+    flex-direction: column
+    justify-content: center
+    height: 100vh
+    padding-top: 100px
+
+    /* background: #2e324c url("img/intro-bg.jpg") center no-repeat; */
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center center
+
+.intro__inner
+    width: 100%
+    max-width: 970px
+    margin: 0 auto
+    bottom: 0px
+    text-align: center
+.intro__title
+    padding-top: 400px
+    font-size: 60px
+    font-weight: bold
+    font-family: $poppins-bold
+    color: $white
+.destination__inner
+    display: flex
+    flex-wrap: wrap
+.destination__item
+    margin: 5px 0
+    width: 33.3333%
+    height: 120px
+    max-height: 120px
+    text-align: center
+.communication__inner
+    display: flex
+    flex-wrap: wrap
+.communication__item
+    width: 33.3333%
+    padding: 40px 20px
+    height: auto
+    // max-height: 170px
+    text-align: center
+.rose
+    background-color: $rose
+.blue
+    background-color: $blue
+.dark-blue
+    background-color: $dark-blue
+.destination__title
+    font-size: 40px
+    font-family: $poppins-bold
+    font-weight: bold
+    white-space: nowrap
+    color: #fff
+.destination__desc
+    font-size: 31px
+    font-family: $avenir
+    color: #fff
+    padding-bottom: 10px
+.consultant
+    padding: 100px 0
+    color: #333
+    text-align: center
+.consultant__title
+    font-size: 60px
+    font-family: $poppins-bold
+    color: #333
+.consultant__inner
+    display: flex
+    align-items: center
+    justify-content: space-evenly
+    padding: 20px
+.consultant__item
+    border: 1px solid #ddd
+.consultant__image
+    width: 300px
+    height: 165px
+    object-fit: cover
+.consultant__text
+    padding: 24px
+    font-size: 18px
+    font-family: $poppins-bold
+    color: #000
+.consultant__content
+    border-top: 1px solid #ddd
+    padding: 24px 0
+    display: flex
+    align-items: center
+    justify-content: space-around
+    vertical-align: center
+.btn
+    display: inline-block
+    padding: 10px
+    color: #ffffff
+    background-color: $rose
+    font-family: $poppins-bold
+    font-weight: bold
+    cursor: pointer
+    width: 150px
+    height: 47px
+    font-size: 16px
+    text-align: center
+    &:hover
+        background-color: #de3c6b
+        text-decoration: none
+        color: #fff
+.btn-white
+    background-color: #ffffff
+    color: $dark-blue
+    &:hover
+        background-color: #0E2971
+        color: #ffffff
+        text-decoration: none
+.btn-green
+    background-color: $light-green
+    color: #ffffff
+    border: none
+    font-weight: 400
+    font-family: $avenir
+    &:hover
+        background-color: $dark-green
+        color: #ffffff
+        text-decoration: none
+
+
+.btn-header
+    width: 200px
+    &:hover
+        color: #fff
+.franchise
+    background-color: $dark-blue
+    text-align: center
+    padding-top: 40px
+    padding-bottom: 20px
+.franchise__text
+    font-size: 34px
+    font-family: $avenir
+    color: #fff
+.events
+    padding: 100px 0
+    text-align: center
+.events__title
+    font-size: 60px
+    font-weight: bold
+    font-family: $poppins-bold
+    color: #333
+.join-us__inner
+    display: flex
+    align-items: center
+.join-us__content
+    background-color: $dark-blue
+    max-height: 525px
+    height: 100%
+    text-align: center
+    padding: 100px
+.join-us__title
+    font-size: 60px
+    font-family: $poppins-bold
+.join-us__text
+    font-size: 28px
+    font-family: $poppins-light
+.footer
+    color: #333333
+    padding: 50px 0px
+.footer__inner
+    display: flex
+    justify-content: space-around
+    align-items: center
+.footer__text
+    font-size: 18px
+.footer-social-icon
+    display: inline-block
+    margin-left: 10px
+    width: 26px
+    height: 26px
+.footer__email,
+.footer__phone,
+.footer__whatsapp
+    color: #000000
+    font-weight: bold
+    a
+        color: #000
+        font-weight: normal
+        &:hover
+            text-decoration: none
+            color: $rose
+.footer__form-title,
+.footer__links-title
+    font-size: 20px
+    font-weight: bold
+    color: #000
+.footer__form
+    display: flex
+    flex-direction: column
+    width: 100%
+    max-width: 495px
+.footer__form-input,
+.contact__form-input
+    border: none
+    border-bottom: 1px solid #000
+    padding: 10px
+    &:hover
+        border-bottom: 2px solid #000
+    &:active,
+    &:focus
+        border-bottom: 2px solid $rose
+.btn-form
+    width: 100%
+    border: none
+    margin-top: 15px
+.list__links
+    display: flex
+    flex-direction: column
+.list__link
+    color: #000000
+    padding: 7px
+    &:hover
+        text-decoration: none
+        color: $rose
+
+.copyright
+    background-color: rgb(33, 62, 140)
+    text-align: center
+    padding: 15px
+    font-size: 13px
+    a
+        color: #fff
+
+        /*Support page*/
+.header__text
+    padding-top: 150px
+    background-color: $dark-blue
+    padding-bottom: 50px
+    text-align: center
+.header__title
+    font-size: 60px
+    font-family: $poppins-bold
+    color: #fff
+.get-involded
+    padding-top: 50px
+    padding-bottom: 20px
+    text-align: center
+.get-involded__title
+    font-size: 45px
+    font-family: $poppins-bold
+    color: #333
+.get-involded__text
+    padding: 0 50px
+    font-size: 18px
+    color: #333333
+.support-bg
+    height: 540px
+    background-image: url('/images/support-bg.jpg')
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center center
+    width: 100%
+.communication
+    padding-top: 80px
+    padding-bottom: 50px
+    text-align: center
+.communication__title
+    font-size: 35px
+    color: #333333
+    font-family: $poppins-bold
+.communication__text
+    color: #333333
+    font-size: 18px
+.communication__item-title
+    color:#fff
+    font-size: 28px
+    font-family: $poppins-bold
+.communication__item-text
+    color: #ffffff
+    font-size: 18px
+    font-family: $avenir
+.communication__item-link
+    color: #fff
+.communicate__item-img
+    width: 30px
+    height: 30px
+    margin: 0 auto
+
+/*Events page*/
+.events__inner
+    display: flex
+    align-items: center
+    justify-content: space-around
+    color: #333
+.events__date
+    font-size: 40px
+    font-family: $avenir
+.events__text
+    a
+        color: #333333
+        font-size: 21px
+        font-family: $avenir
+        &:hover
+            color: $rose
+            text-decoration: none
+/*Blog page*/
+.news__item
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin: 30px
+    border: 1px solid #ddd
+    color: #333333
+    text-align: left
+.news-img
+    width: 50%
+.news__content
+    padding: 40px 40px 0  40px
+    a
+        color: #333
+        &:hover
+            color: $rose
+            text-decoration: none
+.news__content-aditional
+    display: flex
+    justify-content: space-between
+    align-items: centers
+    margin-top: 50px
+    border-top: 1px solid #ddd
+    padding-top: 30px
+/*Hot-tour page*/
+
+.hot-tour__inner
+    display: flex
+    align-items: center
+    justify-content: space-around
+.hot-tour__item
+    margin: 40px 0px
+    width: 100%
+    max-width: 290px
+    color: #333
+    box-shadow: 0 0 10px rgba(0,0,0,0.5)
+
+.hot-tour__img
+    height: 190px
+    width: 290px
+    object-fit: cover
+    max-width: 290px
+    max-height: 190px
+.hot-tour__content
+    padding: 20px
+.hot-tour__title
+    margin-bottom: 20px
+.hot-tour__date
+    display: block
+    margin-bottom: 15px
+    color: $light-green
+    font-family: $avenir
+    font-size: 18px
+.hot-tour__region
+    color: #000000
+    font-size: 18px
+    font-family: $avenir
+    margin-bottom: 15px
+.hot-tour__footer-content
+    display: flex
+    flex-direction: column
+    align-items: center
+.price
+    font-size: 26px
+    font-family: $avenir
+    color: $light-green
+    font-weight: bold
+.hot-tour__btn
+    margin-bottom: 20px
+    border: none
+/*Contac page*/
+.contact__inner
+    display: flex
+    align-items: center
+    justify-content: space-between
+    color: #333
+.contact__content
+    text-align: center
+    width: 50%
+.contact__title
+    font-size: 40px
+    font-family: $poppins-bold
+.contact__form
+    display: flex
+    flex-direction: column
+    align-items: center
+.contact__form-input-subject
+    width: 58%
+    margin-bottom: 20px
+.contact__form-input-message
+    margin-bottom: 20px
+/*About us page*/
+
+.video-bg
+    height: 500px
+    width: 100%    
+.about-us__text
+    padding: 20px
+    color: #333333
+    text-align: center
+    font-size: 20px
+.guide__slider,
+.guide-nav
+    width: 50%
+
+.guide-nav__item
+  width: 50px
+  height: 50px
+  margin-right: 30px
+
+.slick-btn
+
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    z-index: 5
+    cursor: pointer
+    border: none
+    background: transparent
+    outline: none
+    img
+        height: 30px
+        width: 30px
+.slick-prev
+    left: 0
+.slick-next
+    right: 95px
+.guide__inner
+    color: #333
+    position: relative
+    padding: 20px 0px
+.guide__container
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    max-width: 1230px
+    padding: 0 15px
+    margin: 0 auto
+.guide__body
+    margin-left: auto
+    padding-left: 55px
+    width: 50%
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+.guide__body-title
+    font-family: $avenir
+    font-size: 25px
+    font-weight: bold
+.guide__body__text
+    padding: 10px 0
+.guide-right__inner
+    padding: 20px 0px
+    position: relative
+.guide-right__content
+    width: 50%
+    padding-right: 55px
+    color: #333
+.guide-right__slider
+    img
+        margin-left: auto
+    .slick-prev
+        left: 778px
+    .slick-next
+        right: 0px
+.guide-right__body
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: start
+    height: 100%
+.guide-right__body
+    width: 50%
+.guide-info
+    padding: 40px 0px
+    background-color: $rose
+    color: #fff
+.guide-info__text
+    text-align: center
+    font-size: 30px
+    font-family: $avenir

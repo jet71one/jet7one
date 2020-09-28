@@ -12,5 +12,6 @@ let mix = require('laravel-mix');
  */
 
 mix.setPublicPath('../../../../public/themes/uikit/')
-	.less('assets/less/app.less', 'css')
-	.js('assets/js/app.js', 'js');
+	.sass('assets/sass/app.sass', 'css')
+	.js('assets/js/app.js', 'js')
+	.browserSync('wave.loc');

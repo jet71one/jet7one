@@ -21,7 +21,7 @@
             <h4 class="about-us__title">
                 Watch a video and you'll understand everything
             </h4>
-            <video src="video/about-us.mp4" controls></video>
+            <video class="video-bg" src="video/about-us.mp4" controls></video>
         </div>
     </div>
 
