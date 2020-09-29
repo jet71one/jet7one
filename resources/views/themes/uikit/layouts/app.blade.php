@@ -43,8 +43,10 @@
     @endif
 
     <!-- Styles -->
+    
+    
+    {{-- <link href="{{ asset('css/app.min.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('themes/uikit/css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/app.min.css') }}" rel="stylesheet">
 </head>
 <body class="@if(Request::is('/')){{ 'home' }}@else{{ str_slug(str_replace('/', '-', Request::path())) }}@endif">
     <div id="app" data-sticky-wrap>
