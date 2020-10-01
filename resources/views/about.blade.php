@@ -33,23 +33,23 @@
     <div class="image-grid">
         <div class="grid-item">
             
-            <a data-fancybox="gallery" href="images/about/image-1.png"><img src="images/about/image-1.png"></a>
+            <a data-fancybox="gallery" href="images/about/image-1.jpg"><img src="images/about/image-1.jpg"></a>
         </div>
        
         <div class="grid-item">
-            <a data-fancybox="gallery" href="images/about/image-2.png"><img src="images/about/image-2.png"></a>
+            <a data-fancybox="gallery" href="images/about/image-2.jpg"><img src="images/about/image-2.jpg"></a>
         </div>
         <div class="grid-item ">
             <a data-fancybox="gallery" href="images/about/image-3.jpg"><img src="images/about/image-3.jpg"></a>
         </div>
         <div class="grid-item">
-            <a data-fancybox="gallery" href="images/about/image-4.png"><img src="images/about/image-4.png"></a>
+            <a data-fancybox="gallery" href="images/about/image-4.jpg"><img src="images/about/image-4.jpg"></a>
         </div>
         <div class="grid-item">
             <a data-fancybox="gallery" href="images/about/image-5.jpg"><img src="images/about/image-5.jpg"></a>
         </div>
         <div class="grid-item">
-            <a data-fancybox="gallery" href="images/about/image-6.png"><img src="images/about/image-6.png"></a>
+            <a data-fancybox="gallery" href="images/about/image-6.jpg"><img src="images/about/image-6.jpg"></a>
         </div>
         <div class="grid-item">
             <a data-fancybox="gallery" href="images/about/image-7.jpg"><img src="images/about/image-7.jpg"></a>
