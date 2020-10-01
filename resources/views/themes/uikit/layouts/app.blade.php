@@ -44,7 +44,7 @@
 
     <!-- Styles -->
     
-    
+    @yield('css')
     {{-- <link href="{{ asset('css/app.min.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('themes/uikit/css/app.css') }}" rel="stylesheet">
 </head>

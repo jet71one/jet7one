@@ -1,5 +1,9 @@
 @extends('theme::layouts.app')
 
+@section('css')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+@endsection
 @section('content')
 <div class="header__text">
     <h1 class="header__title">
@@ -21,9 +25,39 @@
             <h4 class="about-us__title">
                 Watch a video and you'll understand everything
             </h4>
-            <video class="video-bg" src="video/about-us.mp4" controls></video>
+            <video class="video-bg" src="/video/about-us.mp4" controls></video>
         </div>
+
+       
     </div>
+    <div class="image-grid">
+        <div class="grid-item">
+            
+            <a data-fancybox="gallery" href="images/about/image-1.png"><img src="images/about/image-1.png"></a>
+        </div>
+       
+        <div class="grid-item">
+            <a data-fancybox="gallery" href="images/about/image-2.png"><img src="images/about/image-2.png"></a>
+        </div>
+        <div class="grid-item ">
+            <a data-fancybox="gallery" href="images/about/image-3.jpg"><img src="images/about/image-3.jpg"></a>
+        </div>
+        <div class="grid-item">
+            <a data-fancybox="gallery" href="images/about/image-4.png"><img src="images/about/image-4.png"></a>
+        </div>
+        <div class="grid-item">
+            <a data-fancybox="gallery" href="images/about/image-5.jpg"><img src="images/about/image-5.jpg"></a>
+        </div>
+        <div class="grid-item">
+            <a data-fancybox="gallery" href="images/about/image-6.png"><img src="images/about/image-6.png"></a>
+        </div>
+        <div class="grid-item">
+            <a data-fancybox="gallery" href="images/about/image-7.jpg"><img src="images/about/image-7.jpg"></a>
+        </div>
+        <div class="grid-item">
+            <a data-fancybox="gallery" href="images/about/image-8.jpg"><img src="images/about/image-8.jpg"></a>
+        </div>
+      </div>
 
 
     <div class="guide-info">
@@ -155,5 +189,13 @@
         <a href="/support.html" class="btn btn-white">donate</a>
     </div>
 </div>
+
+@endsection
+
+@section('javascript')
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript" src="{{ asset('themes/uikit/js/slick.js') }}"></script>
 
 @endsection

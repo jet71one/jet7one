@@ -197,3 +197,4 @@ mobileOptimizations();
 window.onresize = function(event) {
     mobileOptimizations();
 }
+
