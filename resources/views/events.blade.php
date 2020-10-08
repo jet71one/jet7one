@@ -19,9 +19,9 @@
                     <div class="events__month">Вересень</div>
                 </div>
                 <div class="events__text">
-                    <a href="#">{{ $event->title}}</a>
+                    <a href="{{ $event->link() }}">{{ $event->title}}</a>
                     </div>
-                <a href="#" class="btn">Register Now</a>
+                <a href="{{ $event->link() }}" class="btn">Register Now</a>
             </div>
                
             @endforeach

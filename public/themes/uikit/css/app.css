@@ -1360,3 +1360,23 @@ p {
   font-family: Avenir-light, sans-serif;
 }
 
+.event-single {
+  color: #000;
+  text-align: center;
+}
+
+.event-single-content {
+  text-align: left;
+}
+
+.event-single-title {
+  padding: 10px 120px;
+}
+
+.event-single-image {
+  width: 800px;
+  height: 640px;
+  padding: 30px;
+  text-align: center;
+}
+
