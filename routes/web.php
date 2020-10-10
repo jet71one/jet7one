@@ -32,4 +32,5 @@ Route::get('/events',   'FrontController@events')->name('events');
 Route::get('/events/{slug}', 'EventsController@event')->name('event.event-single');
 // Route::get('/events/{id}',   'FrontController@events')->name('events');
 Route::get('/hot-tour',   'FrontController@hotTour')->name('hot-tour');
+Route::get('/rules-fro-clients',   'FrontController@guestInfo')->name('guest-info');
 Route::get('/contact',   'FrontController@contact')->name('contact');

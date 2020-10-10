@@ -1378,5 +1378,11 @@ p {
   height: 640px;
   padding: 30px;
   text-align: center;
+  /*Guest info page*/
+}
+
+.guest-info {
+  text-align: left;
+  color: #000;
 }
 

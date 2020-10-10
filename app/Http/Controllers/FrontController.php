@@ -53,4 +53,8 @@ class FrontController extends Controller
     public function contact () {
         return view('contact');
     }
+
+    public function guestInfo() {
+        return view('guest-info');
+    }
 }

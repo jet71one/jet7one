@@ -67,7 +67,7 @@
                         <a href="{{route('contact')}}" class="nav__link">Contact</a>
                     </nav>
                     <div class="header__btn btn btn-header">
-                        <a href="#" class="nav__link">guest information</a>
+                        <a href="{{route('guest-info')}}" class="nav__link">guest information</a>
                     </div>
                 </div>
             </div>
