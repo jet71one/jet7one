@@ -1,8 +1,7 @@
 @extends('theme::layouts.app')
 
 @section('css')
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    
 @endsection
 @section('content')
 <div class="header__text">

@@ -57,4 +57,12 @@ class FrontController extends Controller
     public function guestInfo() {
         return view('guest-info');
     }
+
+    public function useTerms() {
+        return view('use-terms');
+    }
+
+    public function privacyPolicy() {
+        return view('privacy-policy');
+    }
 }

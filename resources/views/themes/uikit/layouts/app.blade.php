@@ -118,7 +118,7 @@
     <div class="copyright">
         <div class="container">
             <div class="copyright__inner">
-                © 2019 by PWR. Proudly created with JetSetUa | <a href="#">Terms of Use</a>   |  <a href="#">Privacy Policy</a> 
+                © 2019 by PWR. Proudly created with JetSetUa | <a href="{{route('use-terms')}}">Terms of Use</a>   |  <a href="{{route('privacy-policy')}}">Privacy Policy</a> 
             </div>
         </div>
     </div>
