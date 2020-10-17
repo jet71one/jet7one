@@ -78,10 +78,7 @@
             <div class="guide__item"><img src="images/guide-img-8.jpg" alt="Guide image"></div>
 
         </div>
-        <!-- <div class="guide-nav">
-            <div class="guide-nav__item"><img src="images/guide-img-1.jpg" alt="Guide image"></div>
-            <div class="guide-nav__item"><img src="images/guide-img-2.jpg" alt="Guide image"></div>
-        </div> -->
+        
         <div class="guide__content">
             <div class="guide__container">
                 <div class="guide__body">
@@ -122,7 +119,6 @@
             </div>
         </div>
 
-    
     </div>
 
     <div class="guide-right__inner">

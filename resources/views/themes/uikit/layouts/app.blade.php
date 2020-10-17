@@ -55,7 +55,7 @@
             <div class="container">
                 <div class="header__inner">
                     <div class="header__logo">
-                        <a href="#" class="logo__link">Jet 7 One</a>
+                        <a href="/" class="logo__link">Jet 7 One</a>
                     </div>
                     <nav class="nav">
                         <a href="/" class="nav__link">Home</a>
@@ -66,9 +66,14 @@
                         <a href="{{route('hot-tour')}}" class="nav__link">Hot tour</a>
                         <a href="{{route('contact')}}" class="nav__link">Contact</a>
                     </nav>
+
+                    
                     <div class="header__btn btn btn-header">
                         <a href="{{route('guest-info')}}" class="nav__link">guest information</a>
                     </div>
+                    <button class="burger" type="button">
+                        <span class="burger__item"></span>
+                    </button>
                 </div>
             </div>
         </header>

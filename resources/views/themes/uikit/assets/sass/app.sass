@@ -135,10 +135,12 @@
     color: #fff
 .consultant__inner
     display: flex
+    flex-wrap: wrap
     align-items: center
     justify-content: space-evenly
     padding: 20px
 .consultant__item
+    margin-bottom: 30px
     background-color: #fff
     border: 1px solid #ddd
 .consultant__image
@@ -219,6 +221,7 @@
     padding: 30px 0px
 .join-us__inner
     display: flex
+    flex-wrap: wrap
     align-items: center
 .join-us__content
     background-color: $dark-blue
@@ -237,6 +240,7 @@
     padding: 50px 0px
 .footer__inner
     display: flex
+    flex-wrap: wrap
     justify-content: space-around
     align-items: center
 .footer__text
@@ -589,3 +593,117 @@
 .guest-info
     text-align: left
     color: #000
+.burger
+    display: none
+    padding: 10px 2px
+    background: none
+    border: 0
+    cursor: pointer
+
+.burger__item 
+    display: block
+    width: 30px
+    height: 3px
+    background-color: #fff
+    font-size: 0
+    color: transparent
+    position: relative
+
+
+.burger__item:before,
+.burger__item:after 
+    content: ""
+    height: 100%
+    background-color: #fff
+    position: absolute
+    right: 0
+    z-index: 1
+
+.burger__item:before 
+    width: 25px
+    top: -8px
+
+
+.burger__item:after 
+    width: 25px
+    bottom: -8px
+
+
+@media (max-width: 991px)
+    .burger
+        display: block
+    .nav
+        display: none
+    .intro__title
+        font-size: 40px
+    .intro
+        height: auto
+        padding-top: 0px
+    .destination__item 
+        width: 50%
+    .upcoming-events
+        padding: 50px
+    .join-us-image
+        width: 100%
+        height: auto
+        object-fit: cover
+    
+
+@media (max-width: 767px)
+    .header__title
+        font-size: 40px
+    .intro
+        height: auto
+    .intro__title
+        font-size: 35px
+    .destination__title
+        font-size: 29px
+    .destination__desc
+        font-size: 25px
+    .consultant
+        padding: 10px 0
+    .consultant__title
+        font-size: 42px
+    .franchise__text
+        font-size: 26px
+    .events__title
+        font-size: 40px
+    .upcoming-events
+        padding: 25px 0px
+    .join-us__title
+        font-size: 40px
+    .join-us__text
+        font-size: 23px
+    .join-us__content
+        width: 100%
+        padding: 25px 0px
+    .footer__inner
+        justify-content: space-between
+    .footer__form
+        margin: 20px 0
+
+        /*ABout us*/
+    .video-bg
+        height: auto
+    .guide__container
+        position: static
+    .guide__slider,
+    .guide-right__slider
+        width: 100%
+    .guide__body,
+    .guide-right__body,
+    .guide-right__content
+        padding-left: 0px
+        width: 100%
+        
+@media (max-width: 420px)
+    .header__title
+        font-size: 26px
+    .destination__item 
+        width: 100%
+    .events__title
+        font-size: 26px
+    .btn-header
+        width: auto
+    .nav__link
+        font-size: 13px
