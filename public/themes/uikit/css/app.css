@@ -1463,6 +1463,23 @@ p {
     -o-object-fit: cover;
        object-fit: cover;
   }
+
+  .footer__form {
+    max-width: 100%;
+  }
+
+  .news__item {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .news-img {
+    width: 100%;
+  }
+
+  .news__content {
+    width: 100%;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1527,6 +1544,7 @@ p {
 
   .footer__form {
     margin: 20px 0;
+    max-width: 100%;
     /*ABout us*/
   }
 
@@ -1547,6 +1565,12 @@ p {
   .guide-right__body,
   .guide-right__content {
     padding-left: 0px;
+    width: 100%;
+  }
+
+  /*Support*/
+
+  .communication__item {
     width: 100%;
   }
 }
