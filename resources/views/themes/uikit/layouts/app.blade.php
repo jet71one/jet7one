@@ -57,7 +57,7 @@
                     <div class="header__logo">
                         <a href="/" class="logo__link">Jet 7 One</a>
                     </div>
-                    <nav class="nav">
+                    <nav class="nav" id="nav">
                         <a href="/" class="nav__link">Home</a>
                         <a href="{{route('about')}}" class="nav__link">About us</a>
                         <a href="{{route('support')}}" class="nav__link">Support</a>
@@ -71,7 +71,7 @@
                     <div class="header__btn btn btn-header">
                         <a href="{{route('guest-info')}}" class="nav__link">guest information</a>
                     </div>
-                    <button class="burger" type="button">
+                    <button class="burger" type="button" id="navToggle">
                         <span class="burger__item"></span>
                     </button>
                 </div>
@@ -133,7 +133,9 @@
     @endif --}}
 
     <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="{{ asset('themes/uikit/js/app.js') }}"></script>
+    <script src="{{ asset('themes/uikit/js/main.js') }}"></script>
 
     @yield('javascript')
 

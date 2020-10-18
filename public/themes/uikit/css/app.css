@@ -1070,6 +1070,8 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1078,7 +1080,7 @@ p {
 }
 
 .hot-tour__item {
-  margin: 40px 0px;
+  margin: 40px 40px;
   width: 100%;
   max-width: 290px;
   color: #333;
@@ -1149,6 +1151,8 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1431,6 +1435,26 @@ p {
   bottom: -8px;
 }
 
+/*Blog page*/
+
+.uk-container {
+  color: #000;
+}
+
+.uk-container img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: auto;
+}
+
+.blog-image {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: auto;
+}
+
 @media (max-width: 991px) {
   .burger {
     display: block;
@@ -1438,6 +1462,26 @@ p {
 
   .nav {
     display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    text-align: right;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #213e8c;
+  }
+
+  .show {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .nav__link {
+    padding: 9px 15px;
   }
 
   .intro__title {
@@ -1477,8 +1521,18 @@ p {
     width: 100%;
   }
 
+  .contact__content {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
   .news__content {
     width: 100%;
+  }
+
+  .event-single-image {
+    width: 100%;
+    height: auto;
   }
 }
 

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="breadcrumb-nav uk-margin-bottom">
+    {{-- <div class="breadcrumb-nav uk-margin-bottom">
         <div class="uk-container">
             <ul class="uk-breadcrumb">
                 <li><a href="{{ route('wave.blog') }}">Blog</a></li>
@@ -10,6 +10,12 @@
                 <li><span>{{ $post->title }}</span></li>
             </ul>
         </div>
+    </div> --}}
+
+    <div class="header__text">
+        <h1 class="header__title">
+            {{ $post->title }}
+        </h1>
     </div>
 
     <div class="uk-container uk-container-small">
@@ -21,7 +27,7 @@
             <meta class="uk-margin-remove-adjacent" property="datePublished" content="{{ Carbon\Carbon::parse($post->created_at)->toIso8601String() }}">
             
             <div class="uk-margin-large-bottom">
-                <img width="1200" height="640" src="{{ $post->image() }}" alt="{{ $post->title }}" srcset="{{ $post->image() }}">
+                <img class="blog-image" src="{{ $post->image() }}" alt="{{ $post->title }}" srcset="{{ $post->image() }}">
             </div>
             
             <div class="uk-margin-medium-bottom uk-container uk-container-small uk-text-center">    

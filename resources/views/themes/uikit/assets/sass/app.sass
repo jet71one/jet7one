@@ -404,10 +404,11 @@
 
 .hot-tour__inner
     display: flex
+    flex-wrap: wrap
     align-items: center
     justify-content: space-around
 .hot-tour__item
-    margin: 40px 0px
+    margin: 40px 40px
     width: 100%
     max-width: 290px
     color: #333
@@ -449,6 +450,7 @@
 /*Contac page*/
 .contact__inner
     display: flex
+    flex-wrap: wrap
     align-items: center
     justify-content: space-between
     color: #333
@@ -627,6 +629,17 @@
 .burger__item:after 
     width: 25px
     bottom: -8px
+/*Blog page*/
+.uk-container
+    color: #000
+    img
+        width: 100%
+        object-fit: cover
+        height: auto
+.blog-image
+    width: 100%
+    object-fit: cover
+    height: auto
 
 
 @media (max-width: 991px)
@@ -634,6 +647,17 @@
         display: block
     .nav
         display: none
+        flex-direction: column
+        width: 100%
+        text-align: right
+        position: absolute
+        right: 0
+        top: 100%
+        background-color: #213e8c
+    .show
+        display: flex
+    .nav__link
+        padding: 9px 15px
     .intro__title
         font-size: 40px
     .intro
@@ -654,8 +678,14 @@
         flex-wrap: wrap
     .news-img
         width: 100%
+    .contact__content
+        width: 100%
+        margin-bottom: 30px
     .news__content
         width: 100%
+    .event-single-image
+        width: 100%
+        height: auto
 @media (max-width: 767px)
     .header__title
         font-size: 40px
