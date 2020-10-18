@@ -17,7 +17,8 @@
             {{ $post->title }}
         </h1>
     </div>
-
+    <div class="container">
+        
     <div class="uk-container uk-container-small">
         <article id="post-{{ $post->id }}" class="uk-article post-{{ $post->id }} uk-text-center uk-margin-large-bottom">
             
@@ -45,6 +46,7 @@
 
             
         </article>
+    </div>
     </div>
 
 @endsection

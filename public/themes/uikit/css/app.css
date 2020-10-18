@@ -1534,6 +1534,10 @@ p {
     width: 100%;
     height: auto;
   }
+
+  .slick-next {
+    right: 0px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1626,6 +1630,10 @@ p {
 
   .communication__item {
     width: 100%;
+  }
+
+  .guide-right__slider .slick-prev {
+    left: 50px;
   }
 }
 
