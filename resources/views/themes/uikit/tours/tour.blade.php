@@ -15,22 +15,22 @@ L
         <div class="tour__inner">
             <div class="list-btn">
                 <div class="header__btn btn btn-header">
-                    <a href="{{route('guest-info')}}" class="nav__link">hotels</a>
+                    <a href="#map" class="nav__link">hotels</a>
                 </div>
                 <div class="header__btn btn btn-header">
-                    <a href="{{route('guest-info')}}" class="nav__link">apartments</a>
+                    <a href="#map" class="nav__link">apartments</a>
                 </div>
                 <div class="header__btn btn btn-header">
-                    <a href="{{route('guest-info')}}" class="nav__link">rent a car</a>
+                    <a href="#map" class="nav__link">rent a car</a>
                 </div>
                 <div class="header__btn btn btn-header">
-                    <a href="{{route('guest-info')}}" class="nav__link">restaurants</a>
+                    <a href="#map" class="nav__link">restaurants</a>
                 </div>
                 <div class="header__btn btn btn-header">
-                    <a href="{{route('guest-info')}}" class="nav__link">strip club</a>
+                    <a href="#map" class="nav__link">strip club</a>
                 </div>
                 <div class="header__btn btn btn-header">
-                    <a href="{{route('guest-info')}}" class="nav__link">night club</a>
+                    <a href="#map" class="nav__link">night club</a>
                 </div>
             </div>
             <div class="guide__inner">
@@ -82,7 +82,7 @@ L
 
         {{-- <div id="map" class="map"></div> --}}
 
-        <iframe src="https://www.google.com/maps/d/embed?mid=12zmLfYNODRpPhCs6YIL3oxrnODzKb6dE" width="100%" height="480"></iframe>
+        <iframe id="map" src="https://www.google.com/maps/d/embed?mid=12zmLfYNODRpPhCs6YIL3oxrnODzKb6dE" width="100%" height="480"></iframe>
 
     </div>
  
