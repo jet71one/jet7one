@@ -8,7 +8,7 @@ L
 
     
     <div class="header__text">
-        <h1 class="header__title event-single-title">TEst</h1>
+    <h1 class="header__title event-single-title">{{ $tour->title}}</h1>
     </div>
 
     <div class="container tour-single">
