@@ -79,23 +79,23 @@
             <p class="guest-info__paragraph">
                 14. Our guides can keep client's company on such places as 
             <li>
-                - theatre/cinema/nightclub trip, sight-seeing tour
+                theatre/cinema/nightclub trip, sight-seeing tour
             </li>
                 
             <li>
-                - restaurant, gourmet trip, 
+                restaurant, gourmet trip, 
             </li>
             <li>    
-                - social events, celebration, 
+                social events, celebration, 
             </li>
             <li>    
-                - beach resorts, boating, 
+                beach resorts, boating, 
             </li>
             <li>    
-                - different extreme sports tour, 
+                different extreme sports tour, 
             </li>
             <li>    
-                - joint trip to another city/country etc. 
+                joint trip to another city/country etc. 
             </li></li>    
                  
                 
