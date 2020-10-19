@@ -54,6 +54,10 @@ class FrontController extends Controller
         return view('contact');
     }
 
+    public function franchize () {
+        return view ('franchize');
+    }
+
     public function guestInfo() {
         return view('guest-info');
     }

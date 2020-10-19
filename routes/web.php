@@ -29,6 +29,7 @@ Route::get('/about-us',   'FrontController@aboutUs')->name('about');
 Route::get('/support',   'FrontController@support')->name('support');
 Route::get('/news',   'FrontController@news')->name('news');
 Route::get('/events',   'FrontController@events')->name('events');
+Route::get('/franchize',   'FrontController@franchize')->name('franchize');
 Route::get('/events/{slug}', 'EventsController@event')->name('event.event-single');
 Route::get('/tour/{slug}', 'TourController@tour')->name('tour.event-tour');
 // Route::get('/events/{id}',   'FrontController@events')->name('events');

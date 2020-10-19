@@ -34,6 +34,22 @@
 		</div>
 </div>
 
+<div class="social">
+	<a href="https://www.facebook.com/jet71one/?modal=admin_todo_tour" class="social__item" target="_blank">
+		<img src="images/icons/facebook-f.svg" alt="Facebook">
+	</a>
+
+	<a href="https://www.youtube.com/user/Wix#" class="social__item" target="_blank">
+		<img src="images/icons/youtube.svg" alt="Youtube">
+	</a>
+	<a href="https://twitter.com/wix" class="social__item" target="_blank">
+		<img src="images/icons/twitter.svg" alt="Twitter">
+	</a>
+	<a href="https://www.instagram.com/jet_7_one/" class="social__item" target="_blank">
+		<img src="images/icons/instagram.svg" alt="Instagram">
+	</a>
+</div>
+
 <div class="destinations">
 	<div class="destination__inner">
 		<div class="destination__item rose">

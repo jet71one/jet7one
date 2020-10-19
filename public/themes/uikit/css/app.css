@@ -818,6 +818,11 @@ p {
   height: 26px;
 }
 
+.footer-social-icon img {
+  width: 26px;
+  height: 26px;
+}
+
 .footer__email,
 .footer__phone,
 .footer__whatsapp {
@@ -1509,6 +1514,50 @@ p {
   width: 100%;
 }
 
+.franchize__inner {
+  color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.franch__title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.left__col,
+.right__col {
+  padding: 20px;
+}
+
+.social {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 0;
+  background-color: #213e8c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 42px;
+  height: auto;
+}
+
+.social__item {
+  margin: 10px;
+}
+
+.social__item img {
+  width: 22px;
+  height: 22px;
+}
+
 @media (max-width: 991px) {
   .burger {
     display: block;
@@ -1704,9 +1753,33 @@ p {
   .guide-right__slider .slick-prev {
     left: 50px;
   }
+
+  /*Franchise*/
+
+  .franchize__inner {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
 
 @media (max-width: 420px) {
+  .social {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: 100%;
+    margin-top: 30px;
+    top: 0;
+    position: unset;
+  }
+
   .header__title {
     font-size: 26px;
   }
