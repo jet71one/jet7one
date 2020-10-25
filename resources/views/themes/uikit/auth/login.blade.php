@@ -1,6 +1,7 @@
-@extends('theme::layouts.app')
+@extends('theme::layouts.admin-app')
 
 @section('content')
+
     <div class="uk-section">
         <div class="uk-container uk-container-center">
 
@@ -8,7 +9,7 @@
 
                 <div class="uk-padding uk-box-shadow-large">
 
-                    <h2>Login</h2>
+                    <h2>Logi1n</h2>
 
                     <form class="uk-form-stacked" role="form" method="POST" action="{{ route('login') }}">
 

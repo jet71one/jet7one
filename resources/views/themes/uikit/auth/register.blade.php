@@ -1,4 +1,4 @@
-@extends('theme::layouts.app')
+@extends('theme::layouts.admin-app')
 
 @section('content')
     <div class="uk-section">
