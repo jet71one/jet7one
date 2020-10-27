@@ -101,6 +101,11 @@
                 
                 Just make request for your tour!
             </p>
+
+            <div class="register__form">
+                <a href="/register" class="btn btn-green hot-tour__btn">registration</a>
+    
+            </div>
            
           
         </div>
