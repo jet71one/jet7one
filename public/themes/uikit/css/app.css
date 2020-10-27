@@ -1463,7 +1463,7 @@ p {
   color: #000;
 }
 
-.uk-container img {
+.blog img {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -1477,25 +1477,17 @@ p {
   height: auto;
 }
 
-.uk-nav-container {
-  /*Tour*/
-}
-
-.uk-nav-container img {
-  width: auto;
-}
-
-.tour__inner {
+*.tour__inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.tour__inner .guide__inner {
+*.tour__inner .guide__inner {
   width: 100%;
 }
 
-.tour__inner .guide__inner .slick-next {
+*.tour__inner .guide__inner .slick-next {
   right: 15px;
 }
 
