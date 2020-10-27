@@ -44,6 +44,7 @@
 
     <!-- Styles -->
     <link href="../themes/uikit/css/admin/admin-app.css" rel="stylesheet">
+    <link href="../themes/uikit/css/app.css" rel="stylesheet">
 </head>
 <body class="@if(Request::is('/')){{ 'home' }}@else{{ str_slug(str_replace('/', '-', Request::path())) }}@endif">
     <div id="app" data-sticky-wrap>
@@ -52,7 +53,7 @@
             <div class="uk-container">
                 <nav class="uk-navbar-container uk-margin uk-navbar-transparent" uk-navbar>
                     <div class="uk-navbar-left uk-logo-container">
-                        <a class="uk-navbar-item uk-logo" href="/"><img src="{{ Voyager::image(theme('logo')) }}" style="height:35px;"></a>
+                        <a href="/" class="logo__link">Jet 7 One</a>
                     </div>
 
                     @if(!Auth::guest())
@@ -129,74 +130,61 @@
         @yield('content')
     </div>
 
-    <div id="footer" data-sticky-footer>
-
-        <div class="uk-section-default uk-section uk-section-large">
-
-            <div class="uk-container">
-
-                <div class="uk-grid-large uk-grid-margin-large uk-grid" uk-grid="">
-
-                    <div class="uk-width-expand@m uk-width-1-2@s uk-first-column uk-footer-logo">
-
-                        <div class="uk-margin">
-
-                            <a href="/"><img src="{{ Voyager::image(theme('footer_logo')) }}" data-src="{{ Voyager::image(theme('footer_logo')) }}" style="height:16px;"></a>
-
-                        </div>
-
-                        <div class="uk-margin uk-width-xlarge">{{ setting('site.description', 'The Software as a Service Starter Kit built on Laravel & Voyager') }}</div>
-
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__info">
+                    <p class="footer__text">Guide Administrator </p>
+                    <p class="footer__text">Contact us via Telegram:<br>
+    
+                        JetSetUa<a href="https://t.me/JetSetUa" target="_blank" class="footer-social-icon">
+                            <img src="../images/icons/telegram.png" alt="Telegram">
+                            {{-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"/></svg> --}}
+                        </a></p>
+                    <div class="footer__email">Email:
+                        <a href="mailto:jet71one@gmail.com">jet71one@gmail.com</a>
                     </div>
-
-                    <div class="uk-width-expand@m uk-width-1-2@s">
-
-                        <h3 class="uk-h5">Site Links</h3>
-
-                        <ul class="uk-list">
-                            <li><a href="/#features" class="uk-link-muted" @if(Request::is('/'))@php echo 'uk-scroll="offset:80"'; @endphp@endif>Features</a></li>
-                            <li><a href="/#testimonials" class="el-link uk-link-muted" @if(Request::is('/'))@php echo 'uk-scroll="offset:80"'; @endphp@endif>Testimonials</a></li>
-                            <li><a href="/#pricing" class="el-link uk-link-muted" @if(Request::is('/'))@php echo 'uk-scroll="offset:80"'; @endphp@endif>Pricing</a></li>
-                        </ul>
-
+                    <div class="footer__phone">
+                        {{-- Phone: --}}
+                        <img src="../images/icons/viber.png" class="footer-social-icon" alt="Viber">
+                        <a href="tel:+380669213266">+38 (066) 921 32 66</a>
                     </div>
-
-                    <div class="uk-width-expand@m uk-width-1-2@s">
-
-                        <h3 class="uk-h5">Wave Resources</h3>
-
-                        <ul class="uk-list">
-                            <li><a href="https://devdojo.com/scripts/php/wave" class="el-link uk-link-muted" target="_blank">Product Page</a></li>
-                            <li><a href="/docs" class="el-link uk-link-muted">Documentation</a></li>
-                            <li><a href="https://devdojo.com/series/wave" class="el-link uk-link-muted" target="_blank">Videos</a></li>
-                        </ul>
-
+                    <div class="footer__whatsapp">
+                        {{-- Whatsapp:  --}}
+                        <img src="../images/icons/whatsapp.png" class="footer-social-icon" alt="Whatsapp">
+                        <a href="https://api.whatsapp.com/send/?phone=380669213266&text&app_absent=0" target="_blank">+38 (066) 921 32 66</a>
                     </div>
-
-                    <div class="uk-width-expand@m uk-width-1-2@s">
-
-                        <h3 class="uk-h5">Contact Us</h3>
-
-                        <div class="uk-margin">contact@app.com</div>
-
-                        <div class="uk-margin">
-                            <div class="uk-child-width-auto uk-grid-medium uk-grid uk-social" uk-grid>
-                                <a uk-icon="icon: youtube; ratio: 0.8" href="https://www.youtube.com/devdojo" target="_blank" class="el-link uk-link-muted uk-icon"></a>
-                                <a uk-icon="icon: instagram; ratio: 0.8" href="https://www.instagram.com/devdojo" target="_blank" class="el-link uk-link-muted uk-icon"></a>
-                                <a uk-icon="icon: twitter; ratio: 0.8" href="https://twitter.com/thedevdojo" target="_blank" class="el-link uk-link-muted uk-icon"></a>
-                                <a uk-icon="icon: facebook; ratio: 0.8" href="https://www.facebook.com/thedevdojo" target="_blank" class="el-link uk-link-muted uk-icon"></a>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+                <div class="footer__form">
+                    <div class="footer__form-title">Get Monthly Updates</div>
+                    <input type="text" class="footer__form-input" placeholder="Enter your email here *">
+                    <button type="submit" class="btn btn-form">Sign Up</button>
+                </div>
+                <div class="footer__links">
+                    <div class="footer__links-title">Quick Links</div>
+                    <nav class="list__links">
+                        <a href="{{route('about')}}" class="list__link">About</a>
+                        <a href="{{route('support')}}" class="list__link">Support Us</a>
+                        <a href="{{route('news')}}" class="list__link">News</a>
+                        <a href="{{route('events')}}" class="list__link">Events</a>
+                        <a href="{{route('contact')}}" class="list__link">Contact</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        <div class="container">
+            <div class="copyright__inner">
+                © 2019 by PWR. Proudly created with JetSetUa | <a href="{{route('use-terms')}}">Terms of Use</a>   |  <a href="{{route('privacy-policy')}}">Privacy Policy</a> 
             </div>
         </div>
     </div>
 
-    @if(!auth()->guest() && auth()->user()->hasAnnouncements())
+    {{-- @if(!auth()->guest() && auth()->user()->hasAnnouncements())
         @include('theme::partials.announcements')
-    @endif
+    @endif --}}
 
     <!-- Scripts -->
     <script src="{{ asset('themes/uikit/js/app.js') }}"></script>

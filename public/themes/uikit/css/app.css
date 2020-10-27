@@ -1475,7 +1475,14 @@ p {
   -o-object-fit: cover;
      object-fit: cover;
   height: auto;
+}
+
+.uk-nav-container {
   /*Tour*/
+}
+
+.uk-nav-container img {
+  width: auto;
 }
 
 .tour__inner {

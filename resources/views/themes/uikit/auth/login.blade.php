@@ -9,7 +9,7 @@
 
                 <div class="uk-padding uk-box-shadow-large">
 
-                    <h2>Logi1n</h2>
+                    <h2>Login</h2>
 
                     <form class="uk-form-stacked" role="form" method="POST" action="{{ route('login') }}">
 
