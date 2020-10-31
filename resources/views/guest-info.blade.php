@@ -99,7 +99,7 @@
             </li></li>    
                  
                 
-                Just make request for your tour!
+                <h3 style="text-align: center">Just make request for your tour!</h3>
             </p>
 
             <div class="register__form">

@@ -1,5 +1,11 @@
 @extends('theme::layouts.app')
 
+
+@section('css')
+	
+@endsection
+<link href="{{ asset('themes/uikit/css/animate.css') }}" rel="stylesheet">
+
 @section('content')
 
 
@@ -28,7 +34,7 @@
 <div class="intro" style="background-image: url('images/intro-bg.jpg');">
 	
 		<div class="intro__inner">
-			<div class="intro__title">
+			<div class="intro__title animated fadeInRight delay-1s">
 				Your tour guide fashion models
 			</div>
 		</div>
@@ -52,7 +58,7 @@
 
 <div class="destinations">
 	<div class="destination__inner">
-		<div class="destination__item rose">
+		<div class="destination__item rose  wow fadeInUp">
 			<div class="destination__title">Ukraine - Kyiv</div>
 			<div class="destination__desc">choose your tour</div>
 		</div>
@@ -64,7 +70,7 @@
 			<div class="destination__title">Ukraine - Kyiv</div>
 			<div class="destination__desc">choose your tour</div>
 		</div>
-		<div class="destination__item rose">
+		<div class="destination__item rose wow fadeInUp">
 			<div class="destination__title">Ukraine - Kyiv</div>
 			<div class="destination__desc">choose your tour</div>
 		</div>
@@ -77,7 +83,7 @@
 			<div class="destination__desc">choose your tour</div>
 		</div>
 
-		<div class="destination__item rose">
+		<div class="destination__item rose wow fadeInUp">
 			<div class="destination__title">Ukraine - Kyiv</div>
 			<div class="destination__desc">choose your tour</div>
 		</div>
@@ -97,7 +103,7 @@
 	<div class="container">
 		<h2 class="consultant__title">constant offers</h2>
 		<div class="consultant__inner">
-			<div class="consultant__item " >
+			<div class="consultant__item wow fadeInUp" data-wow-delay="0.1s">
 				<img class="consultant__image" src="images/file-1.jpg" alt="Consultant image">
 				<h3 class="consultant__text">Kiev-Pechersk Lavra</h3>
 
@@ -115,7 +121,7 @@
 				</div>
 			</div>
 
-			<div class="consultant__item" >
+			<div class="consultant__item wow fadeInUp" data-wow-delay="0.3s">
 				<img class="consultant__image" src="images/file-2.jpg" alt="Consultant image">
 				<h3 class="consultant__text">Kiev-Pechersk Lavra</h3>
 
@@ -133,7 +139,7 @@
 				</div>
 			</div>
 
-			<div class="consultant__item" >
+			<div class="consultant__item wow fadeInUp" data-wow-delay="0.6s" >
 				<img class="consultant__image" src="images/file-3.jpg" alt="Consultant image">
 				<h3 class="consultant__text">Kiev-Pechersk Lavra</h3>
 

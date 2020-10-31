@@ -55,7 +55,7 @@
             <div class="container">
                 <div class="header__inner">
                     <div class="header__logo">
-                        <a href="/" class="logo__link">Jet 7 One</a>
+                        <a href="/" class="logo__link animated fadeInRight delay-1s">Jet 7 One</a>
                     </div>
                     <nav class="nav" id="nav">
                         <a href="/" class="nav__link">Home</a>
@@ -68,7 +68,7 @@
                     </nav>
 
                     
-                    <div class="header__btn btn btn-header">
+                    <div class="header__btn btn btn-header animated wobble delay-1s">
                         <a href="{{route('guest-info')}}" class="nav__link">guest information</a>
                     </div>
                     <button class="burger" type="button" id="navToggle">
@@ -139,6 +139,7 @@
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{{ asset('themes/uikit/js/wow.min.js') }}"></script>
     <script src="{{ asset('themes/uikit/js/app.js') }}"></script>
     <script src="{{ asset('themes/uikit/js/main.js') }}"></script>
 
