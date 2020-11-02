@@ -58,40 +58,40 @@
 
 <div class="destinations">
 	<div class="destination__inner">
-		<div class="destination__item rose  wow fadeInUp">
+		<div class="destination__item rose  animated fadeInUp delay-0.5s ">
 			<div class="destination__title">Ukraine - Kyiv</div>
 			<div class="destination__desc">choose your tour</div>
 		</div>
-		<div class="destination__item blue ">
+		<div class="destination__item blue animated fadeInUp delay-0.5s">
 			<div class="destination__title">Ukraine - Kyiv</div>
 			<div class="destination__desc">choose your tour</div>
 		</div>
-		<div class="destination__item dark-blue">
+		<div class="destination__item dark-blue animated fadeInUp delay-0.5s">
 			<div class="destination__title">Ukraine - Kyiv</div>
 			<div class="destination__desc">choose your tour</div>
 		</div>
-		<div class="destination__item rose wow fadeInUp">
+		<div class="destination__item rose animated fadeInUp delay-1s">
 			<div class="destination__title">Ukraine - Kyiv</div>
 			<div class="destination__desc">choose your tour</div>
 		</div>
-		<div class="destination__item blue ">
+		<div class="destination__item blue animated fadeInUp delay-1s ">
 			<div class="destination__title">Ukraine - Kyiv</div>
 			<div class="destination__desc">choose your tour</div>
 		</div>
-		<div class="destination__item dark-blue">
+		<div class="destination__item dark-blue animated fadeInUp delay-1s">
 			<div class="destination__title">Ukraine - Kyiv</div>
 			<div class="destination__desc">choose your tour</div>
 		</div>
 
-		<div class="destination__item rose wow fadeInUp">
+		<div class="destination__item rose animated fadeInUp delay-2s">
 			<div class="destination__title">Ukraine - Kyiv</div>
 			<div class="destination__desc">choose your tour</div>
 		</div>
-		<div class="destination__item blue ">
+		<div class="destination__item blue animated fadeInUp delay-2s">
 			<div class="destination__title">Ukraine - Kyiv</div>
 			<div class="destination__desc">choose your tour</div>
 		</div>
-		<div class="destination__item dark-blue">
+		<div class="destination__item dark-blue animated fadeInUp delay-2s">
 			<div class="destination__title">Ukraine - Kyiv</div>
 			<div class="destination__desc">choose your tour</div>
 		</div>
@@ -100,10 +100,10 @@
 
 <div class="consultant" style="background: linear-gradient(#0006,#00000080),url(images/consultant-bg.jpg) no-repeat center center;background-size: cover">
 	
-	<div class="container">
+	<div class="container ">
 		<h2 class="consultant__title">constant offers</h2>
 		<div class="consultant__inner">
-			<div class="consultant__item wow fadeInUp" data-wow-delay="0.1s">
+			<div class="consultant__item animated fadeInLeft delay-1s " data-wow-delay="0.1s">
 				<img class="consultant__image" src="images/file-1.jpg" alt="Consultant image">
 				<h3 class="consultant__text">Kiev-Pechersk Lavra</h3>
 
@@ -121,7 +121,7 @@
 				</div>
 			</div>
 
-			<div class="consultant__item wow fadeInUp" data-wow-delay="0.3s">
+			<div class="consultant__item animated fadeInLeft delay-1s " data-wow-delay="0.3s">
 				<img class="consultant__image" src="images/file-2.jpg" alt="Consultant image">
 				<h3 class="consultant__text">Kiev-Pechersk Lavra</h3>
 
@@ -139,7 +139,7 @@
 				</div>
 			</div>
 
-			<div class="consultant__item wow fadeInUp" data-wow-delay="0.6s" >
+			<div class="consultant__item animated fadeInLeft delay-1s " data-wow-delay="0.6s" >
 				<img class="consultant__image" src="images/file-3.jpg" alt="Consultant image">
 				<h3 class="consultant__text">Kiev-Pechersk Lavra</h3>
 
@@ -163,10 +163,10 @@
 	</div>
 </div>
 
-<div class="franchise">
+<div class="franchise animated fadeInRight delay-2s">
 	<div class="container">
 		<div class="franchise__text">You can buy a franchise from us for your country and your city.</div>
-		<a href="#" class="btn btn-white">in detail</a>
+		<a href="{{route('franchize')}}" class="btn btn-white">in detail</a>
 	</div>
 </div>
 
@@ -180,12 +180,12 @@
 
 <div class="join-us">
 	<div class="join-us__inner">
-		<div class="join-us__content">
+		<div class="join-us__content animated fadeInLeft delay-2s">
 			<h4 class="join-us__title">Join Us</h4>
 			<p class="join-us__text">We are looking for girl guides in different countries and cities.<br> Contact us<br></p>
 			<a href="#" class="btn">Donate now</a>
 		</div>
-		<img class="join-us-image" src="images/join-us-bg.jpg" alt="Join us">
+		<img class="join-us-image animated fadeInRight delay-2s" src="images/join-us-bg.jpg" alt="Join us">
 	</div>
 	
 </div>
@@ -193,6 +193,5 @@
 
 
 
-<script src="js/app.min.js"></script>
 
 @endsection

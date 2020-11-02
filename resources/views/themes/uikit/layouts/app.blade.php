@@ -84,7 +84,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer__inner">
-                <div class="footer__info">
+                <div class="footer__info animated fadeInRight delay-1s">
                     <p class="footer__text">Guide Administrator </p>
                     <p class="footer__text">Contact us via Telegram:<br>
     
@@ -106,12 +106,12 @@
                         <a href="https://api.whatsapp.com/send/?phone=380669213266&text&app_absent=0" target="_blank">+38 (066) 921 32 66</a>
                     </div>
                 </div>
-                <div class="footer__form">
+                <div class="footer__form animated fadeInRight delay-2s">
                     <div class="footer__form-title">Get Monthly Updates</div>
                     <input type="text" class="footer__form-input" placeholder="Enter your email here *">
                     <button type="submit" class="btn btn-form">Sign Up</button>
                 </div>
-                <div class="footer__links">
+                <div class="footer__links animated fadeInRight delay-3s">
                     <div class="footer__links-title">Quick Links</div>
                     <nav class="list__links">
                         <a href="{{route('about')}}" class="list__link">About</a>
