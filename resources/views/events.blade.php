@@ -21,8 +21,10 @@
                 <div class="events__text">
                     <a href="{{ $event->link() }}">{{ $event->title}}</a>
                     </div>
-                <a href="{{ $event->link() }}" class="btn">Register Now</a>
+                <a href="/register" class="btn">Register Now</a>
             </div>
+            
+           
                
             @endforeach
         </div>

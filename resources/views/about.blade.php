@@ -140,27 +140,8 @@
                             Katarina - prof. model
                         </p>
                         <p class="guide__body__text">
-                            She worked on world-class catwalks, represented world brands.<br>
-
-                            Also:
-
-                            Fourth vice miss “Miss Ukraine Universe” 2015<br>
-
-                            Second runner up “Princess of the Globe” 2016<br>
-
-                            Miss photogenic “Photomodel of the World” 2016<br>
-
-                            Grand Champion of senior model “World Championship of Perfoming ARTS” WCOPA U.S.A. 2017<br>
+                            This model can conduct a city tour for you, through historical places of the city and to show you  the night life of the city.
                         </p>
-
-                        
-
-                        Miss “Queen Country” 2017<br>
-
-                        Miss Audience Award “Queen Country” 2017<br>
-
-                        This model can conduct a city tour for you, through historical places of the city and to
-                        show you the night life of the city.</p>
 
                     </p>
                 </div>
