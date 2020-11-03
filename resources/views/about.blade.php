@@ -60,7 +60,7 @@
       </div>
 
 
-    <div class="guide-info">
+    {{-- <div class="guide-info">
         <div class="container">
             <div class="guide-info__text">The guides you see on this page are engaged in you.
                 If our name is called a guide which is not on this page, we will inform you about this.</div>
@@ -155,7 +155,7 @@
         </div>
 
     
-    </div>
+    </div> --}}
 
     
 </div>
