@@ -43,7 +43,7 @@
             </div>
             <h3 class="communication__item-title">Online</h3>
             <p class="communication__item-desc">Make a tax deductible donation‏.</p>
-            <a href="mailto:jet71one@gmail.com" class="btn btn-white">Click to Give</a>
+            <a href="viber://chat?number=%2B380669213266" class="btn btn-white">Click to Give</a>
         </div>
         <div class="communication__item" >
             <div class="communicate__item-img">
@@ -56,8 +56,8 @@
             </p>
             <p class="communication__item-desc">Telegram: 
                 <a href="https://t.me/JetSetUa" target="_blank" class="footer-social-icon">
-                    <img src="images/icons/telegram.png" alt="Telegram">
-                    {{-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"/></svg> --}}
+                    {{-- <img src="images/icons/telegram.png" alt="Telegram"> --}}
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="white"><path d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"/></svg>
                  
                 </a>
             </p>
