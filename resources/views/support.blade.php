@@ -34,7 +34,7 @@
             </div>
             <h3 class="communication__item-title ">I am a model, I want to work as your guide </h3>
             
-            <a href="mailto:jet71one@gmail.com" class="btn btn-white">contact</a>
+            <a href="/register" class="btn btn-white">contact</a>
             <p class="communication__item-desc">Ukraina | Kiev | Odessa | Lviv </p>
         </div>
         <div class="communication__item">
@@ -52,7 +52,7 @@
             <h3 class="communication__item-title ">Over the Phone</h3>
             <p class="communication__item-desc">It is also easy to contact offline</p>
             <p class="communication__item-desc">Whatsapp: 
-                <a href="#" class="communication__item-link">+38 (066) 921 32 66</a>
+                <a href="https://wa.me/380669213266" target="_blank" class="communication__item-link">+38 (066) 921 32 66</a>
             </p>
             <p class="communication__item-desc">Telegram: 
                 <a href="https://t.me/JetSetUa" target="_blank" class="footer-social-icon">
