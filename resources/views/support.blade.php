@@ -11,7 +11,7 @@
     <div class="container">
         <h2 class="get-involded__title">Get Involved</h2>
         <p class="get-involded__text">You can choose one or several tourist routes offered by us, or you can develop it yourself.  All our tours are designed for a maximum of 5 people.  If your company exceeds this amount, you must notify us in advance.</p>
-        <a href="#" class="btn">See Our Events</a>
+        <a href="{{route('events')}}" class="btn">See Our Events</a>
     </div>
 </div>
 

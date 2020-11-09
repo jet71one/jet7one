@@ -85,7 +85,7 @@
         <iframe id="map" src="https://www.google.com/maps/d/embed?mid=12zmLfYNODRpPhCs6YIL3oxrnODzKb6dE" width="100%" height="480"></iframe>
 
         <div class="register__form">
-            <a href="/register" class="btn btn-green hot-tour__btn">registration</a>
+            <a href="/register" class="btn btn-blue hot-tour__btn">registration</a>
 
         </div>
     </div>
