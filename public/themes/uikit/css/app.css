@@ -698,14 +698,14 @@ p {
 }
 
 .btn-blue {
-  background-color: #2A70DE;
+  background: linear-gradient(135deg, #EC5E87 20%, #2A70DE 70%);
   color: #fff;
 }
 
 .btn-blue:hover {
-  background-color: #fff;
-  border: 1px solid #2A70DE;
-  color: #2A70DE;
+  border: 1px solid #fff;
+  background: linear-gradient(135deg, #EC5E87 70%, #2A70DE 20%);
+  color: #fff;
   text-decoration: none;
 }
 
