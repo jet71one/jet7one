@@ -183,7 +183,7 @@
 		<div class="join-us__content animated fadeInLeft delay-2s">
 			<h4 class="join-us__title">Join Us</h4>
 			<p class="join-us__text">We are looking for girl guides in different countries and cities.<br> Contact us<br></p>
-			<a href="#" class="btn">Donate now</a>
+			<a href="{{route('contact')}}" class="btn">Contact</a>
 		</div>
 		<img class="join-us-image animated fadeInRight delay-2s" src="images/join-us-bg.jpg" alt="Join us">
 	</div>

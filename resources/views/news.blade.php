@@ -40,11 +40,6 @@
 
 
 
-<div class="franchise">
-    <div class="container">
-        <div class="franchise__text">We Need Your Support Today!</div>
-        <a href="/support.html" class="btn btn-white">donate</a>
-    </div>
-</div>
+@include('theme::blocks.franchized')
 
 @endsection

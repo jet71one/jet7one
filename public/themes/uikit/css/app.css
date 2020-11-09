@@ -697,6 +697,18 @@ p {
   text-decoration: none;
 }
 
+.btn-blue {
+  background-color: #2A70DE;
+  color: #fff;
+}
+
+.btn-blue:hover {
+  background-color: #fff;
+  border: 1px solid #2A70DE;
+  color: #2A70DE;
+  text-decoration: none;
+}
+
 .btn-green {
   background-color: #18c1c0;
   color: #ffffff;
@@ -1123,7 +1135,7 @@ p {
 .hot-tour__date {
   display: block;
   margin-bottom: 15px;
-  color: #18c1c0;
+  color: #2A70DE;
   font-family: Avenir-light, sans-serif;
   font-size: 18px;
 }
@@ -1151,7 +1163,7 @@ p {
 .price {
   font-size: 26px;
   font-family: Avenir-light, sans-serif;
-  color: #18c1c0;
+  color: #2A70DE;
   font-weight: bold;
 }
 
@@ -1553,6 +1565,7 @@ p {
           flex-direction: column;
   width: 42px;
   height: auto;
+  z-index: 5;
 }
 
 .social__item {

@@ -22,7 +22,7 @@
 						</div>	
 						<div class="hot-tour__footer-content">
 							<div class="price">€ {{ $tour->price }}</div>
-							<a href="{{ $tour->link() }}" class="btn btn-green hot-tour__btn">in detail</a>
+							<a href="{{ $tour->link() }}" class="btn btn-blue hot-tour__btn">in detail</a>
 							{{-- <a href="#" class="btn btn-green hot-tour__btn">registration</a> --}}
 						</div>
 					</div>
