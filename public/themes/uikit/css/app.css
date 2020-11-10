@@ -740,6 +740,10 @@ p {
   padding-bottom: 20px;
 }
 
+.franchize-container {
+  color: #000;
+}
+
 .franchise__text {
   font-size: 34px;
   font-family: Avenir-light, sans-serif;
