@@ -26,6 +26,12 @@ The franchise cost depends on the selected country and region, and ranges from 1
 In the selected region, you can attract advertising projects or partners. After successful verification from our side, their logo will be added on the your region's website page and you will receive your percentage for attracting them in your region as a region representative.
                 </p>
             </div>
+        
+           
+        </div>
+        <div class="register__form">
+            <a href="{{route('contact')}}" class="btn btn-blue hot-tour__btn">Send a request</a>
+
         </div>
     </div>
 </div>       
