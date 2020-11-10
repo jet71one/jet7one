@@ -13,48 +13,17 @@
             <div class="left__col">
                 <h3 class="franch__title">  Франшиза</h2>
                 <p>
-                    Вы можете приобрести франшизу на Ваш  регион.
-
-                    Это не зависит в какой стране и каком городе вы находитесь.
-
-                    Главное , чтоб Вы были хорошо ориентированы на  местном рынке.
-
-                    Стоимость франшизы зависит от Страны и региона в котором Вы находитесь. 
-
-                    Стоимость франшизы: $1500- 5000
-
-                    Франшиза представляет из себя платежи равные трем месяцам - оплата каждые три месяца. 
-
-                    Так же находя рекламные проекты которые мы размещаем на сайте своего региона Вы получаете свой %. 
-
-                    ​
-
-                    ​Покупка франшизы и ежемесячная выплата установленной суммы.
+                    Вы можете приобрести франшизу для Вашего регион - выбор региона не связан со страной и городом в котором вы находитесь так как самое главное, это чтоб в выбранном Вами регионе Вы были хорошо ориентированы в данном регионе. 
+                    Стоимость франшизы зависит от выбранной страны и региона, и составляет от $1500 до $5000 сроком на 3 месяца. По истечении трех месяцев требуется возобновление франшизы в установленной сумме за следующие три месяца пользования франшизой. 
+                    В выбранном регионе Вы можете привлекать рекламные проекты, которые после нашей проверки будут размещены на сайте региона - в данном случае Вы как представитель региона получаете за их привлечение свой процент.
                 </p>
             </div>
             <div class="right__col">
                 <h3 class="franch__title">  Franchise</h2>
                 <p>
-                    You can buy a franchise from us for your country and your city,
-                    in detail
-
-                    It does not depend in which country and which city you are located.
-                    
-                    The main thing is that you are well oriented in the local market.
-                    
-                    The cost of the franchise depends on the Country and region in which you are located.
-                    
-                    Franchise Cost: $ 1,500-5,000
-                    
-                    The franchise is a payment equal to three months - payment every three months.
-                    
-                    Also, finding advertising projects that we place on the site of your region, you get your%.
-                    
-                    ​
-                    
-                    ​
-                    
-                    Buying a franchise and paying a set amount monthly.
+                    You can make a region franchise request - the region choice is not related to the country and city where you are located. The most important condition is that you must be well oriented in chosen region.
+The franchise cost depends on the selected country and region, and ranges from 1500 EUR to 5000 EUR for a 3 months period. After three months, a franchise renewal is required in the established amount for the next three months of region franchise using.
+In the selected region, you can attract advertising projects or partners. After successful verification from our side, their logo will be added on the your region's website page and you will receive your percentage for attracting them in your region as a region representative.
                 </p>
             </div>
         </div>

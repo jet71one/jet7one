@@ -687,6 +687,7 @@ p {
 }
 
 .btn-white {
+  width: auto;
   background-color: #ffffff;
   color: #213e8c;
 }
