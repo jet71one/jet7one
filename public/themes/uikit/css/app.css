@@ -699,6 +699,7 @@ p {
 }
 
 .btn-blue {
+  width: auto;
   background: linear-gradient(135deg, #EC5E87 20%, #2A70DE 70%);
   color: #fff;
 }

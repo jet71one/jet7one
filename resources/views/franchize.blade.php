@@ -30,7 +30,7 @@ In the selected region, you can attract advertising projects or partners. After 
            
         </div>
         <div class="register__form">
-            <a href="{{route('contact')}}" class="btn btn-blue hot-tour__btn">Send a request</a>
+            <a href="{{route('contact')}}" class="btn btn-blue hot-tour__btn">Complete a form</a>
 
         </div>
     </div>
