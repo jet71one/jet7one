@@ -3,6 +3,7 @@
 namespace Wave\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Event;
 
 class HomeController extends \App\Http\Controllers\Controller
 {
@@ -14,6 +15,8 @@ class HomeController extends \App\Http\Controllers\Controller
      */
     public function index()
     {
+
+        $events = Event::orderBy('created_at', 'DESC')->take(3)->get();   
     	if(setting('auth.dashboard_redirect', true) != "null"){
     		if(!\Auth::guest()){
     			return redirect('dashboard');
@@ -29,6 +32,6 @@ class HomeController extends \App\Http\Controllers\Controller
 
         ];
 
-        return view('theme::home', compact('seo'));
+        return view('theme::home', compact('seo','events'));
     }
 }
