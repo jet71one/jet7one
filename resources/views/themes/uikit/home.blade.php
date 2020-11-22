@@ -58,12 +58,27 @@
 
 <div class="destinations">
 	<div class="destination__inner">
-		<div class="destination__item rose  animated fadeInUp delay-0.5s ">
-			<div class="destination__title">Ukraine - Kyiv</div>
-			<div class="destination__desc">choose your tour</div>
-		</div>
-		<div class="destination__item blue animated fadeInUp delay-0.5s">
-			<div class="destination__title">Ukraine - Kyiv</div>
+		@foreach ($tours as $tour)
+			{{-- @if(($loop->count) <= '2' )
+			<div class="destination__item blue animated fadeInUp delay-0.5s">
+				<div class="destination__title"> 
+				<a  class="destination__title"href=" {{ $tour->link() }}">{{ $tour->title}} {{ $loop->count }}</a>	
+					</div>
+				<div class="destination__desc">choose your tour</div>
+			</div>
+			@else  --}}
+			<div class="destination__item blue  animated fadeInUp delay-0.5s ">
+				<div class="destination__title"> 
+				<a  class="destination__title"href=" {{ $tour->link() }}">{{ $tour->title}} </a>	
+				</div>
+					<div class="destination__desc">choose your tour</div>
+				</div>
+			{{-- @endif --}}
+			
+		@endforeach
+		
+		{{-- <div class="destination__item blue animated fadeInUp delay-0.5s">
+			<div class="destination__title">Ukraine - Kyiv2</div>
 			<div class="destination__desc">choose your tour</div>
 		</div>
 		<div class="destination__item dark-blue animated fadeInUp delay-0.5s">
@@ -94,7 +109,7 @@
 		<div class="destination__item dark-blue animated fadeInUp delay-2s">
 			<div class="destination__title">Ukraine - Kyiv</div>
 			<div class="destination__desc">choose your tour</div>
-		</div>
+		</div> --}}
 	</div>
 </div>
 
