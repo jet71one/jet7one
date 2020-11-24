@@ -13,10 +13,10 @@
          
             @foreach($events as $event)
             <div class="events__item">
-                <div class="events__date">18</div>
+                <div class="events__date">{{ $event->created_at->format('d')}}</div>
                 <div class="events__content">
-                    <div class="events__day">Пн</div>
-                    <div class="events__month">Вересень</div>
+                    <div class="events__day">{{ $event->created_at->format('D')}}</div>
+                    <div class="events__month">{{ $event->created_at->format('M')}}</div>
                 </div>
                 <div class="events__text">
                     <a href="{{ $event->link() }}">{{ $event->title}}</a>
