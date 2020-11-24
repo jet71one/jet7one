@@ -1486,6 +1486,14 @@ p {
   color: #000;
 }
 
+.uk-container img {
+  margin: 15px 0;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: auto;
+}
+
 .blog img {
   width: 100%;
   -o-object-fit: cover;
@@ -1494,6 +1502,7 @@ p {
 }
 
 .blog-image {
+  margin: 15px 0;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
