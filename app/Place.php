@@ -10,4 +10,5 @@ class Place extends Model
     use Spatial;
 
     protected $spatial = ['location'];
+
 }

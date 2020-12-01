@@ -4,7 +4,7 @@ namespace Wave\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
-use App\Tour;
+use App\Region;
 
 class HomeController extends \App\Http\Controllers\Controller
 {
@@ -18,7 +18,10 @@ class HomeController extends \App\Http\Controllers\Controller
     {
 
         $events = Event::orderBy('created_at', 'DESC')->take(3)->get();
-        $tours= Tour::orderBy('created_at', 'DESC')->take(9)->get(); 
+
+        $blues= Region::where('color', '=','blue')->orderBy('created_at', 'DESC')->take(9)->get(); 
+        $roses= Region::where('color', '=','rose')->orderBy('created_at', 'DESC')->take(9)->get(); 
+        $dark_blues= Region::where('color', '=','dark-blue')->orderBy('created_at', 'DESC')->take(9)->get(); 
           
     	if(setting('auth.dashboard_redirect', true) != "null"){
     		if(!\Auth::guest()){
@@ -35,6 +38,6 @@ class HomeController extends \App\Http\Controllers\Controller
 
         ];
 
-        return view('theme::home', compact('seo','events','tours'));
+        return view('theme::home', compact('seo','events','blues','roses','dark_blues'));
     }
 }

@@ -10,7 +10,6 @@
     <div class="header__text">
     <h1 class="header__title event-single-title">{{ $tour->title}}</h1>
     </div>
-
     <div class="container tour-single">
         <div class="tour__inner">
             <div class="list-btn">
@@ -33,6 +32,13 @@
                     <a href="#map" class="nav__link">night club</a>
                 </div>
             </div>
+
+
+            @forelse($place->getCoordinates() as $point)
+            var center = {lat: {{ $point['lat'] }}, lng: {{ $point['lng'] }}};
+        @empty
+            var center = {lat: {{ config('voyager.googlemaps.center.lat') }}, lng: {{ config('voyager.googlemaps.center.lng') }}};
+        @endforelse
             <div class="guide__inner">
                 <div class="guide__slider">
                     <div class="guide__item"><img src="../images/guide-img-1.jpg" alt="Guide image"></div>
