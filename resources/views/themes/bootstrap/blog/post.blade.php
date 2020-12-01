@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <div class="breadcrumb-nav">
+    {{-- <div class="breadcrumb-nav">
         <div class="container">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('wave.blog') }}">Blog</a></li>
@@ -11,7 +11,7 @@
                 <li class="breadcrumb-item"><span>{{ $post->title }}</span></li>
             </ol>
         </div>
-    </div>
+    </div> --}}
 
     <div class="container">
 
@@ -29,7 +29,9 @@
 
                     <div class="text-center mt-3 mb-4">
                         <h1 class="article-title">{{ $post->title }}</h1>
-                        <p class="article-meta">Written on <time datetime="{{ Carbon\Carbon::parse($post->created_at)->toIso8601String() }}">{{ Carbon\Carbon::parse($post->created_at)->toFormattedDateString() }}</time>. Posted in <a href="{{ route('wave.blog.category', $post->category->slug) }}" rel="category">{{ $post->category->name }}</a>.</p>
+                        <p class="article-meta">Written on <time datetime="{{ Carbon\Carbon::parse($post->created_at)->toIso8601String() }}">{{ Carbon\Carbon::parse($post->created_at)->toFormattedDateString() }}</time>. 
+                            {{-- Posted in <a href="{{ route('wave.blog.category', $post->category->slug) }}" rel="category">{{ $post->category->name }}</a>. --}}
+                        </p>
                     </div>
 
                     <div class="uk-container uk-container-small uk-text-left">
@@ -38,7 +40,7 @@
 
                     </div>
 
-                    @include('theme::partials.comments')
+                    {{-- @include('theme::partials.comments') --}}
 
 
                 </article>
