@@ -59,96 +59,43 @@
 <div class="destinations">
 	<div class="destination__inner">
 		@foreach ($blues as $item)
-			{{-- @if(($loop->count) <= '2' )
-			<div class="destination__item blue animated fadeInUp delay-0.5s">
-				<div class="destination__title"> 
-				<a  class="destination__title"href=" {{ $tour->link() }}">{{ $tour->title}} {{ $loop->count }}</a>	
-					</div>
-				<div class="destination__desc">choose your tour</div>
-			</div>
-			@else  --}}
-			
+		
 			<div class="destination__item blue  animated fadeInUp delay-0.5s ">
 				<div class="destination__title"> 
-				<a  class="destination__title"href="#">{{ $item->name}} </a>	
+					<a  class="destination__title"href="#">{{ $item->name}} </a>	
 				</div>
-					<div class="destination__desc">choose your tour</div>
-				</div>
-			{{-- @endif --}}
-			
+				<div class="destination__desc">choose your tour</div>
+			</div>
+		
 		@endforeach
 
 		@foreach ($roses as $item)
-		{{-- @if(($loop->count) <= '2' )
-		<div class="destination__item blue animated fadeInUp delay-0.5s">
-			<div class="destination__title"> 
-			<a  class="destination__title"href=" {{ $tour->link() }}">{{ $tour->title}} {{ $loop->count }}</a>	
-				</div>
-			<div class="destination__desc">choose your tour</div>
-		</div>
-		@else  --}}
+		
 		<div class="destination__item rose  animated fadeInUp delay-0.5s ">
 			<div class="destination__title"> 
-			<a  class="destination__title"href="#">{{ $item->name}} </a>	
+				<a  class="destination__title"href="#">{{ $item->name}} </a>	
 			</div>
-				<div class="destination__desc">choose your tour</div>
-			</div>
-		{{-- @endif --}}
-			
+			<div class="destination__desc">choose your tour</div>
+		</div>
 		@endforeach
 
 		@foreach ($dark_blues as $item)
-		{{-- @if(($loop->count) <= '2' )
-		<div class="destination__item blue animated fadeInUp delay-0.5s">
-			<div class="destination__title"> 
-			<a  class="destination__title"href=" {{ $tour->link() }}">{{ $tour->title}} {{ $loop->count }}</a>	
-				</div>
-			<div class="destination__desc">choose your tour</div>
-		</div>
-		@else  --}}
-		<div class="destination__item dark-blue animated fadeInUp delay-0.5s">
-			<div class="destination__title"> 
-			<a  class="destination__title"href="#">{{ $item->name}} </a>	
-			</div>
-				<div class="destination__desc">choose your tour</div>
-			</div>
-		{{-- @endif --}}
-			
-		@endforeach
 		
-		{{-- <div class="destination__item blue animated fadeInUp delay-0.5s">
-			<div class="destination__title">Ukraine - Kyiv2</div>
-			<div class="destination__desc">choose your tour</div>
-		</div>
 		<div class="destination__item dark-blue animated fadeInUp delay-0.5s">
-			<div class="destination__title">Ukraine - Kyiv</div>
+			<div class="destination__title"> 
+				<a  class="destination__title"href="#">{{ $item->name}} </a>	
+			</div>
 			<div class="destination__desc">choose your tour</div>
 		</div>
-		<div class="destination__item rose animated fadeInUp delay-1s">
-			<div class="destination__title">Ukraine - Kyiv</div>
-			<div class="destination__desc">choose your tour</div>
+	
+		@endforeach
+		<div class="destination__item dark-blue animated fadeInUp delay-0.5s">
+		<a href="{{route('franchize')}}">
+				<div class="destination__desc">Here could be your </br> country and your city</div>
+			</a>
+			
 		</div>
-		<div class="destination__item blue animated fadeInUp delay-1s ">
-			<div class="destination__title">Ukraine - Kyiv</div>
-			<div class="destination__desc">choose your tour</div>
-		</div>
-		<div class="destination__item dark-blue animated fadeInUp delay-1s">
-			<div class="destination__title">Ukraine - Kyiv</div>
-			<div class="destination__desc">choose your tour</div>
-		</div>
-
-		<div class="destination__item rose animated fadeInUp delay-2s">
-			<div class="destination__title">Ukraine - Kyiv</div>
-			<div class="destination__desc">choose your tour</div>
-		</div>
-		<div class="destination__item blue animated fadeInUp delay-2s">
-			<div class="destination__title">Ukraine - Kyiv</div>
-			<div class="destination__desc">choose your tour</div>
-		</div>
-		<div class="destination__item dark-blue animated fadeInUp delay-2s">
-			<div class="destination__title">Ukraine - Kyiv</div>
-			<div class="destination__desc">choose your tour</div>
-		</div> --}}
+		
 	</div>
 </div>
 
@@ -250,7 +197,40 @@
 <div class="upcoming-events">
 	<div class="container">
 		<div class="events__title">
-			Upcoming Events
+			News
+		</div>
+		<div class="consultant__inner">
+
+			@foreach ($news as $item)
+				<div class="consultant__item animated fadeInLeft delay-1s " data-wow-delay="0.1s">
+						<img class="consultant__image" src="{{ $item->image() }}" alt="Consultant image">
+					<h3 class="consultant__text">
+						<a href="{{ $item->link() }}">{{ $item->title }}</a>	
+					</h3>
+				</div>
+			@endforeach
+			{{-- <div class="consultant__item animated fadeInLeft delay-1s " data-wow-delay="0.1s">
+				<img class="consultant__image" src="images/file-1.jpg" alt="Consultant image">
+				<h3 class="consultant__text">Kiev-Pechersk Lavra</h3>
+
+			
+			</div>
+
+			<div class="consultant__item animated fadeInLeft delay-1s " data-wow-delay="0.3s">
+				<img class="consultant__image" src="images/file-2.jpg" alt="Consultant image">
+				<h3 class="consultant__text">Kiev-Pechersk Lavra</h3>
+
+				
+			</div>
+
+			<div class="consultant__item animated fadeInLeft delay-1s " data-wow-delay="0.6s" >
+				<img class="consultant__image" src="images/file-3.jpg" alt="Consultant image">
+				<h3 class="consultant__text">Kiev-Pechersk Lavra</h3>
+
+			
+			</div> --}}
+			
+		
 		</div>
 	</div>
 </div>
