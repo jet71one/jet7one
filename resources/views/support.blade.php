@@ -35,7 +35,6 @@
             <h3 class="communication__item-title ">I am a model, I want to work as your guide </h3>
             
             <a href="/register" class="btn btn-white">contact</a>
-            <p class="communication__item-desc">Ukraina | Kiev | Odessa | Lviv </p>
         </div>
         <div class="communication__item">
             <div class="communicate__item-img">
