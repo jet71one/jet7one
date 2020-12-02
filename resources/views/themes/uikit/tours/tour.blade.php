@@ -33,12 +33,12 @@
                 </div>
             </div>
 
-
+{{-- 
             @forelse($place->getCoordinates() as $point)
             var center = {lat: {{ $point['lat'] }}, lng: {{ $point['lng'] }}};
         @empty
             var center = {lat: {{ config('voyager.googlemaps.center.lat') }}, lng: {{ config('voyager.googlemaps.center.lng') }}};
-        @endforelse
+        @endforelse --}}
             <div class="guide__inner">
                 <div class="guide__slider">
                     <div class="guide__item"><img src="../images/guide-img-1.jpg" alt="Guide image"></div>
