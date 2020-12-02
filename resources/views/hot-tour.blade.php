@@ -15,10 +15,10 @@
 					<div class="hot-tour__item">
 						<img src="storage/{{ $tour->image }}" alt="Hot tour" class="hot-tour__img">
 						<div class="hot-tour__content">
-						<h3 class="hot-tour__title">{{ $tour->title }}1</h3>
+						<h3 class="hot-tour__title">{{ $tour->title }}</h3>
 						<span class="hot-tour__date">{{ $tour->start_date }} - {{ $tour->end_date}}</span>
 							<p class="hot-tour__region">{{ $tour->destination }}</p>
-							<p class="hot-tour__text">{!! $tour->body !!}</p>
+							<p class="hot-tour__text">{! $tour->body !}</p>
 						</div>	
 						<div class="hot-tour__footer-content">
 							<div class="price">€ {{ $tour->price }}</div>
