@@ -33,8 +33,8 @@ class HomeController extends \App\Http\Controllers\Controller
 
         $seo = [
 
-            'title'         => setting('site.title', 'Laravel Wave'),
-            'description'   => setting('site.description', 'Software as a Service Starter Kit'),
+            'title'         => setting('site.title', 'Jet7 one'),
+            'description'   => setting('site.description', 'Travel resource'),
             'image'         => url('/og_image.png'),
             'type'          => 'website'
 

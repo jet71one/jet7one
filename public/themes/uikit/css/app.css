@@ -598,7 +598,7 @@ p {
 }
 
 .destination__title:hover {
-  color: #EC5E87;
+  color: #ef85a3;
   text-decoration: none;
 }
 
@@ -1109,6 +1109,20 @@ p {
   margin-top: 50px;
   border-top: 1px solid #ddd;
   padding-top: 30px;
+}
+
+.heart {
+  fill: #0000;
+  stroke: #e84a43;
+  stroke-width: 1.5px;
+  -webkit-transition: fill .25s;
+  transition: fill .25s;
+}
+
+.heart:hover {
+  opacity: 1;
+  fill: #e84a43;
+  stroke: none;
 }
 
 /*Hot-tour page*/

@@ -35,7 +35,7 @@ class BlogController extends \App\Http\Controllers\Controller
         return view('theme::blog.index', compact('posts', 'category', 'categories', 'seo'));
     }
 
-    public function post($category, $slug){
+    public function post( $slug){
 
     	$post = Post::where('slug', '=', $slug)->firstOrFail();
 

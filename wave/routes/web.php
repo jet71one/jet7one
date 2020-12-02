@@ -11,8 +11,8 @@ Route::get('user/verify/{verification_code}', 'Auth\RegisterController@verify')-
 Route::post('register/subscribe', '\Wave\Http\Controllers\RegisterController@register')->name('wave.register-subscribe');
 
 Route::get('blog', '\Wave\Http\Controllers\BlogController@index')->name('wave.blog');
-Route::get('blog/{category}', '\Wave\Http\Controllers\BlogController@category')->name('wave.blog.category');
-Route::get('blog/{category}/{post}', '\Wave\Http\Controllers\BlogController@post')->name('wave.blog.post');
+// Route::get('blog/{category}', '\Wave\Http\Controllers\BlogController@category')->name('wave.blog.category');
+Route::get('blog/{post}', '\Wave\Http\Controllers\BlogController@post')->name('wave.blog.post');
 
 /***** Pages *****/
 Route::get('p/{page}', '\Wave\Http\Controllers\PageController@page');

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     public function link(){
-    	return url('/blog/' . $this->category->slug . '/' . $this->slug);
+    	return url('/blog/' . $this->slug);
     }
 
     public function image(){
