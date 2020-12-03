@@ -33,8 +33,8 @@ class HomeController extends \App\Http\Controllers\Controller
 
         $seo = [
 
-            'title'         => setting('site.title', 'Jet7 one'),
-            'description'   => setting('site.description', 'Travel resource'),
+            'title'         => setting('site.title', ' Jet7One - Your tour guide fashion models'),
+            'description'   => setting('site.description', ' Jet7One - Your tour guide fashion models'),
             'image'         => url('/og_image.png'),
             'type'          => 'website'
 
