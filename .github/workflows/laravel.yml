@@ -1,34 +1,19 @@
-on:
+name: remote ssh command
+on: 
   push:
-    branches: [ master ]
+    branches:
+      -master
+jobs:
 
-jobs: 
-  deploy:
-
+   build:
+    name: Build
     runs-on: ubuntu-latest
-
     steps:
-
-      - name: Checkout
-
-        uses: actions/checkout@v2
-
-      - name: Deployment
-
-        uses: appleboy/ssh-action@master
-
-        with:
-
-          host: ${{ secrets.SSH_HOST }}
-
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-          username: ${{ secrets.SSH_USERNAME }}
-
-          script: |
-
-            cd /home/rr396401/jet7.space/www/
-
-            git checkout -f 
-
-            git pull
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST  }}
+        username: ${{ secrets.SSH_USERNAME  }}
+        password: ${{ secrets.SSH_PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: whoami
