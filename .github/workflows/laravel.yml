@@ -5,30 +5,30 @@ on:
 jobs: 
   deploy:
 
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-  steps:
+    steps:
 
-    - name: Checkout
+      - name: Checkout
 
-      uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
-    - name: Deployment
+      - name: Deployment
 
-      uses: appleboy/ssh-action@main
+        uses: appleboy/ssh-action@main
 
-      with:
+        with:
 
-        host: ${{ secrets.SSH_HOST }}
+          host: ${{ secrets.SSH_HOST }}
 
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-        username: ${{ secrets.SSH_USERNAME }}
+          username: ${{ secrets.SSH_USERNAME }}
 
-        script: |
+          script: |
 
-          cd /home/rr396401/jet7.space/www/
+            cd /home/rr396401/jet7.space/www/
 
-          git checkout -f 
+            git checkout -f 
 
-          git pull
+            git pull
