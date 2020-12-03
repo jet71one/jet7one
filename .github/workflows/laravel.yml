@@ -29,6 +29,6 @@ jobs:
 
             cd /home/rr396401/jet7.space/www/
 
-            git checkout -f 
+            git fetch 
 
             git pull
