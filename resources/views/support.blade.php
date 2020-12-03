@@ -42,7 +42,7 @@
             </div>
             <h3 class="communication__item-title">Online</h3>
             <p class="communication__item-desc">Make a tax deductible donation‏.</p>
-            <a href="viber://chat?number=%2B380669213266" class="btn btn-white">Donate</a>
+            <a href="viber://chat?number=%2B380669213266" class="btn btn-white">donate</a>
         </div>
         <div class="communication__item" >
             <div class="communicate__item-img">
