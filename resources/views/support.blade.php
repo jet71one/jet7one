@@ -3,7 +3,7 @@
 @section('content')
 <div class="header__text">
     <h1 class="header__title">
-        Get Involved
+        Support
     </h1>
 </div>
 
@@ -42,7 +42,7 @@
             </div>
             <h3 class="communication__item-title">Online</h3>
             <p class="communication__item-desc">Make a tax deductible donation‏.</p>
-            <a href="viber://chat?number=%2B380669213266" class="btn btn-white">Click to Give</a>
+            <a href="viber://chat?number=%2B380669213266" class="btn btn-white">Donate</a>
         </div>
         <div class="communication__item" >
             <div class="communicate__item-img">
