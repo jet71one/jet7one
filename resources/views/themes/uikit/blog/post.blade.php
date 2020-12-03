@@ -19,7 +19,7 @@
     </div>
     <div class="container">
         
-    <div class="uk-container uk-container-small">
+    <div class="uk-container blog-container uk-container-small">
         <article id="post-{{ $post->id }}" class="uk-article post-{{ $post->id }} uk-text-center uk-margin-large-bottom">
             
             <meta property="name" content="{{ $post->title }}">

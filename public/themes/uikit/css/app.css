@@ -1506,11 +1506,11 @@ p {
 
 /*Blog page*/
 
-.uk-container {
+.blog-container {
   color: #000;
 }
 
-.uk-container img {
+.blog-container img {
   margin: 15px 0;
   width: 100%;
   -o-object-fit: cover;
@@ -1532,6 +1532,8 @@ p {
      object-fit: cover;
   height: auto;
 }
+
+/*Admin page*/
 
 *.tour__inner {
   display: -webkit-box;
