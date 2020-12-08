@@ -32,6 +32,11 @@ Route::get('/events',   'FrontController@events')->name('events');
 Route::get('/franchize',   'FrontController@franchize')->name('franchize');
 Route::get('/events/{slug}', 'EventsController@event')->name('event.event-single');
 Route::get('/tour/{slug}', 'TourController@tour')->name('tour.event-tour');
+Route::get('/region/{slug}', 'RegionController@region')->name('region.event-region');
+Route::get('/places/{id}', 'PlaceController@index')->name('places.index');
+Route::get('/place/{slug}', 'PlaceController@single')->name('places.single');
+
+Route::get('region/{category}', 'RegionController@category')->name('region.category');
 // Route::get('/events/{id}',   'FrontController@events')->name('events');
 Route::get('/hot-tour',   'FrontController@hotTour')->name('hot-tour');
 Route::get('/rules-for-clients',   'FrontController@guestInfo')->name('guest-info');

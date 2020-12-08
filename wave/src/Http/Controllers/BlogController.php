@@ -9,7 +9,9 @@ use Wave\Category;
 class BlogController extends \App\Http\Controllers\Controller
 {
     public function index(){
-    	
+          
+        
+        //
         $posts = Post::orderBy('created_at', 'DESC')->paginate(6);
         $categories = Category::all();
 

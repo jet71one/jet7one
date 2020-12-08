@@ -62,7 +62,7 @@
 		
 			<div class="destination__item blue  animated fadeInUp delay-0.5s ">
 				<div class="destination__title"> 
-					<a  class="destination__title"href="#">{{ $item->name}} </a>	
+					<a  class="destination__title"href="{{ $item->link() }}">{{ $item->name}} </a>	
 				</div>
 				<div class="destination__desc">choose your tour</div>
 			</div>
@@ -73,7 +73,7 @@
 		
 		<div class="destination__item rose  animated fadeInUp delay-0.5s ">
 			<div class="destination__title"> 
-				<a  class="destination__title"href="#">{{ $item->name}} </a>	
+				<a  class="destination__title"href="{{ $item->link() }}">{{ $item->name}} </a>	
 			</div>
 			<div class="destination__desc">choose your tour</div>
 		</div>
@@ -83,7 +83,7 @@
 		
 		<div class="destination__item dark-blue animated fadeInUp delay-0.5s">
 			<div class="destination__title"> 
-				<a  class="destination__title"href="#">{{ $item->name}} </a>	
+				<a  class="destination__title"href="{{ $item->link() }}">{{ $item->name}} </a>	
 			</div>
 			<div class="destination__desc">choose your tour</div>
 		</div>

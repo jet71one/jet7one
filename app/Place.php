@@ -9,6 +9,9 @@ class Place extends Model
 {
     use Spatial;
 
+    public function link(){
+    	return url('/place/' . $this->slug);
+    }
     protected $spatial = ['location'];
 
 }
