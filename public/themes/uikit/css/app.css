@@ -1533,6 +1533,15 @@ p {
   height: auto;
 }
 
+/*PLace page*/
+
+.place__img {
+  height: 200px;
+  width: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 /*Admin page*/
 
 *.tour__inner {

@@ -15,14 +15,11 @@
         <div class="hot-tour__inner">
             @foreach ($places as $place)
                 <div class="hot-tour__item">
-                    {{-- <img src="storage/{{ $tour->image }}" alt="Hot tour" class="hot-tour__img"> --}}
+                    <img src="storage/{{ $place->image }}" alt="Places" class="place__img">
                     <div class="hot-tour__content">
                     <a href="{{ $place->link() }}">
                         <h3 class="hot-tour__title">{{ $place->name }}</h3>
                     </a>    
-                    {{-- <span class="hot-tour__date">{{ $tour->start_date }} - {{ $tour->end_date}}</span> --}}
-                        {{-- <p class="hot-tour__region">{{ $tour->destination }}</p> --}}
-                        <p class="hot-tour__text">{!! $place->body !!}</p>
                     </div>	
                 
                 </div>
