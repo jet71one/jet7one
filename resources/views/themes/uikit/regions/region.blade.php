@@ -15,26 +15,10 @@
             <div class="list-btn">
                 @foreach ($categories as $item)
                     <div class="header__btn btn btn-header">
-                    {{-- /<a href="{{ route('region.category', $item->slug ) }}" class="nav__link">{{ $item->name}}</a> --}}
                     <a href="{{ route('places.index', $item->id) }}" class="nav__link">{{ $item->name}}</a>
                     </div>  
                 @endforeach
                 
-                <div class="header__btn btn btn-header">
-                    <a href="#map" class="nav__link">apartments</a>
-                </div>
-                <div class="header__btn btn btn-header">
-                    <a href="#map" class="nav__link">rent a car</a>
-                </div>
-                <div class="header__btn btn btn-header">
-                    <a href="#map" class="nav__link">restaurants</a>
-                </div>
-                <div class="header__btn btn btn-header">
-                    <a href="#map" class="nav__link">strip club</a>
-                </div>
-                <div class="header__btn btn btn-header">
-                    <a href="#map" class="nav__link">night club</a>
-                </div>
             </div>
 
 {{-- 
