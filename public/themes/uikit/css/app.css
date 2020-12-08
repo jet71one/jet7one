@@ -1537,7 +1537,7 @@ p {
 
 .place__img {
   height: 200px;
-  width: 300px;
+  width: 290px;
   -o-object-fit: cover;
      object-fit: cover;
 }
