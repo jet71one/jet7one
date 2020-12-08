@@ -13,7 +13,7 @@
 			<div class="hot-tour__inner">
 				@foreach ($tours as $tour)
 					<div class="hot-tour__item">
-						<img src="public/storage/{{ $tour->image }}" alt="Hot tour" class="hot-tour__img">
+						<img src="storage/{{ $tour->image }}" alt="Hot tour" class="hot-tour__img">
 						<div class="hot-tour__content">
 						<h3 class="hot-tour__title">{{ $tour->title }}</h3>
 						<span class="hot-tour__date">{{ $tour->start_date }} - {{ $tour->end_date}}</span>
