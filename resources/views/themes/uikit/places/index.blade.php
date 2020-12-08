@@ -15,7 +15,7 @@
         <div class="hot-tour__inner">
             @foreach ($places as $place)
                 <div class="hot-tour__item">
-                    <img src="storage/{{ $place->image }}" alt="Places" class="place__img">
+                    <img src="/storage/{{ $place->image }}" alt="Places" class="place__img">
                     <div class="hot-tour__content">
                     <a href="{{ $place->link() }}">
                         <h3 class="hot-tour__title">{{ $place->name }}</h3>
