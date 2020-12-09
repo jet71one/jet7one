@@ -1542,6 +1542,12 @@ p {
      object-fit: cover;
 }
 
+/*Term of use*/
+
+.text-bottom {
+  text-decoration: underline;
+}
+
 /*Admin page*/
 
 *.tour__inner {
