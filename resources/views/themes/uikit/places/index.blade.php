@@ -7,7 +7,7 @@
 @section('content')
 <div class="header__text">
     <h1 class="header__title">
-       Places 
+       Places
     </h1>
 </div>
 <div class="hot-tour">

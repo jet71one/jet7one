@@ -7,8 +7,14 @@ use App\Place;
 
 class PlaceController extends Controller
 {
-    public function index( $id){
-        $places = Place::where('category_id', '=', $id)->get();
+    public function index($regID, $id){
+
+        
+        $places = Place::where([
+                                ['category_id', '=', $id],
+                                ['location_id','=',$regID],
+                                ])->get();
+
 
         $seo = [
             'seo_title' => 'Places title',

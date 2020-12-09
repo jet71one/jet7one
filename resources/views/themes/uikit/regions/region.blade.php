@@ -15,7 +15,7 @@
             <div class="list-btn">
                 @foreach ($categories as $item)
                     <div class="header__btn btn btn-header">
-                    <a href="{{ route('places.index', $item->id) }}" class="nav__link">{{ $item->name}}</a>
+                    <a href="{{ route('places.index',['id'=> $item->id,'regID' => $region->id]) }}" class="nav__link">{{ $item->name}}</a>
                     </div>  
                 @endforeach
                 
