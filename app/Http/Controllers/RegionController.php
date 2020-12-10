@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Region;
 use Wave\Category;
+use Wave\User;
 
 class RegionController extends Controller
 {
@@ -12,6 +13,10 @@ class RegionController extends Controller
 
     	$region = Region::where('slug', '=', $slug)->firstOrFail();
         $categories = Category::all();
+        // $user = User::where('id','=','18')->profile($about);
+        // $region_user = $user->profile($about);
+        // dd($reguserion_user);
+
         //$place = Place::where('id', '=', '3')->get('location');
         
 

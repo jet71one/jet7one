@@ -39,13 +39,14 @@ class BlogController extends \App\Http\Controllers\Controller
 
     public function post( $slug){
 
-    	$post = Post::where('slug', '=', $slug)->firstOrFail();
+        $post = Post::where('slug', '=', $slug)->firstOrFail();
+        $featured_posts = Post::where('slug', '<>', $slug)->take(3)->get();
 
         $seo = [
             'seo_title' => $post->title,
             'seo_description' => $post->seo_description,
         ];
 
-    	return view('theme::blog.post', compact('post', 'seo'));
+    	return view('theme::blog.post', compact('post','featured_posts', 'seo'));
     }
 }

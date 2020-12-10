@@ -45,7 +45,7 @@
                         <div class="guide__body">
                             <p class="guide__text">
                                 <div class="guide__body-title">
-                                    Leading Guide - Katarina
+                                    Leading Guide - Katarina 
         
                                 </div>
                                 <p class="guide__body__text">

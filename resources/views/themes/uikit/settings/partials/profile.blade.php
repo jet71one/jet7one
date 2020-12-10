@@ -28,6 +28,13 @@
 				<div class="uk-form-controls">
 					{!! profile_field('text_area', 'about') !!}
 				</div>
+			</div>
+			
+			<div class="uk-margin-top">
+		        <label class="uk-form-label">Region</label>
+				<div class="uk-form-controls">
+					{!! profile_field('text_area', 'region_id') !!}
+				</div>
 		    </div>
 		</div>
 	</div>

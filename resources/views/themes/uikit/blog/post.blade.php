@@ -34,10 +34,38 @@
                     
                 </div>
 
+               <!-- AddToAny BEGIN -->
+                <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                    <a class="a2a_button_facebook"></a>
+                    <a class="a2a_button_twitter"></a>
+                    <a class="a2a_button_linkedin"></a>
+                    <a class="a2a_button_copy_link"></a>
+                </div>
+                    <script async src="https://static.addtoany.com/menu/page.js"></script>
+    <!-- AddToAny END -->
                 {{-- @include('theme::partials.comments') --}}
-
-                
             </article>
+        </div>
+
+
+    </div>
+    <div class="container blog_container">
+        <div class="recent__inner">
+            <div class="title"><h3>Recent Posts</h3> </div>
+            <div class="link"> <a href="{{ route('news')}}">See all</a></div>
+        </div>
+       
+        <div class="consultant__inner">
+            @foreach($featured_posts as $post)
+            <div class="consultant__item animated fadeInLeft delay-1s " data-wow-delay="0.1s">
+                    <img class="consultant__image" src="{{ $post->image() }}" alt="Consultant image">
+                <h3 class="consultant__text">
+                    <a href="{{ $post->link() }}">{{ $post->title }}</a>	
+                </h3>
+            </div>
+            @endforeach
+
         </div>
     </div>
 
