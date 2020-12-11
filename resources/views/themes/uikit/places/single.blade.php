@@ -19,11 +19,11 @@
         </div>
 
 
-        @forelse($place->getCoordinates() as $point)
+        {{-- @forelse($place->getCoordinates() as $point)
             var center = {lat: {{ $point['lat'] }}, lng: {{ $point['lng'] }}};
         @empty
             var center = {lat: {{ config('voyager.googlemaps.center.lat') }}, lng: {{ config('voyager.googlemaps.center.lng') }}};
-        @endforelse
+        @endforelse --}}
         
         <div id="map" class="map"></div>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>

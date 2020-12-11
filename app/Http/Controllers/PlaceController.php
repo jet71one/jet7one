@@ -15,14 +15,14 @@ class PlaceController extends Controller
                                 ['location_id','=',$regID],
                                 ])->get();
 
-        $coord = $model->getCoordinates();
+        
         
         $seo = [
             'seo_title' => 'Places title',
             'seo_description' => 'Places description'
         ];
         
-    	return view('theme::places.index', compact('places','coord', 'seo'));
+    	return view('theme::places.index', compact('places', 'seo'));
     }
 
 
