@@ -101,45 +101,32 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRD3yOPcpOEG6LCPm-aIWZd2sgxQCrEgw&callback=initMap&libraries=&v=weekly"
       defer
     ></script>
+    <script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
 <script>
+    
     function initMap() {
-    // The location of Uluru
-        const uluru = { lat: 50.8614422 , lng: 30.3926087  };
-        // The map, centered at Uluru
-        const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 4,
-            center: uluru,
-        });
-        // The marker, positioned at Uluru
-        const marker = new google.maps.Marker({
-            position: uluru,
-            map: map,
-        });
-
-        // Add some markers to the map.
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 3,
+    center: { lat: 50.024, lng: 30.887 },
+  });
+  // Create an array of alphabetical characters used to label the markers.
+  const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  // Add some markers to the map.
   // Note: The code uses the JavaScript Array.prototype.map() method to
   // create an array of markers based on a given "locations" array.
   // The map() method here has nothing to do with the Google Maps API.
-
-            var markers = [];
-            for (var i = 0; i < 100; i++) {
-            var $locations = data.photos[i];
-            var latLng = new google.maps.LatLng(
-                dataPhoto.latitude,
-                dataPhoto.longitude
-            );
-        const markers = locations.map((location, i) => {
-            return new google.maps.Marker({
-            position: location,
-            label: labels[i % labels.length],
-            });
-        });
-        // Add a marker clusterer to manage the markers.
-        new MarkerClusterer(map, markers, {
-            imagePath:
-            "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
-        });
-        var $locations = [];
-    }
+  const markers = locations.map((location, i) => {
+    return new google.maps.Marker({
+      position: location,
+      label: labels[i % labels.length],
+    });
+  });
+  // Add a marker clusterer to manage the markers.
+  new MarkerClusterer(map, markers, {
+    imagePath:
+      "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+  });
+}
+const locations =  [ {{ $pins}} ]  ;
 </script>
 @endsection

@@ -17,38 +17,25 @@ class RegionController extends Controller
         $categories = Category::all();
         
         $places = Place::where('location_id', '=', $region->id)->get();
-        
-        //dd($place[1]['location']);
+        //Беремо всі точки і додаємо їх в масив
+        //щоб їх додати проходимось циклом по точкам
+        //потім конвертуємо це в строку і передаємо в карту
         $locations = array();
         foreach($places as $place){
             
             foreach($place->getCoordinates() as $point){
-                array_push($locations, '{lat:'. $point['lat'].', lng:'.$point['lng'].'}');
+                array_push($locations, '{lat: '. $point['lat'].', lng: '.$point['lng'].'}');
             };
         };
-        //dd($locations);
-
-
-        // foreach($place['location']->getCoordinates() as $point){
-        //     $center = '{lat:'. $point['lat'].', lng:'.$point['lng'].'}';
-        
-        // };
-        
-    
-        // $user = User::where('id','=','18')->profile($about);
-        // $region_user = $user->profile($about);
-        // dd($reguserion_user);
-
-        //$place = Place::where('id', '=', '3')->get('location');
-        
-
+        $pins ='';
+        $pins =implode(',', $locations);
         
         $seo = [
             'seo_title' => $region->title,
             'seo_description' => $region->seo_description,
         ];
         
-    	return view('theme::regions.region', compact('region','categories','locations', 'seo'));
+    	return view('theme::regions.region', compact('region','categories','pins', 'seo'));
     }
     
     public function category($slug){
