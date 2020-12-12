@@ -20,6 +20,9 @@
                 @endforeach
                 
             </div>
+            {{-- @foreach ($locations as $item)
+                    <a href="#">{{ $item }}</a>
+            @endforeach --}}
 
 {{-- 
             @forelse($place->getCoordinates() as $point)
@@ -73,10 +76,10 @@
         
             </div>
         </div>
+        
+        <div id="map" class="map"></div>
 
-        {{-- <div id="map" class="map"></div> --}}
-
-        <iframe id="map" src="https://www.google.com/maps/d/embed?mid=12zmLfYNODRpPhCs6YIL3oxrnODzKb6dE" width="100%" height="480"></iframe>
+        {{-- <iframe id="map" src="https://www.google.com/maps/d/embed?mid=12zmLfYNODRpPhCs6YIL3oxrnODzKb6dE" width="100%" height="480"></iframe> --}}
 
         <div class="register__form">
             <a href="/register" class="btn btn-blue hot-tour__btn">registration</a>
@@ -112,6 +115,31 @@
             position: uluru,
             map: map,
         });
+
+        // Add some markers to the map.
+  // Note: The code uses the JavaScript Array.prototype.map() method to
+  // create an array of markers based on a given "locations" array.
+  // The map() method here has nothing to do with the Google Maps API.
+
+            var markers = [];
+            for (var i = 0; i < 100; i++) {
+            var $locations = data.photos[i];
+            var latLng = new google.maps.LatLng(
+                dataPhoto.latitude,
+                dataPhoto.longitude
+            );
+        const markers = locations.map((location, i) => {
+            return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length],
+            });
+        });
+        // Add a marker clusterer to manage the markers.
+        new MarkerClusterer(map, markers, {
+            imagePath:
+            "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+        });
+        var $locations = [];
     }
 </script>
 @endsection

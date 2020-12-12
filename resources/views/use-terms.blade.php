@@ -23,7 +23,7 @@
 
            <p> <span class="text-bottom">Your Account</span>.  You agree to keep your account secure and confidential.</p>
 
-            <p><span class="text-bottom">Modifying and Termination Services</span>.  We may modify the Services at any time or discontinue them altogether. You can terminate your account in Settings <a href="(https://www.jet7.space/settings/profile">(https://www.jet7.space/settings/profile)</a>, and we reserve the right to terminate it for you if you violate this Agreement or if we deem your use of the Service to be inappropriate.</p>
+            <p><span class="text-bottom">Modifying and Termination Services</span>.  We may modify the Services at any time or discontinue them altogether. You can terminate your account in Settings <a href="https://www.jet7.space/settings/profile">(https://www.jet7.space/settings/profile)</a>, and we reserve the right to terminate it for you if you violate this Agreement or if we deem your use of the Service to be inappropriate.</p>
 
             <p><span class="text-bottom">Safety</span>.  Jet7One is not responsible for the actions of its users or your interactions with them, and we don’t conduct background checks. </p>
             <p><span class="text-bottom">Rights</span>.  Jet7One grants you the right to use our Service as authorized and permitted by this Agreement. You grant Jet7One the right to display your profile and Content for the limited purpose of Jet7One operating the Service and researching and developing new ones.</p>

@@ -19,12 +19,7 @@
         </div>
 
 
-        {{-- @forelse($place->getCoordinates() as $point)
-            var center = {lat: {{ $point['lat'] }}, lng: {{ $point['lng'] }}};
-        @empty
-            var center = {lat: {{ config('voyager.googlemaps.center.lat') }}, lng: {{ config('voyager.googlemaps.center.lng') }}};
-        @endforelse --}}
-        
+              
         <div id="map" class="map"></div>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
         {{-- <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
@@ -36,10 +31,10 @@
             <script>
                 function initMap() {
                 // The location of Uluru
-                    const uluru = { lat: 50.8614422 , lng: 30.3926087  };
+                    const uluru = {{ $center}};
                     // The map, centered at Uluru
                     const map = new google.maps.Map(document.getElementById("map"), {
-                        zoom: 4,
+                        zoom: 6,
                         center: uluru,
                     });
 

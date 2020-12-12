@@ -43,8 +43,8 @@
     @endif
 
     <!-- Styles -->
-    <link href="../themes/uikit/css/admin/admin-app.css" rel="stylesheet">
-    <link href="../themes/uikit/css/app.css" rel="stylesheet">
+    <link href="/themes/uikit/css/admin/admin-app.css" rel="stylesheet">
+    <link href="/themes/uikit/css/app.css" rel="stylesheet">
 </head>
 <body class="@if(Request::is('/')){{ 'home' }}@else{{ str_slug(str_replace('/', '-', Request::path())) }}@endif">
     <div id="app" data-sticky-wrap>

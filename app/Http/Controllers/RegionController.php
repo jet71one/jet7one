@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Region;
 use Wave\Category;
 use Wave\User;
+use App\Place;
+use Illuminate\Support\Arr;
 
 class RegionController extends Controller
 {
@@ -13,6 +15,26 @@ class RegionController extends Controller
 
     	$region = Region::where('slug', '=', $slug)->firstOrFail();
         $categories = Category::all();
+        
+        $places = Place::where('location_id', '=', $region->id)->get();
+        
+        //dd($place[1]['location']);
+        $locations = array();
+        foreach($places as $place){
+            
+            foreach($place->getCoordinates() as $point){
+                array_push($locations, '{lat:'. $point['lat'].', lng:'.$point['lng'].'}');
+            };
+        };
+        //dd($locations);
+
+
+        // foreach($place['location']->getCoordinates() as $point){
+        //     $center = '{lat:'. $point['lat'].', lng:'.$point['lng'].'}';
+        
+        // };
+        
+    
         // $user = User::where('id','=','18')->profile($about);
         // $region_user = $user->profile($about);
         // dd($reguserion_user);
@@ -26,7 +48,7 @@ class RegionController extends Controller
             'seo_description' => $region->seo_description,
         ];
         
-    	return view('theme::regions.region', compact('region','categories', 'seo'));
+    	return view('theme::regions.region', compact('region','categories','locations', 'seo'));
     }
     
     public function category($slug){
