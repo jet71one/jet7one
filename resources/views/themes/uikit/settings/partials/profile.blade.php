@@ -39,7 +39,7 @@
 		        </div>
 			</div>
 			 
-			@if (auth()->user()->role_id == '7')
+			@if (auth()->user()->role_id == '10')
 			
 			<div class="uk-margin-top">
 				<label class="uk-form-label">Region </label>
