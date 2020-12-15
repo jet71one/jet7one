@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Validator;
 use Wave\User;
+use App\Region;
+use App\TypeTour;
 use Wave\KeyValue;
 use Wave\ApiKey;
 use TCG\Voyager\Http\Controllers\Controller;
@@ -15,50 +17,74 @@ use TCG\Voyager\Http\Controllers\Controller;
 class SettingsController extends Controller
 {
     public function index($section = ''){
+        $regions = Region::select('id','name')->get();
+        $typeTours = TypeTour::select('id','name')->get();
+        $authed_user = auth()->user();
+        
+        $selectedRegion = $authed_user->region_id;
+        $selectedTypeTour = $authed_user->type_tour_id;
+
+       
         if(empty($section)){
             return redirect(route('wave.settings', 'profile'));
         }
-    	return view('theme::settings.index', compact('section'));
+    	return view('theme::settings.index', compact('section','regions','selectedRegion','typeTours','selectedTypeTour'));
     }
 
     public function profilePut(Request $request){
+
+       // $region = Region::select('id','name');
+       // dd($region);
         $request->validate([
             'name' => 'required|string',
             'email' => 'sometimes|required|email|unique:users,email,' . Auth::user()->id,
             'username' => 'sometimes|required|unique:users,username,' . Auth::user()->id,
+            'region_id' => 'required|string',
+            'type_tour' => 'required|string',
+            'lang' => 'required|string',
         ]);
-
+        //dd($request);
+        //dd(console.log($request));
     	$authed_user = auth()->user();
 
     	$authed_user->name = $request->name;
     	$authed_user->email = $request->email;
+    	$authed_user->region_id = $request->region_id;
+    	$authed_user->type_tour_id = $request->type_tour;
+    	$authed_user->lang = $request->lang;
         if($request->avatar){
     	   $authed_user->avatar = $this->saveAvatar($request->avatar, $authed_user->username);
         }
     	$authed_user->save();
 
-    	foreach(config('wave.profile_fields') as $key){
-    		if(isset($request->{$key})){
-	    		$type = $key . '_type__wave_keyvalue';
-	    		if($request->{$type} == 'checkbox'){
-	                if(!isset($request->{$key})){
-	                    $request->request->add([$key => null]);
-	                }
-	            }
+    	// foreach(config('wave.profile_fields') as $key){
+    	// 	if(isset($request->{$key})){
+        //         //dd($key);
+	    // 		$type = $key . '_type__wave_keyvalue';
+	    // 		if($request->{$type} == 'checkbox'){
+	    //             if(!isset($request->{$key})){
+	    //                 $request->request->add([$key => null]);
+	    //             }
+        //         }
+        //         //dd($type);
+        //         $row = (object)['field' => $key, 'type' => $request->{$type}, 'details' => ''];
+        //         dd($row);
+	    //         $value = $this->getContentBasedOnType($request, 'themes', $row);
+        //        // dd($authed_user->keyValue($key));
+	    // 		if(!is_null($authed_user->keyValue($key))){
 
-	            $row = (object)['field' => $key, 'type' => $request->{$type}, 'details' => ''];
-	            $value = $this->getContentBasedOnType($request, 'themes', $row);
-
-	    		if(!is_null($authed_user->keyValue($key))){
-	    			$keyValue = KeyValue::where('keyvalue_id', '=', $authed_user->id)->where('keyvalue_type', '=', 'users')->where('key', '=', $key)->first();
-	    			$keyValue->value = $value;
-	    			$keyValue->type = $request->{$type};
-	    			$keyValue->save();
-	    		} else {
-	    			KeyValue::create(['type' => $request->{$type}, 'keyvalue_id' => $authed_user->id, 'keyvalue_type' => 'users', 'key' => $key, 'value' => $value]);
-	    		}
-	    	}
-    	}
+	    // 			$keyValue = KeyValue::where('keyvalue_id', '=', $authed_user->id)->where('keyvalue_type', '=', 'users')->where('key', '=', $key)->first();
+	    // 			$keyValue->value = $value;
+        //             $keyValue->type = $request->{$type};
+        //             $authed_user->keyValue($key);
+        //              dd($keyValue->type);
+                    
+	    // 			$keyValue->save();
+	    // 		} else {
+	    // 			KeyValue::create(['type' => $request->{$type}, 'keyvalue_id' => $authed_user->id, 'keyvalue_type' => 'users', 'key' => $key, 'value' => $value]);
+	    // 		}
+	    // 	}
+    	// }
 
     	return back()->with(['message' => 'Successfully updated user profile', 'message_type' => 'success']);
     }

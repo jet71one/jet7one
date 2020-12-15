@@ -22,20 +22,57 @@
 				<div class="uk-form-controls">
 		            <input class="uk-input" name="email" type="text" placeholder="Email Address" value="{{ Auth::user()->email }}">
 		        </div>
-		    </div>
-		    <div class="uk-margin-top">
+			</div>
+			
+		
+			<div class="uk-margin-top">
 		        <label class="uk-form-label">About</label>
 				<div class="uk-form-controls">
 					{!! profile_field('text_area', 'about') !!}
 				</div>
+			</div> 
+
+			<div class="uk-margin-top">
+		        <label class="uk-form-label">Language (English | Russian)</label>
+				<div class="uk-form-controls">
+		            <input class="uk-input" name="lang" type="text" placeholder="Enter your language" value="{{ Auth::user()->lang }}">
+		        </div>
 			</div>
+			 
+			@if (auth()->user()->role_id == '7')
 			
 			<div class="uk-margin-top">
-		        <label class="uk-form-label">Region</label>
-				<div class="uk-form-controls">
-					{!! profile_field('text_area', 'region_id') !!}
-				</div>
-		    </div>
+				<label class="uk-form-label">Region </label>
+				<select name="region_id" type="select_dropdown" class="form-control" >
+
+					<option value="">-- Select Region --</option>
+					@foreach ($regions as $region)
+						<option  value="{{ $region->id }}" {{ $region->id == $selectedRegion ? 'selected' : ''}}> {{ ucfirst($region->name) }}</option>
+
+					@endforeach
+				</select>
+			</div>
+
+			<div class="uk-margin-top">
+				<label class="uk-form-label">Type Tour </label>
+				<select name="type_tour" type="select_dropdown" class="form-control" >
+
+					<option value="">-- Select Type Tour --</option>
+					@foreach ($typeTours as $tour)
+						<option  value="{{ $tour->id }}" {{ $tour->id == $selectedTypeTour ? 'selected' : ''}}> {{ ucfirst($tour->name) }}</option>
+					@endforeach
+				</select>
+			</div>
+			@else
+
+			@endif
+
+			
+
+
+			
+				
+			
 		</div>
 	</div>
 

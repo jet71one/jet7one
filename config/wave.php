@@ -3,8 +3,7 @@
 return [
 
 	'profile_fields' => [
-		'about',
-		'region_id',
+		'region_id'
 	],
 
 	'api' => [
