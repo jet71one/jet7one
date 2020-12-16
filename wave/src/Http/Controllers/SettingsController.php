@@ -48,10 +48,12 @@ class SettingsController extends Controller
     	$authed_user = auth()->user();
 
     	$authed_user->name = $request->name;
-    	$authed_user->email = $request->email;
+        $authed_user->email = $request->email;
+        $authed_user->lang = $request->lang;
+        $authed_user->about = $request->about;
     	$authed_user->region_id = $request->region_id;
     	$authed_user->type_tour_id = $request->type_tour;
-    	$authed_user->lang = $request->lang;
+    	
         if($request->avatar){
     	   $authed_user->avatar = $this->saveAvatar($request->avatar, $authed_user->username);
         }

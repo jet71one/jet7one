@@ -24,20 +24,28 @@
 		        </div>
 			</div>
 			
-		
-			<div class="uk-margin-top">
+{{-- 		
+		    <div class="uk-margin-top">
 		        <label class="uk-form-label">About</label>
 				<div class="uk-form-controls">
 					{!! profile_field('text_area', 'about') !!}
 				</div>
-			</div> 
+			</div>   --}}
+
 
 			<div class="uk-margin-top">
+		        <label class="uk-form-label">About</label>
+				<div class="uk-form-controls">
+					<textarea class="form-control" name="about" rows="5">{{ Auth::user()->about }}</textarea>
+
+		        </div>
+			</div>
+			{{-- <div class="uk-margin-top">
 		        <label class="uk-form-label">Language (English | Russian)</label>
 				<div class="uk-form-controls">
 		            <input class="uk-input" name="lang" type="text" placeholder="Enter your language" value="{{ Auth::user()->lang }}">
 		        </div>
-			</div>
+			</div> --}}
 			 
 			@if (auth()->user()->role_id == '10')
 			
@@ -63,8 +71,24 @@
 					@endforeach
 				</select>
 			</div>
+			<div class="uk-margin-top">
+		        <label class="uk-form-label">Language (English | Russian)</label>
+				<div class="uk-form-controls">
+		            <input class="uk-input" name="lang" type="text" placeholder="Enter your language" value="{{ Auth::user()->lang }}">
+		        </div>
+			</div>
 			@else
-
+			
+			<input type="hidden" name="region_id" value="0">
+			<input type="hidden" name="type_tour" value="0">
+			<div class="uk-margin-top">
+		        <label class="uk-form-label">Language (English | Russian)</label>
+				<div class="uk-form-controls">
+		            <input class="uk-input" name="lang" type="text" placeholder="Enter your language" value="{{ Auth::user()->lang }}">
+		        </div>
+			</div>
+			
+			
 			@endif
 
 			
