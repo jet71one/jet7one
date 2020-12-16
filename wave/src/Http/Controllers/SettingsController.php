@@ -33,8 +33,7 @@ class SettingsController extends Controller
 
     public function profilePut(Request $request){
 
-       // $region = Region::select('id','name');
-       // dd($region);
+       
         $request->validate([
             'name' => 'required|string',
             'email' => 'sometimes|required|email|unique:users,email,' . Auth::user()->id,
@@ -43,8 +42,7 @@ class SettingsController extends Controller
             'type_tour' => 'required|string',
             'lang' => 'required|string',
         ]);
-        //dd($request);
-        //dd(console.log($request));
+        
     	$authed_user = auth()->user();
 
     	$authed_user->name = $request->name;

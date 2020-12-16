@@ -7,7 +7,7 @@
         <h1 class="header__title event-single-title">{{ $event->title }}</h1>
     </div>
     <div class="container event-single">
-        <img class="event-single-image" src="{{ $event->image() }}" alt="Event single">
+        <img class="event-single-image" src="{{ $event->showImage() }}" alt="Event single">
 
         <div class="event-single-content">
             <h3>time and place</h3>

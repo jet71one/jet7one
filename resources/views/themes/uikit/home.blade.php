@@ -107,7 +107,7 @@
 
 			@foreach ($events as $event)
 			<div class="consultant__item animated fadeInLeft delay-1s " data-wow-delay="0.1s">
-				<img class="consultant__image" src="{{ $event->image() }}" alt="Consultant image">
+				<img class="consultant__image" src="{{ $event->showImage() }}" alt="Consultant image">
 				<h3 class="consultant__text">
 				<a href="{{ $event->link() }}">{{ $event->title }}</a>
 					
