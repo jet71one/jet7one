@@ -11,7 +11,6 @@
     <div class="contact__inner">
         <div class="contact__content">
             <h2 class="contact__title">Get in Touch</h2>
-            <p class="contact__text">Ukraina | Odessa | Kiev | Lviv</p>
             <p class="contact__text">
                 <a href="mailto:jet71one@gmail.com">jet71one@gmail.com</a> | JetSetUa<a href="https://t.me/JetSetUa" target="_blank" class="footer-social-icon">
                     <img src="../images/icons/telegram.png" alt="Telegram">

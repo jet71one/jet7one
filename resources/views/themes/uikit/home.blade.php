@@ -48,7 +48,7 @@
 	<a href="https://www.youtube.com/user/Wix#" class="social__item" target="_blank">
 		<img src="images/icons/youtube.svg" alt="Youtube">
 	</a>
-	<a href="https://twitter.com/wix" class="social__item" target="_blank">
+	<a href="https://mobile.twitter.com/Jet7O" class="social__item" target="_blank">
 		<img src="images/icons/twitter.svg" alt="Twitter">
 	</a>
 	<a href="https://www.instagram.com/jet_7_one/" class="social__item" target="_blank">
