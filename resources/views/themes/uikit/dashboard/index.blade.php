@@ -22,15 +22,23 @@
 				        </div>
 				    </div>
 				    <div class="uk-card-body">
-				        <p>This is your application <a href="#">dashboard</a> you can customize this view inside of the <code>{{ theme_folder('/dashboard/index.blade.php') }}</code> file.<br><br> (All themes are located inside of the <code>resources/views/themes</code> folder)</p>
+				        <p>We greet you, our foreign friends! Our company came to the conclusion that you lack our unique service. Now professional top model can be your guide on a guided tour. The tour will be held personally for you, it can be planned specially according to your preference. Our top models will communicate with you in English. Excursions can be different:
+							<ul>
+								<li> historical walk around the city;</li>
+								<li> gastronomic tour; the best clubs visiting;</li>
+								<li> extreme entertainment (underground city, skydiving and others);</li>
+								<li> yachting;</li>
+								<li> riding a car or limousine.</li>
+							</ul>
+							 <strong>We can organize everything that you can imagine.</strong></p>
 				    </div>
 				    <div class="uk-card-footer">
-				        <a href="/docs" target="_blank" class="uk-button uk-button-text">Read the docs to learn more</a>
+				        <a href="{{ route('wave.settings', 'profile') }}" class="uk-button uk-button-text">Your profile</a>
 				    </div>
 				</div>
 			</div>
 
-			<div>
+			{{-- <div>
 
 				<div class="uk-card uk-card-default">
 				    <div class="uk-card-header">
@@ -51,7 +59,7 @@
 				        <a href="https://devdojo.com/series/wave" target="_blank" class="uk-button uk-button-text">Watch the Videos</a>
 				    </div>
 				</div>
-			</div>
+			</div> --}}
 
 
 		</div>
