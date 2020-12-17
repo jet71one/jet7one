@@ -56,7 +56,7 @@
             <p class="communication__item-desc">Telegram: 
                 
                 <a href="https://t.me/JetSetUa" target="_blank" class="footer-social-icon">
-                    <img src="../images/icons/telegram.png" alt="Telegram">
+                    <img src="../images/icons/telegram-white.png" alt="Telegram">
                 </a>
             </p>
         </div>
