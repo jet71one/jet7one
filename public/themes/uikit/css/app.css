@@ -1579,6 +1579,12 @@ p {
 }
 
 /*Admin page*/
+body.register #plans .plan .plan-description {
+  background: #1e90ff;
+}
+body.register #plans .plan .feature-list {
+  background: #4eace3;
+}
 
 *.tour__inner {
   display: -webkit-box;
