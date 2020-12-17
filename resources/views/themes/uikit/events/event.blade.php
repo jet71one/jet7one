@@ -12,6 +12,7 @@
         <div class="event-single-content">
             <h3>time and place</h3>
             <p class="time-description">
+                {{ $event->start_date}} </br>
                 {{ $event->place}}
             </p>
             <h3>about the event</h3>
