@@ -949,8 +949,16 @@ p {
 
 .copyright a {
   color: #fff;
-  /*Support page*/
 }
+
+/*Register page*/
+
+.register #plans .plan .feature-list,
+.register #plans .plan .plan-description {
+  background: #2196F3;
+}
+
+/*Support page*/
 
 .header__text {
   padding-top: 90px;
