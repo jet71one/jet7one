@@ -8,29 +8,6 @@
 
 @section('content')
 
-
-{{-- <header class="header">
-	<div class="container">
-		<div class="header__inner">
-			<div class="header__logo">
-				<a href="#" class="logo__link">Jet 7 One</a>
-			</div>
-			<nav class="nav">
-				<a href="#" class="nav__link">Home</a>
-				<a href="/about-us.html" class="nav__link">About us</a>
-				<a href="/support.html" class="nav__link">Support</a>
-				<a href="/news.html" class="nav__link">News</a>
-				<a href="/events.html" class="nav__link">Events</a>
-				<a href="/hot-tour.html" class="nav__link">Hot tour</a>
-				<a href="/contact.html" class="nav__link">Contact</a>
-			</nav>
-			<div class="header__btn btn btn-header">
-				<a href="#" class="nav__link">guest information</a>
-			</div>
-		</div>
-	</div>
-</header> --}}
-
 <div class="intro" style="background-image: url('images/intro-bg.jpg');">
 	
 		<div class="intro__inner">
