@@ -13,8 +13,8 @@ class RegionController extends Controller
 {
     public function region( $slug){
 
-    	$region = Region::where('slug', '=', $slug)->firstOrFail();
-        $categories = Category::all();
+        $region = Region::where('slug', '=', $slug)->firstOrFail();
+        $categories = Category::orderBy('order','asc')->get();
         
         $places = Place::where('location_id', '=', $region->id)->get();
         //Беремо всі точки і додаємо їх в масив
