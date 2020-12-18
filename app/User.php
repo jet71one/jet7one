@@ -34,4 +34,6 @@ class User extends \Wave\User
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function setSettingsAttribute($value) { $this->attributes['settings'] = $value ? $value->toJson() : null; }
 }
