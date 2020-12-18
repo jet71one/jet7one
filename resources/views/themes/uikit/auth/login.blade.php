@@ -51,7 +51,7 @@
                         </div>
 
                         <div class="uk-margin">
-                           <label><input class="uk-checkbox" type="checkbox" name="remember"{{ old('remember') ? ' checked' : '' }}> Remember me</label>
+                           <label class="remember-me"><input class="uk-checkbox" type="checkbox" name="remember"{{ old('remember') ? ' checked' : '' }}> Remember me</label>
                         </div>
 
                         <div class="uk-margin">

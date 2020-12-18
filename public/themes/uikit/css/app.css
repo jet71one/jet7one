@@ -958,6 +958,12 @@ p {
   background: #2196F3;
 }
 
+/*Login page*/
+
+.remember-me {
+  color: #2196F3;
+}
+
 /*Support page*/
 
 .header__text {
