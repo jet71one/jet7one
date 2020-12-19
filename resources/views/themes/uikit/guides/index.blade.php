@@ -17,7 +17,7 @@
                 <div class="hot-tour__item">
                     <img src="/storage/{{ $guide->image }}" alt="Places" class="place__img">
                     <div class="hot-tour__content">
-                    <a href="{{ $guide->link() }}">
+                    <a href="#">
                         <h3 class="hot-tour__title">{{ $guide->name }}</h3>
                     </a>    
                     </div>	
