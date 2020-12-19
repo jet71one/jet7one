@@ -18,6 +18,9 @@
                     <a href="{{ route('places.index',['id'=> $item->id,'regID' => $region->id]) }}" class="nav__link">{{ $item->name}}</a>
                     </div>  
                 @endforeach
+                <div class="header__btn btn btn-header">
+                    <a href="{{ route('region.guides',['regID' => $region->id]) }}" class="nav__link">Guides of region</a>
+                </div>  
                 
             </div>
             {{-- @foreach ($locations as $item)
