@@ -15,11 +15,12 @@
         <div class="hot-tour__inner">
             @foreach ($guides as $guide)
                 <div class="hot-tour__item">
-                    <img src="/storage/{{ $guide->image }}" alt="Places" class="place__img">
+                    <img src="/storage/{{ $guide->avatar }}" alt="Places" class="place__img">
                     <div class="hot-tour__content">
                     <a href="#">
                         <h3 class="hot-tour__title">{{ $guide->name }}</h3>
                     </a>    
+                    <h3 class="hot-tour__title">{{ $TypeTour }}</h3>
                     </div>	
                 
                 </div>
