@@ -24,11 +24,7 @@
 		        </div>
 			</div>
 			
-		 	<div class="uk-form-controls">
-				<br>
-				<div class="clearfix"></div>
-			<input type="file" name="images[]" multiple="multiple" accept="image/*">
-			</div> 
+		 	
 
 
 			<div class="uk-margin-top">
@@ -46,6 +42,11 @@
 			</div> --}}
 			 
 			@if (auth()->user()->role_id == '10')
+			<div class="uk-form-controls">
+				<br>
+				<div class="clearfix"></div>
+			<input type="file" name="images[]" multiple="multiple" accept="image/*">
+			</div> 
 			
 			<div class="uk-margin-top">
 				<label class="uk-form-label">Region </label>
