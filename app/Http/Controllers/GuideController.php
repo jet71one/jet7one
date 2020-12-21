@@ -18,4 +18,11 @@ class GuideController extends Controller
       //  dd($TypeTour);
         return view('theme::guides.index', compact('guides','TypeTour'));
     }
+
+    public function single($id) {
+        $guide = User::where('id', '=', $id)->firstOrFail();
+        $images = json_decode($guide->images);
+        $TypeTour = TypeTour::where('id',"=", $guide->type_tour_id)->value('name');
+        return view('theme::guides.single', compact('guide','TypeTour','images'));
+    }
 }

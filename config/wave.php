@@ -4,6 +4,7 @@ return [
 
 	'profile_fields' => [
 		// 'about'
+		// 'images'
 	],
 
 	'api' => [

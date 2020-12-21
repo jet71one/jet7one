@@ -51,7 +51,30 @@ class SettingsController extends Controller
         $authed_user->about = $request->about;
     	$authed_user->region_id = $request->region_id;
     	$authed_user->type_tour_id = $request->type_tour;
-    	
+        //dd($request);
+        if($request->images){
+           // dd($request->images);
+            $result = array();
+            $i = 1;
+            foreach($request->images as $image){
+                
+                
+                //$//result = array_push($result,$this->saveImage($image, $authed_user->username));
+                $patch = $this->saveImage($image, $authed_user->username.'-'.$i);
+                $newarray=explode(" ",$patch); 
+               
+                array_push($result, $patch);
+                
+
+
+                $i++;
+            }
+            //dd($result);
+            $authed_user->images = json_encode($result);
+            
+            // /$authed_user->avatar = $this->saveAvatar($request->avatar, $authed_user->username);
+         }
+
         if($request->avatar){
     	   $authed_user->avatar = $this->saveAvatar($request->avatar, $authed_user->username);
         }
@@ -147,6 +170,11 @@ class SettingsController extends Controller
     	$path = 'avatars/' . $filename . '.png';
     	Storage::disk(config('voyager.storage.disk'))->put($path, file_get_contents($avatar));
     	return $path;
+    }
+    private function saveImage($image, $filename){
+        $path = 'avatars/images/' . $filename . '.jpg';
+        Storage::disk(config('voyager.storage.disk'))->put($path, file_get_contents($image));
+        return $path;
     }
 
     public function invoice(Request $request, $invoiceId) {

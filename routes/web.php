@@ -34,6 +34,7 @@ Route::get('/events/{slug}', 'EventsController@event')->name('event.event-single
 Route::get('/tour/{slug}', 'TourController@tour')->name('tour.event-tour');
 Route::get('/region/{slug}', 'RegionController@region')->name('region.event-region');
 Route::get('/region-{regID}/guides', 'GuideController@index')->name('region.guides');
+Route::get('/guide-{id}', 'GuideController@single')->name('region.guide-single');
 Route::get('/places/region-{regID}/category-{id}', 'PlaceController@index')->name('places.index');
 Route::get('/place/{slug}', 'PlaceController@single')->name('places.single');
 

@@ -24,13 +24,11 @@
 		        </div>
 			</div>
 			
-{{-- 		
-		    <div class="uk-margin-top">
-		        <label class="uk-form-label">About</label>
-				<div class="uk-form-controls">
-					{!! profile_field('text_area', 'about') !!}
-				</div>
-			</div>   --}}
+		 	<div class="uk-form-controls">
+				<br>
+				<div class="clearfix"></div>
+			<input type="file" name="images[]" multiple="multiple" accept="image/*">
+			</div> 
 
 
 			<div class="uk-margin-top">

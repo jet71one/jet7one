@@ -17,7 +17,7 @@
                 <div class="hot-tour__item">
                     <img src="/storage/{{ $guide->avatar }}" alt="Places" class="place__img">
                     <div class="hot-tour__content">
-                    <a href="#">
+                    <a href="{{ route('region.guide-single',$guide->id ) }}">
                         <h3 class="hot-tour__title">{{ $guide->name }}</h3>
                     </a>    
                     <h3 class="hot-tour__title">{{ $TypeTour }}</h3>
