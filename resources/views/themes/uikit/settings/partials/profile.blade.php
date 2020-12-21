@@ -40,14 +40,14 @@
 		            <input class="uk-input" name="lang" type="text" placeholder="Enter your language" value="{{ Auth::user()->lang }}">
 		        </div>
 			</div> --}}
-			 
-			@if (auth()->user()->role_id == '10')
 			<div class="uk-form-controls">
 				<br>
 				<div class="clearfix"></div>
 			<input type="file" name="images[]" multiple="multiple" accept="image/*">
 			</div> 
+			@if (auth()->user()->role_id == '10')
 			
+
 			<div class="uk-margin-top">
 				<label class="uk-form-label">Region </label>
 				<select name="region_id" type="select_dropdown" class="form-control" >

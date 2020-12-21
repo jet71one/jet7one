@@ -15,9 +15,15 @@
           
             <div class="guide__inner">
                 <div class="guide__slider">
-                    @foreach ($images as $image)
-                         <div class="guide__item"><img src="storage/{{ $image}}" alt="{{ $guide->name }} image"></div>
-                    @endforeach
+
+                    @if( $images !== null)
+                        @foreach ($images as $image)
+                            <div class="guide__item"><img src="storage/{{ $image}}" alt="{{ $guide->name }} image"></div>
+                        @endforeach
+                    @else 
+                
+                    <div class="guide__item"><img src="storage/{{ $guide->avatar}}" alt="Avatar image"></div>
+                    @endif
                 </div>
                 
                 <div class="guide__content">
@@ -45,7 +51,6 @@
             </div>
         </div>
         
-        <div id="map" class="map"></div>
 
 
         {{-- <div class="register__form">
