@@ -31,14 +31,10 @@
                         <div class="guide__body">
                             <p class="guide__text">
                                 <div class="guide__body-title">
-                                    Leading Guide - Katarina 
+                                    <h4>{{ $guide->name }}</h4>
                                     <p> {{ $TypeTour }}</p>
         
                                 </div>
-                                {{-- <p class="guide__body__text">
-                                    Leading Guide - Katarina.<br>
-                                    Katarina - prof. model
-                                </p> --}}
                                 <p class="guide__body__text">
                                     {{ $guide->about }}
                                 </p>
