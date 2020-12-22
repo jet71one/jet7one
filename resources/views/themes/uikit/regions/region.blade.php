@@ -14,25 +14,21 @@
         <div class="tour__inner">
             <div class="list-btn">
                 @foreach ($categories as $item)
-                    <div class="header__btn btn btn-header">
-                    <a href="{{ route('places.index',['id'=> $item->id,'regID' => $region->id]) }}" class="nav__link">{{ $item->name}}</a>
-                    </div>  
+                    
+                        <?php $countPlace = App\Place::where('category_id', '=', $item->id)->count() ?>
+                        @if( $countPlace >= '1')
+                        <div class="header__btn btn btn-header">
+                             <a href="{{ route('places.index',['id'=> $item->id,'regID' => $region->id]) }}" class="nav__link">{{ $item->name}} </a>
+                        </div>  
+                            
+                        @endif
                 @endforeach
                 <div class="header__btn btn btn-header">
                     <a href="{{ route('region.guides',['regID' => $region->id]) }}" class="nav__link">Guides of region</a>
                 </div>  
                 
             </div>
-            {{-- @foreach ($locations as $item)
-                    <a href="#">{{ $item }}</a>
-            @endforeach --}}
-
-{{-- 
-            @forelse($place->getCoordinates() as $point)
-            var center = {lat: {{ $point['lat'] }}, lng: {{ $point['lng'] }}};
-        @empty
-            var center = {lat: {{ config('voyager.googlemaps.center.lat') }}, lng: {{ config('voyager.googlemaps.center.lng') }}};
-        @endforelse --}}
+           
             <div class="guide__inner">
                 <div class="guide__slider">
                     <div class="guide__item"><img src="../images/guide-img-1.jpg" alt="Guide image"></div>

@@ -17,6 +17,9 @@ class RegionController extends Controller
         $categories = Category::orderBy('order','asc')->get();
         
         $places = Place::where('location_id', '=', $region->id)->get();
+
+        
+        //dd($countPlace);
         //Беремо всі точки і додаємо їх в масив
         //щоб їх додати проходимось циклом по точкам
         //потім конвертуємо це в строку і передаємо в карту
