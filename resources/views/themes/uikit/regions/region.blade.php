@@ -17,7 +17,7 @@
                         <?php $countPlace = App\Place::where('location_id', '=' ,$region->id )->where('category_id','=', $item->id)->count() ?>
                         @if( $countPlace >= '1')
                         <div class="header__btn btn btn-header">
-                             <a href="{{ route('places.index',['id'=> $item->id,'regID' => $region->id]) }}" class="nav__link">{{ $item->name}} | {{ $countPlace }}  </a>
+                             <a href="{{ route('places.index',['id'=> $item->id,'regID' => $region->id]) }}" class="nav__link">{{ $item->name}}  </a>
                         </div>  
                             
                         @endif
