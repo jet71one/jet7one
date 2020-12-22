@@ -1580,7 +1580,7 @@ p {
 /*PLace page*/
 
 .place__img {
-  height: 265x;
+  height: 265px;
   width: 290px;
   -o-object-fit: cover;
      object-fit: cover;
