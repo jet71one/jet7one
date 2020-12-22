@@ -20,7 +20,8 @@
                     <a href="{{ route('region.guide-single',$guide->id ) }}">
                         <h3 class="hot-tour__title">{{ $guide->name }}</h3>
                     </a>    
-                    <h3 class="hot-tour__title"><span class="rose type_tour">{{ $TypeTour }}</span></h3>
+                    <h3 class="hot-tour__title">
+                        <span class="rose type_tour">{{ $TypeTour }}</span></h3>
                     </div>	
                 
                 </div>

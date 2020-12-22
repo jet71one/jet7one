@@ -15,7 +15,7 @@ class GuideController extends Controller
             ])->get();
        
         $TypeTour = TypeTour::where('id',"=", $guides[0]['type_tour_id'])->value('name');
-      //  dd($TypeTour);
+
         return view('theme::guides.index', compact('guides','TypeTour'));
     }
 
