@@ -1842,7 +1842,14 @@ p {
   .footer__form {
     margin: 20px 0;
     max-width: 100%;
+  }
+
+  p {
     /*ABout us*/
+  }
+
+  p img {
+    width: 100%;
   }
 
   .video-bg {
