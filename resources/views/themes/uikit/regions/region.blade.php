@@ -16,10 +16,9 @@
                 @foreach ($categories as $item)
                         <?php $countPlace = App\Place::where('location_id', '=' ,$region->id )->where('category_id','=', $item->id)->count() ?>
                         @if( $countPlace >= '1')
-                        <div class="header__btn btn btn-header">
-                             <a href="{{ route('places.index',['id'=> $item->id,'regID' => $region->id]) }}" class="nav__link">{{ $item->name}}  </a>
-                        </div>  
-                            
+                            <div class="header__btn btn btn-header">
+                                <a href="{{ route('places.index',['id'=> $item->id,'regID' => $region->id]) }}" class="nav__link">{{ $item->name}}  </a>
+                            </div>   
                         @endif
                 @endforeach
                 <div class="header__btn btn btn-header">
@@ -28,57 +27,46 @@
                 
             </div>
            
-            <div class="guide__inner">
-                <div class="guide__slider">
-                    <div class="guide__item"><img src="../images/guide-img-1.jpg" alt="Guide image"></div>
-                    <div class="guide__item"><img src="../images/guide-img-2.jpg" alt="Guide image"></div>
-                    <div class="guide__item"><img src="../images/guide-img-3.jpg" alt="Guide image"></div>
-                    <div class="guide__item"><img src="../images/guide-img-4.jpg" alt="Guide image"></div>
-                    <div class="guide__item"><img src="../images/guide-img-5.jpg" alt="Guide image"></div>
-                    <div class="guide__item"><img src="../images/guide-img-6.jpg" alt="Guide image"></div>
-                    <div class="guide__item"><img src="../images/guide-img-7.jpg" alt="Guide image"></div>
-                    <div class="guide__item"><img src="../images/guide-img-8.jpg" alt="Guide image"></div>
-        
-                </div>
-                
-                <div class="guide__content">
-                    <div class="guide__container">
-                        <div class="guide__body">
-                            <p class="guide__text">
-                                <div class="guide__body-title">
-                                    Leading Guide - Katarina 
-        
-                                </div>
-                                <p class="guide__body__text">
-                                    Leading Guide - Katarina.<br>
-                                    Katarina - prof. model
+            @if ($guide->role_id == '11')
+                <div class="guide__inner">
+                    <div class="guide__slider">
+                        @if( $guide->images !== null)
+                            @foreach ($images as $image)
+                                <div class="guide__item"><img src="storage/{{ $image}}" alt="{{ $guide->name }} image"></div>
+                            @endforeach
+                        @else 
+                    
+                        <div class="guide__item"><img src="../storage/{{ $guide->avatar}}" alt="Avatar image"></div>
+                        @endif
+            
+                    </div>
+                    
+                    <div class="guide__content">
+                        <div class="guide__container">
+                            <div class="guide__body">
+                                <p class="guide__text">
+                                    <div class="guide__body-title">
+                                       {{ $guide->name}}
+            
+                                    </div>
+                                    <p> <span class="rose type_tour">{{ $TypeTour }}</span></p>
+                                    <p class="guide__body__text">
+                                        {{ $guide->about }}
+                                    </p>
+            
                                 </p>
-                                <p class="guide__body__text">
-                                    She worked on world-class catwalks, represented world brands.<br>
-        
-                                    Also:
-        
-                                    Fourth vice miss “Miss Ukraine Universe” 2015<br>
-        
-                                    Second runner up “Princess of the Globe” 2016<br>
-        
-                                    Miss photogenic “Photomodel of the World” 2016<br>
-        
-                                    Grand Champion of senior model “World Championship of Perfoming ARTS” WCOPA U.S.A. 2017<br>
-                                </p>
-        
-                            </p>
+                            </div>
                         </div>
                     </div>
+            
                 </div>
-        
-            </div>
+            @else
+            @endif
         </div>
         
         <div id="map" class="map"></div>
 
-        {{-- <iframe id="map" src="https://www.google.com/maps/d/embed?mid=12zmLfYNODRpPhCs6YIL3oxrnODzKb6dE" width="100%" height="480"></iframe> --}}
-
+      
         <div class="register__form">
             <a href="/register" class="btn btn-blue hot-tour__btn">registration</a>
 

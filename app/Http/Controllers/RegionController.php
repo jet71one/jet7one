@@ -7,6 +7,7 @@ use App\Region;
 use Wave\Category;
 use Wave\User;
 use App\Place;
+use App\TypeTour;
 use Illuminate\Support\Arr;
 
 class RegionController extends Controller
@@ -18,8 +19,8 @@ class RegionController extends Controller
         
         $places = Place::where('location_id', '=', $region->id)->get();
 
-        
-        //dd($countPlace);
+        $guide = User::where([['region_id', '=', $region->id],['role_id', '=', '11']])->firstOrFail();
+        $TypeTour = TypeTour::where('id',"=", $guide->type_tour_id)->value('name');
         //Беремо всі точки і додаємо їх в масив
         //щоб їх додати проходимось циклом по точкам
         //потім конвертуємо це в строку і передаємо в карту
@@ -38,7 +39,7 @@ class RegionController extends Controller
             'seo_description' => $region->seo_description,
         ];
         
-    	return view('theme::regions.region', compact('region','categories','pins', 'seo'));
+    	return view('theme::regions.region', compact('region','categories','pins','guide','TypeTour', 'seo'));
     }
     
     public function category($slug){

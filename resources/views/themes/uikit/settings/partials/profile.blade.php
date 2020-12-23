@@ -54,7 +54,7 @@
 				<br>
 				<div class="clearfix"></div>
 			<label for="file">Select a file:</label>
-			<input language="en" type="file" name="images[]" multiple="multiple" accept="image/*" >
+			<input type="file" name="images[]" multiple="multiple" accept="image/*" >
 			</div> 
 			@if (auth()->user()->role_id == '10')
 			
