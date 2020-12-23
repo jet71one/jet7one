@@ -56,7 +56,7 @@
 			<label for="file">Select a file:</label>
 			<input type="file" name="images[]" multiple="multiple" accept="image/*" >
 			</div> 
-			@if (auth()->user()->role_id == '10')
+			@if (auth()->user()->role_id == '10' or auth()->user()->role_id == '11'  )
 			
 
 			<div class="uk-margin-top">
