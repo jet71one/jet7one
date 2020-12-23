@@ -53,7 +53,8 @@
 			<div class="uk-form-controls">
 				<br>
 				<div class="clearfix"></div>
-			<input type="file" name="images[]" multiple="multiple" accept="image/*">
+			<label for="file">Select a file:</label>
+			<input language="en" type="file" name="images[]" multiple="multiple" accept="image/*" >
 			</div> 
 			@if (auth()->user()->role_id == '10')
 			
