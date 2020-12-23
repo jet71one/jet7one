@@ -30,7 +30,7 @@
             @if ($guide->role_id == '11')
                 <div class="guide__inner">
                     <div class="guide__slider">
-                        @if( $guide->images !== null)
+                        @if( $guide->images <> NULL)
                             @foreach ($images as $image)
                                 <div class="guide__item"><img src="storage/{{ $image}}" alt="{{ $guide->name }} image"></div>
                             @endforeach
