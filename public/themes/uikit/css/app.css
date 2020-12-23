@@ -949,9 +949,13 @@ p {
 
 /*Register page*/
 
-.register #plans .plan .feature-list,
-.register #plans .plan .plan-description {
+.register #plans .plan .feature-list {
   background: #2196F3;
+}
+
+.register #plans .plan .plan-description {
+  background: #fff;
+  color: #EC5E87;
 }
 
 /*Login page*/
