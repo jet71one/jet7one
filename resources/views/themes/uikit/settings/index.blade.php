@@ -15,7 +15,7 @@
 			        	<ul class="settings-links">
 				            <li class="@if(Request::is('settings/profile')){{ 'active' }}@endif tablink"><a href="{{ route('wave.settings', 'profile') }}" class="setting-link"> <span uk-icon="icon: user" class="uk-icon"></span>Profile</a></li>
 				            <li class="@if(Request::is('settings/security')){{ 'active' }}@endif tablink"><a href="{{ route('wave.settings', 'security') }}" class="setting-link"><span uk-icon="icon: lock" class="uk-icon"></span>Security</a></li>
-				            <li class="@if(Request::is('settings/api')){{ 'active' }}@endif tablink"><a href="{{ route('wave.settings', 'api') }}" class="setting-link"><span uk-icon="icon: code" class="uk-icon"></span>API Keys</a></li>
+				            {{-- <li class="@if(Request::is('settings/api')){{ 'active' }}@endif tablink"><a href="{{ route('wave.settings', 'api') }}" class="setting-link"><span uk-icon="icon: code" class="uk-icon"></span>API Keys</a></li> --}}
 				        </ul>
 				    </div>
 		        </div>
