@@ -31,12 +31,12 @@
                 <div class="guide__inner">
                     <div class="guide__slider">
                         @if( $guide->images <> 'NULL')
-                            @foreach ($guide->images as $image)
-                                <div class="guide__item"><img src="storage/{{ $image}}" alt="{{ $guide->name }} image"></div>
-                            @endforeach
+                             <div class="guide__item"><img src="../storage/{{ $guide->avatar}}" alt="Avatar image"></div>
                         @else 
+                            @foreach ($guide->images as $image)
+                                    <div class="guide__item"><img src="storage/{{ $image}}" alt="{{ $guide->name }} image"></div>
+                            @endforeach
                     
-                        <div class="guide__item"><img src="../storage/{{ $guide->avatar}}" alt="Avatar image"></div>
                         @endif
             
                     </div>
