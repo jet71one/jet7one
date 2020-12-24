@@ -29,6 +29,7 @@ class RegionController extends Controller
                 //повідомлення Немає гідів
                 if($guide == null){
                     $guide ='There is no  guide for this region yet';
+                    $TypeTour = '';
                 }
                 else{
                     $images = json_decode($guide->images);

@@ -53,7 +53,7 @@
                                             {{$guide->name }} 
                                             </div>
                                             <p> <span class="rose type_tour">{{ $TypeTour }}</span></p>
-                                            <p class="guide__body__text">{{ $guide->about}}</p>
+                                            <p class="guide__body__text">{{ $guide->about }}</p>
                                         </p>
                                     </div>
                                 </div>
@@ -64,10 +64,10 @@
                         <div class="guide__inner">
                             <div class="guide__slider">
                                 @if( $images == null)
-                                    <div class="guide__item"><img src="../storage/{{ $guide->avatar}}" alt="Avatar image"></div>
+                                    <div class="guide__item"><img src="../storage/{{ $guide->avatar }}" alt="Avatar image"></div>
                                 @else 
                                     @foreach ($images as $image)
-                                        <div class="guide__item"><img src="../storage/{{ $image}}" alt="{{ $guide->name}} image"></div>
+                                        <div class="guide__item"><img src="../storage/{{ $image}}" alt="{{ $guide->name }} image"></div>
                                     @endforeach
                                 @endif
                             </div>
@@ -76,9 +76,9 @@
                                 <div class="guide__container">
                                     <div class="guide__body">
                                         <p class="guide__text">
-                                            <div class="guide__body-title">{{$guide->name }}</div>
+                                            <div class="guide__body-title">{{ $guide->name }}</div>
                                             <p> <span class="rose type_tour">{{ $TypeTour }}</span></p>
-                                            <p class="guide__body__text">{{ $guide->about}}</p>
+                                            <p class="guide__body__text">{{ $guide->about }}</p>
                                         </p>
                                     </div>
                                 </div>
