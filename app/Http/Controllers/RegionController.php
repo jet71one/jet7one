@@ -19,8 +19,27 @@ class RegionController extends Controller
         
         $places = Place::where('location_id', '=', $region->id)->get();
 
-        $guide = User::where([['region_id', '=', $region->id],['role_id', '=', '11']])->firstOrFail();
-        $TypeTour = TypeTour::where('id',"=", $guide->type_tour_id)->value('name');
+        //Якщо у нас є Супергідв Регіоні
+        $guide = User::where([['region_id', '=', $region->id],['role_id', '=', '11']])->first();
+        if($guide == null){
+            //Якщо у нас в регіоні немає СуперГіда тоді ми беремо звичайного
+            //гіда але з цього регіону
+            $guide = User::where([['region_id', '=', $region->id]])->first();
+                //Якщо у нас немає гідів в цьому регіоні тоді видаємо 
+                //повідомлення Немає гідів
+                if($guide == null){
+                    $guide ='There is no  guide for this region yet';
+                }
+                else{
+                    $images = json_decode($guide->images);
+                    $TypeTour = TypeTour::where('id',"=", $guide->type_tour_id)->value('name');
+                }
+           
+        }
+        else{
+            $images = json_decode($guide->images);
+            $TypeTour = TypeTour::where('id',"=", $guide->type_tour_id)->value('name');
+        }
         //Беремо всі точки і додаємо їх в масив
         //щоб їх додати проходимось циклом по точкам
         //потім конвертуємо це в строку і передаємо в карту
@@ -39,7 +58,7 @@ class RegionController extends Controller
             'seo_description' => $region->seo_description,
         ];
         
-    	return view('theme::regions.region', compact('region','categories','pins','guide','TypeTour', 'seo'));
+    	return view('theme::regions.region', compact('region','categories','pins','guide','TypeTour', 'seo','images'));
     }
     
     public function category($slug){

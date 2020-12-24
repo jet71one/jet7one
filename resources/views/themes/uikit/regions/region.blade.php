@@ -27,41 +27,67 @@
                 
             </div>
            
-            @if ($guide->role_id == '11')
-                <div class="guide__inner">
-                    <div class="guide__slider">
-                        @if( $guide->images <> 'NULL')
-                             <div class="guide__item"><img src="../storage/{{ $guide->avatar}}" alt="Avatar image"></div>
-                        @else 
-                            @foreach ($guide->images as $image)
-                                    <div class="guide__item"><img src="storage/{{ $image}}" alt="{{ $guide->name }} image"></div>
-                            @endforeach
+           @if($guide == 'There is no  guide for this region yet')
+            <p class="guide__body__text">
+                {{ $guide }} 
+            </p>
+           @else 
+                    @if ($guide->role_id == '11')
+                        <div class="guide__inner">
+                            <div class="guide__slider">
+                                @if( $images == null)
+                                    <div class="guide__item"><img src="../storage/{{ $guide->avatar}}" alt="Avatar image"></div>
+                                @else 
+                                    @foreach ($images as $image)
+                                        <div class="guide__item"><img src="../storage/{{ $image}}" alt="{{ $guide->name}} image"></div>
+                                    @endforeach
+                                @endif
                     
-                        @endif
-            
-                    </div>
-                    
-                    <div class="guide__content">
-                        <div class="guide__container">
-                            <div class="guide__body">
-                                <p class="guide__text">
-                                    <div class="guide__body-title">
-                                       {{ $guide->name}}
-            
-                                    </div>
-                                    <p> <span class="rose type_tour">{{ $TypeTour }}</span></p>
-                                    <p class="guide__body__text">
-                                        {{ $guide->about }}
-                                    </p>
-            
-                                </p>
                             </div>
+                            
+                            <div class="guide__content">
+                                <div class="guide__container">
+                                    <div class="guide__body">
+                                        <p class="guide__text">
+                                            <div class="guide__body-title">
+                                            {{$guide->name }} 
+                                            </div>
+                                            <p> <span class="rose type_tour">{{ $TypeTour }}</span></p>
+                                            <p class="guide__body__text">{{ $guide->about}}</p>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                    
                         </div>
-                    </div>
+                    @else
+                        <div class="guide__inner">
+                            <div class="guide__slider">
+                                @if( $images == null)
+                                    <div class="guide__item"><img src="../storage/{{ $guide->avatar}}" alt="Avatar image"></div>
+                                @else 
+                                    @foreach ($images as $image)
+                                        <div class="guide__item"><img src="../storage/{{ $image}}" alt="{{ $guide->name}} image"></div>
+                                    @endforeach
+                                @endif
+                            </div>
+                            
+                            <div class="guide__content">
+                                <div class="guide__container">
+                                    <div class="guide__body">
+                                        <p class="guide__text">
+                                            <div class="guide__body-title">{{$guide->name }}</div>
+                                            <p> <span class="rose type_tour">{{ $TypeTour }}</span></p>
+                                            <p class="guide__body__text">{{ $guide->about}}</p>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                        </div>
+                    @endif 
+           @endif
             
-                </div>
-            @else
-            @endif
         </div>
         
         <div id="map" class="map"></div>
