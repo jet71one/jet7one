@@ -30,6 +30,7 @@ class RegionController extends Controller
                 if($guide == null){
                     $guide ='There is no  guide for this region yet';
                     $TypeTour = '';
+                    $image = '';
                 }
                 else{
                     $images = json_decode($guide->images);
