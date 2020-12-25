@@ -23,7 +23,12 @@
 		            <input class="uk-input" name="email" type="text" placeholder="Email Address" value="{{ Auth::user()->email }}">
 		        </div>
 			</div>
-			
+			<div class="uk-margin-top">
+		        <label class="uk-form-label">Phone</label>
+				<div class="uk-form-controls">
+					<input class="uk-input" name="phone" type="tel" placeholder="Your phone" value="{{ Auth::user()->phone }}">
+		        </div>
+			</div>
 		 	
 
 
