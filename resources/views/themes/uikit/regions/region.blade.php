@@ -53,7 +53,9 @@
                                             {{$guide->name }} 
                                             </div>
                                             <p> <span class="rose type_tour">{{ $TypeTour }}</span></p>
+                                            <p>Languages : {{ $guide->lang }}</p>
                                             <p class="guide__body__text">{{ $guide->about }}</p>
+                                            
                                         </p>
                                     </div>
                                 </div>
@@ -78,7 +80,9 @@
                                         <p class="guide__text">
                                             <div class="guide__body-title">{{ $guide->name }}</div>
                                             <p> <span class="rose type_tour">{{ $TypeTour }}</span></p>
+                                            <p>Languages : {{ $guide->lang }}</p>
                                             <p class="guide__body__text">{{ $guide->about }}</p>
+                                            
                                         </p>
                                     </div>
                                 </div>
