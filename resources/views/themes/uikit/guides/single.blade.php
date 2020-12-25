@@ -32,7 +32,7 @@
                             <p class="guide__text">
                                 <div class="guide__body-title">
                                     <h4>{{ $guide->name }}</h4>
-                                    <p> <span class="rose type_tour">{{ $TypeTour }}</span></p>
+                                    <h4 class="hot-tour__title guide__type">{{ $TypeTour }}</h4>
         
                                 </div>
                                 <p class="guide__body__text">
