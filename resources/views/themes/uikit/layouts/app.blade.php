@@ -69,7 +69,7 @@
 
                     
                     <div class="header__btn btn btn-header animated wobble delay-1s">
-                        <a href="{{route('guest-info')}}" class="nav__link">guest information</a>
+                        <a href="/p/guest-info" class="nav__link">guest information</a>
                     </div>
                     <button class="burger" type="button" id="navToggle">
                         <span class="burger__item"></span>
@@ -128,7 +128,7 @@
     <div class="copyright">
         <div class="container">
             <div class="copyright__inner">
-                © 2019 by PWR. Proudly created with JetSetUa | <a href="/p/term-of-use">Terms of Use</a>   |  <a href="{{route('privacy-policy')}}">Privacy Policy</a> 
+                © 2019 by PWR. Proudly created with JetSetUa | <a href="/p/term-of-use">Terms of Use</a>   |  <a href="/p/privacy-policy">Privacy Policy</a> 
             </div>
         </div>
     </div>
