@@ -52,7 +52,7 @@
                                             <div class="guide__body-title">
                                             {{$guide->name }} 
                                             </div>
-                                            <p> <span class="rose type_tour">{{ $TypeTour }}</span></p>
+                                            <h4 class="hot-tour__title guide__type">{{ $TypeTour }}</h4>
                                             <p>Languages : {{ $guide->lang }}</p>
                                             <p class="guide__body__text">{{ $guide->about }}</p>
                                             
@@ -79,7 +79,7 @@
                                     <div class="guide__body">
                                         <p class="guide__text">
                                             <div class="guide__body-title">{{ $guide->name }}</div>
-                                            <p> <span class="rose type_tour">{{ $TypeTour }}</span></p>
+                                            <h4 class="hot-tour__title guide__type">{{ $TypeTour }}</h4>
                                             <p>Languages : {{ $guide->lang }}</p>
                                             <p class="guide__body__text">{{ $guide->about }}</p>
                                             
