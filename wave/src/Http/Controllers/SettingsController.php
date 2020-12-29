@@ -55,7 +55,23 @@ class SettingsController extends Controller
     	$authed_user->region_id = $request->region_id;
     	$authed_user->type_tour_id = $request->type_tour;
         if($request->images){
-            if($authed_user->role_id = '10'){
+
+            if($authed_user->role_id == '11'){
+                
+                $result = array();
+                $i = 0;
+                $count = count($request->images);
+                    if($count < 5 or $count == 5){
+                        foreach($request->images as $image){
+
+                            $patch = $this->saveImage($image, $authed_user->username.'-'.$i);
+                            $newarray=explode(" ",$patch); 
+                            array_push($result, $patch);
+                            $i++;
+                        }
+                    }
+            }
+            if($authed_user->role_id == '10'){
                 
                 $result = array();
                 $i = 0;
@@ -71,21 +87,7 @@ class SettingsController extends Controller
                     }
             }
             
-            if($authed_user->role_id = '11'){
-                
-                $result = array();
-                $i = 0;
-                $count = count($request->images);
-                    if($count < 5 or $count == 5){
-                        foreach($request->images as $image){
-
-                            $patch = $this->saveImage($image, $authed_user->username.'-'.$i);
-                            $newarray=explode(" ",$patch); 
-                            array_push($result, $patch);
-                            $i++;
-                        }
-                    }
-            }
+          
 
           
             // else{
