@@ -55,7 +55,6 @@ class SettingsController extends Controller
     	$authed_user->region_id = $request->region_id;
     	$authed_user->type_tour_id = $request->type_tour;
         if($request->images){
-            dd($authed_user);
             if($authed_user->role_id = '10'){
                 
                 $result = array();
