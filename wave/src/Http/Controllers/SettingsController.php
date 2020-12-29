@@ -20,7 +20,9 @@ class SettingsController extends Controller
         $regions = Region::select('id','name')->get();
         $typeTours = TypeTour::select('id','name')->get();
         $authed_user = auth()->user();
-        
+
+        $images = json_decode($authed_user->images);
+        // dd($authed_user);
         $selectedRegion = $authed_user->region_id;
         $selectedTypeTour = $authed_user->type_tour_id;
 
@@ -28,7 +30,7 @@ class SettingsController extends Controller
         if(empty($section)){
             return redirect(route('wave.settings', 'profile'));
         }
-    	return view('theme::settings.index', compact('section','regions','selectedRegion','typeTours','selectedTypeTour'));
+    	return view('theme::settings.index', compact('section','regions','selectedRegion','images','typeTours','selectedTypeTour'));
     }
 
     public function profilePut(Request $request){
@@ -45,7 +47,6 @@ class SettingsController extends Controller
         ]);
         
     	$authed_user = auth()->user();
-
     	$authed_user->name = $request->name;
         $authed_user->email = $request->email;
         $authed_user->phone = $request->phone;
@@ -53,24 +54,67 @@ class SettingsController extends Controller
         $authed_user->about = $request->about;
     	$authed_user->region_id = $request->region_id;
     	$authed_user->type_tour_id = $request->type_tour;
-        //dd($request);
         if($request->images){
-           // dd($request->images);
-            $result = array();
-            $i = 1;
-            foreach($request->images as $image){
+            dd($authed_user);
+            if($authed_user->role_id = '10'){
                 
-                
-                //$//result = array_push($result,$this->saveImage($image, $authed_user->username));
-                $patch = $this->saveImage($image, $authed_user->username.'-'.$i);
-                $newarray=explode(" ",$patch); 
-               
-                array_push($result, $patch);
-                
+                $result = array();
+                $i = 0;
+                $count = count($request->images);
+                    if($count < 3 or $count == 3){
+                        foreach($request->images as $image){
 
-
-                $i++;
+                            $patch = $this->saveImage($image, $authed_user->username.'-'.$i);
+                            $newarray=explode(" ",$patch); 
+                            array_push($result, $patch);
+                            $i++;
+                        }
+                    }
             }
+            
+            if($authed_user->role_id = '11'){
+                
+                $result = array();
+                $i = 0;
+                $count = count($request->images);
+                    if($count < 5 or $count == 5){
+                        foreach($request->images as $image){
+
+                            $patch = $this->saveImage($image, $authed_user->username.'-'.$i);
+                            $newarray=explode(" ",$patch); 
+                            array_push($result, $patch);
+                            $i++;
+                        }
+                    }
+            }
+
+          
+            // else{
+            //     if($authed_user->role_id = '10'){
+            //         $result = array();
+            //         $i = 1;
+            //         for ($i = 1; $i < 3; $i++){
+            //             $patch = $this->saveImage($image, $authed_user->username.'-'.$i);
+            //             $newarray=explode(" ",$patch); 
+                    
+            //             array_push($result, $patch);
+                        
+            //         }
+            //     }else{
+            //         $result = "";
+            //     }
+            // }
+            
+            // foreach($request->images as $image){
+                
+                
+            //     //$//result = array_push($result,$this->saveImage($image, $authed_user->username));
+                
+                
+
+
+            //     $i++;
+            // }
             //dd($result);
             $authed_user->images = json_encode($result);
             

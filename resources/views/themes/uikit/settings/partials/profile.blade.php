@@ -60,7 +60,14 @@
 				<div class="clearfix"></div>
 			<label for="file">Select a file:</label>
 			<input type="file" name="images[]" multiple="multiple" accept="image/*" >
+			
+				
 			</div> 
+			@if($images <> null)
+				@foreach ($images as $image)
+						<img src="../storage/{{ $image }}" alt=""style="width: 100px; height:100px">
+				@endforeach
+			@endif
 			@if (auth()->user()->role_id == '10' or auth()->user()->role_id == '11'  )
 			
 
@@ -117,7 +124,7 @@
 
 	{{ csrf_field() }}
 
-	<button class="uk-button uk-button-primary uk-align-right uk-margin-top" dusk="update-profile-button">Save</button>
+	<button id="submit" class="uk-button uk-button-primary uk-align-right uk-margin-top" dusk="update-profile-button">Save</button>
 
 </form>
 
@@ -141,3 +148,20 @@
     </div>
 
 </div>
+
+@section('javascript')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+	$(function(){
+    $("button#submit").click(function(){
+        var $fileUpload = $("input[type='file']");
+		console.log($fileUpload);
+        if (parseInt($fileUpload.get(0).files.length)>2){
+			console.log('You can only upload a maximum of 2 files');
+         alert("You can only upload a maximum of 2 files");
+        }
+    });    
+});
+</script>
+@endsection

@@ -1617,6 +1617,10 @@ p {
 
 /*Admin page*/
 
+.select_dropdown {
+  height: auto;
+}
+
 *.tour__inner {
   display: -webkit-box;
   display: -ms-flexbox;
