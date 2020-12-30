@@ -76,7 +76,7 @@ class SettingsController extends Controller
                 $result = array();
                 $i = 0;
                 $count = count($request->images);
-                    if($count < 3 or $count == 3){
+                    if($count < 1 or $count == 1){
                         foreach($request->images as $image){
 
                             $patch = $this->saveImage($image, $authed_user->username.'-'.$i);
