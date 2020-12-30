@@ -40,10 +40,10 @@ class SettingsController extends Controller
             'name' => 'required|string',
             'email' => 'sometimes|required|email|unique:users,email,' . Auth::user()->id,
             'username' => 'sometimes|required|unique:users,username,' . Auth::user()->id,
-            'phone' => 'required|string',
-            'region_id' => 'required|string',
-            'type_tour' => 'required|string',
-            'lang' => 'required|string',
+            'phone' => 'string',
+            'region_id' => 'string',
+            'type_tour' => 'string',
+            'lang' => 'string',
         ]);
         
     	$authed_user = auth()->user();
