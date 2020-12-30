@@ -60,7 +60,7 @@
                         <div id="uk-nav-left-mobile"><span class="more-btn" uk-icon="menu"></span><span class="close-btn uk-icon" uk-icon="close"></span></div>
                         <div class="uk-navbar-left uk-margin-left">
                             <ul class="uk-navbar-nav" id="uk-nav-left">
-                                {!! menu('authenticated-menu', 'theme::menus.uikit') !!}
+                                {!! menu('guest-menu', 'theme::menus.uikit') !!}
                             </ul>
                         </div>
                     @endif
@@ -110,9 +110,9 @@
                                             @if( !auth()->guest() && auth()->user()->can('browse_admin') )
                                                 <li><a href="{{ route('voyager.dashboard') }}"><span uk-icon="icon: bolt"></span>Admin</a></li>
                                             @endif
-                                            <li><a href="{{ route('wave.profile', Auth::user()->username) }}"><span uk-icon="icon: user"></span>My Profile</a></li>
+                                            {{-- <li><a href="{{ route('wave.profile', Auth::user()->username) }}"><span uk-icon="icon: user"></span>My Profile</a></li> --}}
                                             <li><a href="{{ route('wave.settings') }}"><span uk-icon="icon: cog"></span>Settings</a></li>
-                                            <li class="uk-hidden@m"><a href="{{ route('wave.notifications') }}"><span uk-icon="icon: bell"></span>My Notifications</a></li>
+                                            {{-- <li class="uk-hidden@m"><a href="{{ route('wave.notifications') }}"><span uk-icon="icon: bell"></span>My Notifications</a></li> --}}
                                             <li><a href="{{ route('logout') }}"><span uk-icon="icon: sign-out"></span>Logout</a></li>
                                         </ul>
                                     </div>
