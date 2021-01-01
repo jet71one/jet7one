@@ -68,7 +68,7 @@
 						<img src="../storage/{{ $image }}" alt=""style="width: 100px; height:100px">
 				@endforeach
 			@endif
-			@if (auth()->user()->role_id == '10' or auth()->user()->role_id == '11'  )
+			@if (auth()->user()->role_id == '10' )
 			
 
 			<div class="uk-margin-top">
@@ -112,6 +112,45 @@
 			
 			
 			@endif
+
+
+			@if ( auth()->user()->role_id == '11'  )
+			
+
+			<div class="uk-margin-top">
+				<label class="uk-form-label">Region </label>
+				<select name="region_id[]" type="select_dropdown" multiple class="form-control select_dropdown" >
+
+					<option value="">-- Select Region --</option>
+					@foreach ($regions as $region)
+						<option  value="{{ $region->id }}" {{ $region->id == $selectedRegion ? 'selected' : ''}}> {{ ucfirst($region->name) }}</option>
+
+					@endforeach
+				</select>
+			</div>
+
+			<div class="uk-margin-top">
+				<label class="uk-form-label">Type Tour </label>
+				<select name="type_tour" type="select_dropdown" class="form-control" >
+
+					<option value="">-- Select Type Tour --</option>
+					@foreach ($typeTours as $tour)
+						<option  value="{{ $tour->id }}" {{ $tour->id == $selectedTypeTour ? 'selected' : ''}}> {{ ucfirst($tour->name) }}</option>
+					@endforeach
+				</select>
+			</div>
+			<div class="uk-margin-top">
+		        <label class="uk-form-label">Language (English | Russian)</label>
+				<div class="uk-form-controls">
+		            <input class="uk-input" name="lang" type="text" placeholder="Enter your language" value="{{ Auth::user()->lang }}">
+		        </div>
+			</div>
+			
+			
+			@endif
+
+
+
 
 			
 

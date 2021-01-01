@@ -35,7 +35,7 @@ class SettingsController extends Controller
 
     public function profilePut(Request $request){
 
-       
+    
         $request->validate([
             'name' => 'required|string',
             'email' => 'sometimes|required|email|unique:users,email,' . Auth::user()->id,
@@ -52,10 +52,15 @@ class SettingsController extends Controller
         $authed_user->phone = $request->phone;
         $authed_user->lang = $request->lang;
         $authed_user->about = $request->about;
-    	$authed_user->region_id = $request->region_id;
+        if($authed_user->role_id == '11'){
+            $regions = json_encode($request->region_id);
+            $authed_user->region_id = $regions;
+        }else{
+            $authed_user->region_id = $request->region_id;
+        }
+        
     	$authed_user->type_tour_id = $request->type_tour;
         if($request->images){
-
             if($authed_user->role_id == '11'){
                 
                 $result = array();
@@ -76,7 +81,7 @@ class SettingsController extends Controller
                 $result = array();
                 $i = 0;
                 $count = count($request->images);
-                    if($count < 1 or $count == 1){
+                    if($count < 3 or $count == 3){
                         foreach($request->images as $image){
 
                             $patch = $this->saveImage($image, $authed_user->username.'-'.$i);
