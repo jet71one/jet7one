@@ -1969,7 +1969,8 @@ p {
   }
 
   .btn-header {
-    width: auto;
+    width: 100%;
+    max-width: 175px;
   }
 
   .nav__link {
