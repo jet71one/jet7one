@@ -2,7 +2,8 @@
 
 
 @section('css')
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 @endsection
 @section('content')
 <div class="header__text">
@@ -11,24 +12,20 @@
     </h1>
 </div>
 <div class="hot-tour">
-    <div class="container">
-        <div class="hot-tour__inner">
+        <div class="single-guide__inner">
             @foreach ($guides as $guide)
-                <div class="hot-tour__item">
-                    <img src="/storage/{{ $guide->avatar }}" alt="Places" class="place__img">
-                    <div class="hot-tour__content">
-                    <a href="{{ route('region.guide-single',$guide->id ) }}">
-                        <h3 class="hot-tour__title">{{ $guide->name }}</h3>
+                <figure class="single-guide__item">
+                    <a  data-fancybox="gallery"  data-caption=" Name:{{ $guide->name }} <br> {{ $guide->about}}"  href="/storage/{{ $guide->avatar }}" >
+                        <img src="/storage/{{ $guide->avatar }}" alt="Places" class="guide__img">
+                        {{-- href="{{ route('region.guide-single',$guide->id ) }} --}}
+                        <div class="guide__title">{{ $guide->name}}</div> 
                     </a>    
-                    <h4 class="hot-tour__title guide__type">{{ $TypeTour }}</h4>
-                    </div>	
-                
-                </div>
+                </figure>
 
             @endforeach
-            
+
         </div>
-    </div>
+    
 </div>
 
    
@@ -36,5 +33,7 @@
 @endsection
 
 @section('javascript')
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 @endsection
