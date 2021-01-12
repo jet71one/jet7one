@@ -18,11 +18,11 @@
 
                     @if( $images !== null)
                         @foreach ($images as $image)
-                            <div class="guide__item"><img src="storage/{{ $image}}" alt="{{ $guide->name }} image"></div>
+                            <div class="guide__item"><img src="../storage/{{ $image}}" alt="{{ $guide->name }} image"></div>
                         @endforeach
                     @else 
                 
-                    <div class="guide__item"><img src="storage/{{ $guide->avatar}}" alt="Avatar image"></div>
+                    <div class="guide__item"><img src="../storage/{{ $guide->avatar}}" alt="Avatar image"></div>
                     @endif
                 </div>
                 

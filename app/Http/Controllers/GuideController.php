@@ -13,7 +13,7 @@ class GuideController extends Controller
         $guides = User::where([
             ['region_id', '=', $regID]
             ])->get();
-       
+        
         $TypeTour = TypeTour::where('id',"=", $guides[0]['type_tour_id'])->value('name');
 
         return view('theme::guides.index', compact('guides','TypeTour'));
