@@ -144,7 +144,6 @@
     <script src="{{ asset('themes/uikit/js/app.js') }}"></script>
     <script src="{{ asset('themes/uikit/js/main.js') }}"></script>
 
-    <script type="text/javascript" src="https://spikmi.com/Widget?Id=110"></script>
 
     @yield('javascript')
     @livewireScripts

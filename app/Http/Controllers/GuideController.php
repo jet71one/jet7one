@@ -19,6 +19,10 @@ class GuideController extends Controller
         return view('theme::guides.index', compact('guides','TypeTour'));
     }
 
+    // public function index($regID){
+    //     return view('livewire.guides');
+    // }
+
     public function single($id) {
         $guide = User::where('id', '=', $id)->firstOrFail();
         $images = json_decode($guide->images);
