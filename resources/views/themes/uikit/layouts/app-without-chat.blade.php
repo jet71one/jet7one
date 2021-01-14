@@ -45,7 +45,6 @@
     <!-- Styles -->
     
     @yield('css')
-    @livewireStyles
     {{-- <link href="{{ asset('css/app.min.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('themes/uikit/css/app.css') }}" rel="stylesheet">
 </head>
@@ -146,7 +145,6 @@
 
 
     @yield('javascript')
-    @livewireScripts
     @impersonating
         @include('theme::partials.impersonation-bar')
     @endImpersonating
