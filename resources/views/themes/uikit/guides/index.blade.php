@@ -17,7 +17,7 @@
             @foreach ($guides as $guide)
                 <figure class="single-guide__item">
                
-                    <a  data-fancybox="cl-group-{{$guide->id}}"  data-caption=" Name:  <a href='{{ route('region.guide-single',$guide->id ) }}'>{{ $guide->name }}</a> <br> {{ $guide->about}}<br> Guides: {{ $TypeTour }}"  href="/storage/{{ $guide->avatar }}" >
+                    <a  data-fancybox="cl-group-{{$guide->id}}"  data-caption=" Name:  <a  href='{{ route('region.guide-single',$guide->id ) }}'><strong>{{ $guide->name }}</strong></a> <br> {{ $guide->about}}<br> Guides: {{ $TypeTour }}"  href="/storage/{{ $guide->avatar }}" >
                         <img src="/storage/{{ $guide->avatar }}" alt="Places" class="guide__img">
                         @if (json_decode($guide->images) !== null)
                                 
