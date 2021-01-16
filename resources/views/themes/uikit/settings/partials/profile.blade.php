@@ -77,7 +77,23 @@
 
 					<option value="">-- Select Region --</option>
 					@foreach ($regions as $region)
-						<option  value="{{ $region->id }}" {{ $region->id == $selectedRegion ? 'selected' : ''}}> {{ ucfirst($region->name) }}</option>
+						{{-- @foreach ($selectedRegions as $selectedRegion) --}}
+						@if ($selectedRegions  !== null)
+						<option  value="{{ $region->id }}" 
+							@foreach ($selectedRegions as $selectedRegion)
+							{{ $region->id == $selectedRegion ? 'selected' : ''}}
+							@endforeach
+							
+							> {{ ucfirst($region->name) }}</option>
+						@else 
+							@foreach ($regions as $region)
+								<option  value="{{ $region->id }}"> {{ ucfirst($region->name) }}</option>
+
+							@endforeach
+						@endif
+						
+							
+						{{-- @endforeach --}}
 
 					@endforeach
 				</select>
