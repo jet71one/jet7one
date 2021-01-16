@@ -22,26 +22,26 @@ class SettingsController extends Controller
         $authed_user = auth()->user();
 
         $images = json_decode($authed_user->images);
+        $selectedRegions = json_decode($authed_user->region_id);
+        //$regions = json_decode($authed_user->redion_id);
         // dd($authed_user);
-        $selectedRegion = $authed_user->region_id;
         $selectedTypeTour = $authed_user->type_tour_id;
 
        
         if(empty($section)){
             return redirect(route('wave.settings', 'profile'));
         }
-    	return view('theme::settings.index', compact('section','regions','selectedRegion','images','typeTours','selectedTypeTour'));
+    	return view('theme::settings.index', compact('section','regions','selectedRegions','images','typeTours','selectedTypeTour'));
     }
 
     public function profilePut(Request $request){
 
-    
         $request->validate([
             'name' => 'required|string',
             'email' => 'sometimes|required|email|unique:users,email,' . Auth::user()->id,
             'username' => 'sometimes|required|unique:users,username,' . Auth::user()->id,
             'phone' => 'string',
-            'region_id' => 'string',
+            'region_id' => 'array',
             'type_tour' => 'string',
             'lang' => 'string',
         ]);
@@ -52,6 +52,7 @@ class SettingsController extends Controller
         $authed_user->phone = $request->phone;
         $authed_user->lang = $request->lang;
         $authed_user->about = $request->about;
+        
         if($authed_user->role_id == '11'){
             $regions = json_encode($request->region_id);
             $authed_user->region_id = $regions;

@@ -112,22 +112,33 @@
 			
 			
 			@endif
-
-
-			@if ( auth()->user()->role_id == '11'  )
-			
-
 			<div class="uk-margin-top">
 				<label class="uk-form-label">Region </label>
 				<select name="region_id[]" type="select_dropdown" multiple class="form-control select_dropdown" >
-
+					
 					<option value="">-- Select Region --</option>
 					@foreach ($regions as $region)
-						<option  value="{{ $region->id }}" {{ $region->id == $selectedRegion ? 'selected' : ''}}> {{ ucfirst($region->name) }}</option>
+						{{-- @foreach ($selectedRegions as $selectedRegion) --}}
+						<option  value="{{ $region->id }}" 
+							@foreach ($selectedRegions as $selectedRegion)
+							{{ $region->id == $selectedRegion ? 'selected' : ''}}
+							@endforeach
+							
+							> {{ ucfirst($region->name) }}</option>
+							
+						{{-- @endforeach --}}
 
 					@endforeach
 				</select>
 			</div>
+
+
+			@if ( auth()->user()->role_id == '11'  )
+				{{-- @foreach ($selectedRegions as $item)
+					{{ $item}}
+				@endforeach --}}
+
+			
 
 			<div class="uk-margin-top">
 				<label class="uk-form-label">Type Tour </label>
