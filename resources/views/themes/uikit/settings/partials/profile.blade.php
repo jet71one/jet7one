@@ -174,12 +174,12 @@
 					@endforeach
 				</select>
 			</div>
-			<div class="uk-margin-top">
+			{{-- <div class="uk-margin-top">
 		        <label class="uk-form-label">Language (English | Russian)</label>
 				<div class="uk-form-controls">
 		            <input class="uk-input" name="lang" type="text" placeholder="Enter your language" value="{{ Auth::user()->lang }}">
 		        </div>
-			</div>
+			</div> --}}
 			
 			
 			@endif
