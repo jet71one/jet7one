@@ -59,7 +59,7 @@ class RegionController extends Controller
         if($locations[0] !== 0)
             $center = $locations[0];
         else
-            $center = { lat: 50.024, lng: 30.887 }
+            $center = '{ lat: 50.024, lng: 30.887 }';
         endif
         $seo = [
             'seo_title' => $region->title,
