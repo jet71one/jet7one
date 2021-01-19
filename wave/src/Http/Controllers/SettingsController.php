@@ -35,17 +35,17 @@ class SettingsController extends Controller
     }
 
     public function profilePut(Request $request){
-
+       
         $request->validate([
             'name' => 'required|string',
             'email' => 'sometimes|required|email|unique:users,email,' . Auth::user()->id,
             'username' => 'sometimes|required|unique:users,username,' . Auth::user()->id,
-            'phone' => 'string',
+            'phone' => 'string|nullable',
             'region_id' => 'array',
             'type_tour' => 'string',
-            'lang' => 'string',
+            'lang' => 'string|nullable',
         ]);
-        
+        // dd($request);
     	$authed_user = auth()->user();
     	$authed_user->name = $request->name;
         $authed_user->email = $request->email;
@@ -53,12 +53,10 @@ class SettingsController extends Controller
         $authed_user->lang = $request->lang;
         $authed_user->about = $request->about;
         
-        if($authed_user->role_id == '11'){
-            $regions = json_encode($request->region_id);
-            $authed_user->region_id = $regions;
-        }else{
-            $authed_user->region_id = $request->region_id;
-        }
+        
+        $regions = json_encode($request->region_id);
+        $authed_user->region_id = $regions;
+        
         
     	$authed_user->type_tour_id = $request->type_tour;
         if($request->images){

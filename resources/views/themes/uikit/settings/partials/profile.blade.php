@@ -102,7 +102,28 @@
 			</div>
 			@else
 			
-			<input type="hidden" name="region_id" value="0">
+			<div class="uk-margin-top">
+				<label class="uk-form-label">Region </label>
+				<select name="region_id[]" type="select_dropdown" multiple class="form-control select_dropdown" >
+					
+					<option value="">-- Select Region --</option>
+					@foreach ($regions as $region)
+						@if ($selectedRegions  !== null  )
+						<option  value="{{ $region->id }}" 
+							@foreach ($selectedRegions as $selectedRegion)
+							{{ $region->id == $selectedRegion ? 'selected' : ''}}
+							@endforeach
+							
+							> {{ ucfirst($region->name) }}</option>
+						@else 
+								<option  value="{{ $region->id }}"> {{ ucfirst($region->name) }}</option>
+						@endif
+						
+							
+
+					@endforeach
+				</select>
+			</div>
 			<input type="hidden" name="type_tour" value="0">
 			<div class="uk-margin-top">
 		        <label class="uk-form-label">Language (English | Russian)</label>
@@ -113,31 +134,7 @@
 			
 			
 			@endif
-			<div class="uk-margin-top">
-				<label class="uk-form-label">Region </label>
-				<select name="region_id[]" type="select_dropdown" multiple class="form-control select_dropdown" >
-					
-					<option value="">-- Select Region --</option>
-					@foreach ($regions as $region)
-						@if ($selectedRegions  !== null)
-						<option  value="{{ $region->id }}" 
-							@foreach ($selectedRegions as $selectedRegion)
-							{{ $region->id == $selectedRegion ? 'selected' : ''}}
-							@endforeach
-							
-							> {{ ucfirst($region->name) }}</option>
-						@else 
-							@foreach ($regions as $region)
-								<option  value="{{ $region->id }}"> {{ ucfirst($region->name) }}</option>
-
-							@endforeach
-						@endif
-						
-							
-
-					@endforeach
-				</select>
-			</div>
+			
 
 
 			@if ( auth()->user()->role_id == '11'  )
