@@ -119,7 +119,7 @@
     
     function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 6,
+    zoom: 10,
     center: {{ $center }},
   });
   // Create an array of alphabetical characters used to label the markers.
