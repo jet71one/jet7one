@@ -56,14 +56,12 @@ class RegionController extends Controller
         $pins =implode(',', $locations);
         
         $center = '';
-        // dd($locations);
         if($locations == null){
             $center = '{ lat: 50.024, lng: 30.887 }';
 
         }else{
             $center = $locations[0];
         }
-        dd($center);
         
         $seo = [
             'seo_title' => $region->title,
