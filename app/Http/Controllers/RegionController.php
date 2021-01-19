@@ -55,12 +55,18 @@ class RegionController extends Controller
         $pins ='';
         $pins =implode(',', $locations);
         
+        $center = '';
+        if($locations[0] !== 0)
+            $center = $locations[0];
+        else
+            $center = { lat: 50.024, lng: 30.887 }
+        endif
         $seo = [
             'seo_title' => $region->title,
             'seo_description' => $region->seo_description,
         ];
         
-    	return view('theme::regions.region', compact('region','categories','pins','guide','TypeTour', 'seo','images','locations'));
+    	return view('theme::regions.region', compact('region','categories','pins','guide','TypeTour', 'seo','images','center'));
     }
     
     public function category($slug){
