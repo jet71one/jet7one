@@ -80,7 +80,28 @@
 					@endforeach
 				@endif
 			@if (auth()->user()->role_id == '10' )
-			
+			<div class="uk-margin-top">
+				<label class="uk-form-label">Region </label>
+				<select name="region_id[]" type="select_dropdown" multiple class="form-control select_dropdown" >
+					
+					<option value="">-- Select Region --</option>
+					@foreach ($regions as $region)
+						@if ($selectedRegions  !== null  )
+						<option  value="{{ $region->id }}" 
+							@foreach ($selectedRegions as $selectedRegion)
+							{{ $region->id == $selectedRegion ? 'selected' : ''}}
+							@endforeach
+							
+							> {{ ucfirst($region->name) }}</option>
+						@else 
+								<option  value="{{ $region->id }}"> {{ ucfirst($region->name) }}</option>
+						@endif
+						
+							
+
+					@endforeach
+				</select>
+			</div>
 
 			
 
