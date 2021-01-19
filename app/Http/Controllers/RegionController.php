@@ -60,7 +60,7 @@ class RegionController extends Controller
             'seo_description' => $region->seo_description,
         ];
         
-    	return view('theme::regions.region', compact('region','categories','pins','guide','TypeTour', 'seo','images'));
+    	return view('theme::regions.region', compact('region','categories','pins','guide','TypeTour', 'seo','images','locations'));
     }
     
     public function category($slug){

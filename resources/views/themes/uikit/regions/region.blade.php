@@ -93,7 +93,7 @@
            @endif
             
         </div>
-        
+       
         <div id="map" class="map"></div>
 
       
@@ -120,7 +120,7 @@
     function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 6,
-    center: { lat: 50.024, lng: 30.887 },
+    center: {{ $locations[0] }},
   });
   // Create an array of alphabetical characters used to label the markers.
   const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
