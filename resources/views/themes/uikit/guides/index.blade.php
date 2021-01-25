@@ -15,10 +15,8 @@
     <div class="container">
         <div class="single-guide__inner">
             @foreach ($guides as $guide)
-                <?php  $regions = json_decode($guide->region_id, true)?>
-                
+              
                 <?php  $collection = collect(json_decode($guide->region_id)) ?>
-                {{-- {{ dd($collection->contains($regID) )}} --}}
                 @if ($collection->contains($regID))
                     <figure class="single-guide__item">
                 
@@ -42,28 +40,7 @@
                 @else
                 @endif
 
-                    {{-- <figure class="single-guide__item">
-                
-                        <a  data-fancybox="cl-group-{{$guide->id}}"  data-caption=" Name:  <a  href='{{ route('region.guide-single',$guide->id ) }}'><strong>{{ $guide->name }}</strong></a> <br> {{ $guide->about}}<br> Guides: {{ $TypeTour }}"  href="/storage/{{ $guide->avatar }}" >
-                            <img src="/storage/{{ $guide->avatar }}" alt="Places" class="guide__img">
-                            
-                          
-                            @if (json_decode($guide->images) !== null && json_decode($guide->images) !== "")
-                            
-                                @foreach (json_decode($guide->images) as $image)
-                                    <div class="hidden">
-                                        <a data-fancybox="cl-group-{{$guide->id}}"  href="../storage/{{ $image }}"></a>
-                                    </div>
-                                @endforeach
-                                            
-                            @endif
-
-                            <div class="guide__title">{{ $guide->name}}</div> 
-                        </a>    
-                    </figure> --}}
-             
-
-                
+                  
 
             @endforeach
             {{-- @livewire('guides')

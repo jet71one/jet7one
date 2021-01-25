@@ -33,6 +33,8 @@
             </p>
            @else 
                     @if ($guide->role_id == '11')
+                        <?php  $collection = collect(json_decode($guide->region_id)) ?>
+                        @if ($collection->contains($region->id))
                         <div class="guide__inner">
                             <div class="guide__slider">
                                 @if( $images == null)
@@ -62,6 +64,9 @@
                             </div>
                     
                         </div>
+                        @endif
+
+                        
                     @else
                         <div class="guide__inner">
                             <div class="guide__slider">
