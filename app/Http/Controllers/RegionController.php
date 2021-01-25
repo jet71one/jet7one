@@ -23,7 +23,8 @@ class RegionController extends Controller
         //dd(in_array(2,$regions));
         //як перевірити всіх гідів які нам мають такий регіон
         //Якщо у нас є Супергідв Регіоні
-        $guide = User::where([['region_id', '=', $region->id],['role_id', '=', '11']])->first();
+        $guide = User::where('role_id', '=', '11')->first();
+        
         if($guide == null){
             //Якщо у нас в регіоні немає СуперГіда тоді ми беремо звичайного
             //гіда але з цього регіону

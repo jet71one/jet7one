@@ -26,14 +26,15 @@
                 </div>  
                 
             </div>
-           
+            <?php  $collection = collect(json_decode($guide->region_id)) ?>
+            {{-- {{ dd($guide) }} --}}
            @if($guide == 'There is no  guide for this region yet')
             <p class="guide__body__text">
                 {{ $guide }} 
             </p>
            @else 
                     @if ($guide->role_id == '11')
-                        <?php  $collection = collect(json_decode($guide->region_id)) ?>
+                        
                         @if ($collection->contains($region->id))
                         <div class="guide__inner">
                             <div class="guide__slider">
