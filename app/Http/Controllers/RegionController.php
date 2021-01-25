@@ -18,7 +18,10 @@ class RegionController extends Controller
         $categories = Category::orderBy('order','asc')->get();
         
         $places = Place::where('location_id', '=', $region->id)->get();
-
+        $user = User::firstOrFail();
+        $regions= json_decode($user->region_id);
+        //dd(in_array(2,$regions));
+        //як перевірити всіх гідів які нам мають такий регіон
         //Якщо у нас є Супергідв Регіоні
         $guide = User::where([['region_id', '=', $region->id],['role_id', '=', '11']])->first();
         if($guide == null){

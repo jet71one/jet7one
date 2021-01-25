@@ -11,12 +11,14 @@ class GuideController extends Controller
     public function index ($regID){
 
         $guides = User::where([
-            ['region_id', '=', $regID]
+            ['role_id', '=', 10]
             ])->get();
-        
+        $regions = array();
+        // $guides = User::all();
+       // $regions= json_decode($guides->region_id);
         $TypeTour = TypeTour::where('id',"=", $guides[0]['type_tour_id'])->value('name');
 
-        return view('theme::guides.index', compact('guides','TypeTour'));
+        return view('theme::guides.index', compact('guides','TypeTour','regID','regions'));
     }
 
     // public function index($regID){
