@@ -28,7 +28,7 @@
             </div>
             @forelse ($guide as $item)
             <?php  $collection = collect(json_decode($item->region_id)) ?>
-        
+                {{ $item }}
                 @if ($collection->contains($region->id))
                     <div class="guide__inner">
                         <div class="guide__slider">
