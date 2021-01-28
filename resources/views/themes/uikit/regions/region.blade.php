@@ -61,15 +61,13 @@
                 
                     </div>
                     @break
-                @else 
-                <p class="guide__body__text">
-                    There is no  guide for this region yet
-                </p>
-                 @break
+               
                 @endif
                 
             @empty
-                <p>No users</p>
+            <p class="guide__body__text">
+                There is no  guide for this region yet
+            </p>
             @endforelse
             {{-- {{ dd($guide) }} --}}
            {{-- @if($guide == 'There is no  guide for this region yet')
