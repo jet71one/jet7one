@@ -1444,7 +1444,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  max-width: 900px;
+  max-width: 800px;
   padding: 0 15px;
   margin: 0 auto;
   margin-bottom: 15px;
@@ -1845,6 +1845,10 @@ p {
 
   .footer__form {
     max-width: 100%;
+  }
+
+  .guide__container {
+    max-width: 600px;
   }
 
   .news__item {
