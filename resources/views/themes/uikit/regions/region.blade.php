@@ -10,7 +10,7 @@
     <div class="header__text">
     <h1 class="header__title event-single-title">{{ $region->name}}</h1>
     </div>
-    <div class="container tour-single">
+    <div class=" tour-single">
         <div class="tour__inner">
             <div class="list-btn">
                 @foreach ($categories as $item)
