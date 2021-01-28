@@ -26,9 +26,53 @@
                 </div>  
                 
             </div>
-            <?php  $collection = collect(json_decode($guide->region_id)) ?>
+            @forelse ($guide as $item)
+            <?php  $collection = collect(json_decode($item->region_id)) ?>
+        
+                @if ($collection->contains($region->id))
+                    <div class="guide__inner">
+                        <div class="guide__slider">
+                            @if( $item->images == null)
+                                <div class="guide__item"><img src="../storage/{{ $item->avatar}}" alt="Avatar image"></div>
+                            @else 
+
+                                @foreach (json_decode($item->images) as $image)
+                                    <div class="guide__item"><img src="../storage/{{ $image}}" alt="{{ $item->name}} image"></div>
+                                @endforeach
+                            @endif
+                
+                        </div>
+                        
+                        <div class="guide__content">
+                            <div class="guide__container">
+                                <div class="guide__body">
+                                    <p class="guide__text">
+                                        <div class="guide__body-title">
+                                        {{$item->name }} 
+                                        </div>
+                                        <h4 class="hot-tour__title guide__type">{{ $TypeTour = App\TypeTour::where('id',"=", $item->type_tour_id)->value('name') }}</h4>
+                                        <p>Languages : {{ $item->lang }}</p>
+                                        <p class="guide__body__text">{{ $item->about }}</p>
+                                        
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                
+                    </div>
+                    @break
+                @else 
+                <p class="guide__body__text">
+                    There is no  guide for this region yet
+                </p>
+                 @break
+                @endif
+                
+            @empty
+                <p>No users</p>
+            @endforelse
             {{-- {{ dd($guide) }} --}}
-           @if($guide == 'There is no  guide for this region yet')
+           {{-- @if($guide == 'There is no  guide for this region yet')
             <p class="guide__body__text">
                 {{ $guide }} 
             </p>
@@ -96,7 +140,7 @@
                     
                         </div>
                     @endif 
-           @endif
+           @endif --}}
             
         </div>
        
