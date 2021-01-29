@@ -1768,6 +1768,13 @@ p {
   height: 22px;
 }
 
+@media (max-width: 1024px) {
+  .tour__inner {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 @media (max-width: 991px) {
   .tour__inner {
     -ms-flex-wrap: wrap;
