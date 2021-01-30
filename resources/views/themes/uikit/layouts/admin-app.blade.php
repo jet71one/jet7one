@@ -112,7 +112,7 @@
                                             @endif
                                             {{-- <li><a href="{{ route('wave.profile', Auth::user()->username) }}"><span uk-icon="icon: user"></span>My Profile</a></li> --}}
                                             <li><a href="{{ route('wave.settings') }}"><span uk-icon="icon: cog"></span>Settings</a></li>
-                                            {{-- <li class="uk-hidden@m"><a href="{{ route('wave.notifications') }}"><span uk-icon="icon: bell"></span>My Notifications</a></li> --}}
+                                            <li class="uk-hidden@m"><a href="{{ route('wave.notifications') }}"><span uk-icon="icon: bell"></span>My Notifications</a></li>
                                             <li><a href="{{ route('logout') }}"><span uk-icon="icon: sign-out"></span>Logout</a></li>
                                         </ul>
                                     </div>

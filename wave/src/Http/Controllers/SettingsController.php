@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use Validator;
 use Wave\User;
 use App\Region;
+use App\Notifications\TestNotification;
 use App\TypeTour;
 use Wave\KeyValue;
 use Wave\ApiKey;
@@ -159,6 +160,7 @@ class SettingsController extends Controller
 	    // 		}
 	    // 	}
     	// }
+        request()->user()->notify(new TestNotification());
 
     	return back()->with(['message' => 'Successfully updated user profile', 'message_type' => 'success']);
     }
