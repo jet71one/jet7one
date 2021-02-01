@@ -85,10 +85,11 @@
                                     <li><span class="trial-days">You have {{ auth()->user()->daysLeftOnGrace() }} @if(auth()->user()->daysLeftOnTrial() > 1){{ 'Days' }}@else{{ 'Day' }}@endif left on your {{ ucfirst(auth()->user()->role->name) . ' Plan' }}</span></li>
                                 @endif
 
-                                @if(!Request::is('notifications'))
-                                    @include('theme::partials.notifications')
+                                @if( !auth()->guest() && auth()->user()->can('browse_admin') )
+                                    @if(!Request::is('notifications'))
+                                        @include('theme::partials.notifications')
+                                    @endif
                                 @endif
-
                                 <li>
                                     <a href="#_" class="user-icon">
                                         <img src="{{ Voyager::image(Auth::user()->avatar) }}">
@@ -112,7 +113,9 @@
                                             @endif
                                             {{-- <li><a href="{{ route('wave.profile', Auth::user()->username) }}"><span uk-icon="icon: user"></span>My Profile</a></li> --}}
                                             <li><a href="{{ route('wave.settings') }}"><span uk-icon="icon: cog"></span>Settings</a></li>
+                                            @if( !auth()->guest() && auth()->user()->can('browse_admin') )
                                             <li class="uk-hidden@m"><a href="{{ route('wave.notifications') }}"><span uk-icon="icon: bell"></span>My Notifications</a></li>
+                                            @endif
                                             <li><a href="{{ route('logout') }}"><span uk-icon="icon: sign-out"></span>Logout</a></li>
                                         </ul>
                                     </div>

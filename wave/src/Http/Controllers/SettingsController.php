@@ -159,8 +159,9 @@ class SettingsController extends Controller
 	    // 			KeyValue::create(['type' => $request->{$type}, 'keyvalue_id' => $authed_user->id, 'keyvalue_type' => 'users', 'key' => $key, 'value' => $value]);
 	    // 		}
 	    // 	}
-    	// }
-        request()->user()->notify(new TestNotification());
+        // }
+        // dd(request()->name);
+        request()->user()->notify(new TestNotification(request()->name));
 
     	return back()->with(['message' => 'Successfully updated user profile', 'message_type' => 'success']);
     }

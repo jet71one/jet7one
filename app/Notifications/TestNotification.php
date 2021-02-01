@@ -11,14 +11,15 @@ class TestNotification extends Notification
 {
     use Queueable;
 
+    protected $name;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($name)
     {
-        //
+        $this->name = $name;
     }
 
     /**
@@ -55,10 +56,10 @@ class TestNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'title' => 'My Title Here',
+            'title' => 'Update profile',
             'icon' => '/storage/users/default.png',
-            'body' => 'This is the body content of the notification... Yada yada yada',
-            'link' => 'https://google.com'
+            'body' => 'User  updated profile.Check this profile - '.$this->name,
+            'link' => 'admin/users/'
         ];
     }
 }
