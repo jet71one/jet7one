@@ -36,7 +36,7 @@
                 {{-- {{ dd($index) }} --}}
                 <li id="notification-li-{{ $index + 1 }}"style="color: black;padding: 15px" >
                     <span class=""><i class="dojo-envelope"></i><span class="notification-highlight notification-user"></span>
-                    🔔Updated profile. User {{ $notification->data }} </span>
+                    🔔Updated profile. User {{ $notification->data }} <a href="/admin/users">Look profile</a> </span>
                     <span class="notification-datetime" style="color: cornflowerblue;display:block;">{{ \Carbon\Carbon::parse($notification->created_at)->format('l F, jS Y h:i:s A') }}</span>
                     <div id="notification-actions">
                         <span class="icon-more" uk-icon="icon: more-vertical; ratio: 0.68"></span>
