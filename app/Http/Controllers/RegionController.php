@@ -49,19 +49,24 @@ class RegionController extends Controller
         //     $images = json_decode($guide->images);
         //     $TypeTour = TypeTour::where('id',"=", $guide->type_tour_id)->value('name');
         // }
+        
 
 
 
         //Беремо всі точки і додаємо їх в масив
         //щоб їх додати проходимось циклом по точкам
         //потім конвертуємо це в строку і передаємо в карту
+        $name = array();
+
         $locations = array();
+
         foreach($places as $place){
-            
+            array_push($names, $place->name);
             foreach($place->getCoordinates() as $point){
                 array_push($locations, '{lat: '. $point['lat'].', lng: '.$point['lng'].'}');
             };
         };
+        dd($names);
         $pins ='';
         $pins =implode(',', $locations);
         
@@ -78,7 +83,7 @@ class RegionController extends Controller
             'seo_description' => $region->seo_description,
         ];
         
-    	return view('theme::regions.region', compact('region','categories','pins','guide', 'seo','center'));
+    	return view('theme::regions.region', compact('region','categories','pins','guide', 'seo','center','names'));
     }
     
     public function category($slug){

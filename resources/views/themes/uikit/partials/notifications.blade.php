@@ -11,6 +11,7 @@
         </a>
 @else
     {{-- @php $unreadNotifications = auth()->user()->unreadNotifications->all(); @endphp --}}
+    {{-- @php $unreadNotifications = App\Notification::all()->take(5)->toArray(); @endphp --}}
     @php $unreadNotifications = App\Notification::all()->take(5); @endphp
 @endif
 
@@ -30,10 +31,9 @@
                 All Caught Up!
             </div>
             <ul class="uk-nav uk-navbar-dropdown-nav">
-
-                @php $count = 0; @endphp
+              
                 @foreach ($unreadNotifications as $index => $notification)
-                {{-- {{ dd($index) }} --}}
+         
                 <li id="notification-li-{{ $index + 1 }}"style="color: black;padding: 15px" >
                     <span class=""><i class="dojo-envelope"></i><span class="notification-highlight notification-user"></span>
                     🔔Updated profile. User {{ $notification->data }} <a href="/admin/users">Look profile</a> </span>
@@ -42,13 +42,13 @@
                         <span class="icon-more" uk-icon="icon: more-vertical; ratio: 0.68"></span>
                         <span class="mark-as-read" data-id="{{ $notification->id }}" data-listid="{{ $index+1 }}"><i uk-icon="icon: check; ratio: 0.5" class="icon-check"></i> Mark as Read</span>
                     </div>
-                   @php $count++; @endphp 
+                   
                </li>
                 @endforeach
 
 
-{{-- 
-                @foreach ($unreadNotifications as $index => $notification)
+
+                {{-- @foreach ($unreadNotifications as $index => $notification)
                     @php $notification_data = (object)$notification->data; @endphp
 
                    
