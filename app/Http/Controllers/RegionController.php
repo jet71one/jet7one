@@ -56,8 +56,7 @@ class RegionController extends Controller
         //Беремо всі точки і додаємо їх в масив
         //щоб їх додати проходимось циклом по точкам
         //потім конвертуємо це в строку і передаємо в карту
-        $name = array();
-
+        $names = array();
         $locations = array();
 
         foreach($places as $place){
@@ -66,7 +65,6 @@ class RegionController extends Controller
                 array_push($locations, '{lat: '. $point['lat'].', lng: '.$point['lng'].'}');
             };
         };
-        dd($names);
         $pins ='';
         $pins =implode(',', $locations);
         
