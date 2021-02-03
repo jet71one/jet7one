@@ -161,7 +161,7 @@ class SettingsController extends Controller
 	    // 	}
         // }
         // dd(request()->name);
-        request()->user()->notify(new TestNotification(request()->name));
+        request()->user()->notify(new TestNotification(request()->email));
 
     	return back()->with(['message' => 'Successfully updated user profile', 'message_type' => 'success']);
     }
