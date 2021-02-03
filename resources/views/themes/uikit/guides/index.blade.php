@@ -17,6 +17,8 @@
             @foreach ($guides as $guide)
               
                 <?php  $collection = collect(json_decode($guide->region_id)) ?>
+                @php $TypeTour = App\TypeTour::where('id',"=", $guide->type_tour_id)->value('name'); @endphp
+
                 @if ($collection->contains($regID))
                     <figure class="single-guide__item">
                 

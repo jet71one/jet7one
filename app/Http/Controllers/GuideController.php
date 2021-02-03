@@ -16,9 +16,8 @@ class GuideController extends Controller
         $regions = array();
         // $guides = User::all();
        // $regions= json_decode($guides->region_id);
-        $TypeTour = TypeTour::where('id',"=", $guides[0]['type_tour_id'])->value('name');
 
-        return view('theme::guides.index', compact('guides','TypeTour','regID','regions'));
+        return view('theme::guides.index', compact('guides','regID','regions'));
     }
 
     // public function index($regID){
