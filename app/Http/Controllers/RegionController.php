@@ -67,6 +67,7 @@ class RegionController extends Controller
         };
         $pins ='';
         $pins =implode(',', $locations);
+        $names =implode(',', $names);
         
         $center = '';
         if($locations == null){
