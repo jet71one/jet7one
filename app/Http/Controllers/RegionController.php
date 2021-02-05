@@ -9,6 +9,7 @@ use Wave\User;
 use App\Place;
 use App\TypeTour;
 use Illuminate\Support\Arr;
+use Namshi\JOSE\Signer\OpenSSL\HS512;
 
 class RegionController extends Controller
 {
@@ -82,7 +83,7 @@ class RegionController extends Controller
             'seo_description' => $region->seo_description,
         ];
         
-    	return view('theme::regions.region', compact('region','categories','pins','guide', 'seo','center','names'));
+    	return view('theme::regions.region', compact('region','categories','pins','guide', 'seo','center'));
     }
     
     public function category($slug){
