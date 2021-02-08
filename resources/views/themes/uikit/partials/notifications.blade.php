@@ -12,7 +12,7 @@
 @else
     {{-- @php $unreadNotifications = auth()->user()->unreadNotifications->all(); @endphp --}}
     {{-- @php $unreadNotifications = App\Notification::all()->take(5)->toArray(); @endphp --}}
-    @php $unreadNotifications = App\Notification::all()->take(5); @endphp
+    @php $unreadNotifications = App\Notification::all()->sortByDesc('created_at'); @endphp
 @endif
 
 
