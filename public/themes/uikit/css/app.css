@@ -1768,6 +1768,10 @@ p {
   height: 22px;
 }
 
+.gm-style-iw-d {
+  color: #000;
+}
+
 @media (max-width: 1024px) {
   .tour__inner {
     -ms-flex-wrap: wrap;

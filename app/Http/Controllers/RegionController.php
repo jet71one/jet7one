@@ -57,18 +57,27 @@ class RegionController extends Controller
         //Беремо всі точки і додаємо їх в масив
         //щоб їх додати проходимось циклом по точкам
         //потім конвертуємо це в строку і передаємо в карту
-        $names = array();
+        $info = array();
         $locations = array();
 
         foreach($places as $place){
-            array_push($names, $place->name);
             foreach($place->getCoordinates() as $point){
-                array_push($locations, '{lat: '. $point['lat'].', lng: '.$point['lng'].'}');
+                // array_push($locations, '{ placeName: '. '`'. $place->name .'`' .',  LatLng: [{lat: '. $point['lat'].', lng: '.$point['lng'].'}]}');
+                array_push($locations, '[ `'.$place->name.'`,' .$point['lat'].','.$point['lng'].',`'.$place->link().' `]');
+                array_push($info, "[<div class=\"info_content\">ww</div> ]");
             };
         };
+        // <a href="'.$place->link() .' " class="info-content"> '.$place->name .'</a>
+
+
+        // dd($locations);
+        // dd($info);
+        $info = json_encode($info);
         $pins ='';
         $pins =implode(',', $locations);
-        $names =implode(',', $names);
+        // $info =implode(',', $info);
+        // dd($pins);
+        // $names =implode('""', $names);
         
         $center = '';
         if($locations == null){
@@ -83,7 +92,7 @@ class RegionController extends Controller
             'seo_description' => $region->seo_description,
         ];
         
-    	return view('theme::regions.region', compact('region','categories','pins','guide', 'seo','center'));
+    	return view('theme::regions.region', compact('region','categories','pins','places','info','guide', 'seo','center'));
     }
     
     public function category($slug){
