@@ -1777,6 +1777,10 @@ p {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
+
+  .destination__title {
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 991px) {
