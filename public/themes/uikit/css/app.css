@@ -1773,9 +1773,12 @@ p {
 }
 
 @media (max-width: 1024px) {
-  .tour__inner {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+  .guide__body {
+    width: 57%;
+  }
+
+  .tour__inner .guide__inner .slick-next {
+    right: 45px;
   }
 
   .destination__title {
