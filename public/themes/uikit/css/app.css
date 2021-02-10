@@ -1389,6 +1389,7 @@ p {
 }
 
 .guide__slider {
+  max-width: 585px;
   height: 450px;
   max-height: 450px;
   margin-bottom: 25px;
@@ -1397,6 +1398,7 @@ p {
 .guide__item img {
   height: 420px;
   background-position: top center;
+  width: 100%;
 }
 
 .guide-nav__item {
