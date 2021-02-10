@@ -1395,6 +1395,7 @@ p {
 
 .guide__item img {
   height: 420px;
+  width: 65%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50%;
