@@ -1895,6 +1895,10 @@ p {
 }
 
 @media (max-width: 767px) {
+  .guide__item img {
+    width: 100%;
+  }
+
   .header__title {
     font-size: 40px;
   }
