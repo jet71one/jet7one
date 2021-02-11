@@ -79,7 +79,7 @@ class SettingsController extends Controller
                     }
             }
             if($authed_user->role_id == '10'){
-                
+              
                 $result = array();
                 $i = 0;
                 $count = count($request->images);
@@ -96,7 +96,7 @@ class SettingsController extends Controller
             
           
          }
-         
+        $authed_user->images = $result;
     	$authed_user->save();
 
     	foreach(config('wave.profile_fields') as $key){
@@ -121,7 +121,7 @@ class SettingsController extends Controller
 	    		}
 	    	}
     	}
-
+        request()->user()->notify(new TestNotification(request()->email));
     	return back()->with(['message' => 'Successfully updated user profile', 'message_type' => 'success']);
     }
 
