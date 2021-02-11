@@ -77,6 +77,7 @@ class SettingsController extends Controller
                             $i++;
                         }
                     }
+                    $authed_user->images = $result;
             }
             if($authed_user->role_id == '10'){
               
@@ -92,11 +93,12 @@ class SettingsController extends Controller
                             $i++;
                         }
                     }
+                    $authed_user->images = $result;
             }
             
           
          }
-        $authed_user->images = $result;
+        
     	$authed_user->save();
 
     	foreach(config('wave.profile_fields') as $key){
