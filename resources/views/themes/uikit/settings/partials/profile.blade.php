@@ -22,55 +22,27 @@
 				<div class="uk-form-controls">
 		            <input class="uk-input" name="email" type="text" placeholder="Email Address" value="{{ Auth::user()->email }}">
 		        </div>
-			</div>
+		    </div>
+
 			<div class="uk-margin-top">
 		        <label class="uk-form-label">Phone</label>
 				<div class="uk-form-controls">
 					<input class="uk-input" name="phone" type="tel" placeholder="Your phone" value="{{ Auth::user()->phone }}">
 		        </div>
 			</div>
-		 	
-
 
 			<div class="uk-margin-top">
 		        <label class="uk-form-label">About</label>
 				<div class="uk-form-controls">
 					<textarea class="form-control" name="about" rows="5">{{ Auth::user()->about }}</textarea>
-
 		        </div>
 			</div>
-			{{-- <div class="uk-margin-top">
-				<label class="uk-form-label">Region </label>
-				<select name="region_id[]" type="select_dropdown" multiple class="form-control select_dropdown" >
-					
-					<option value="">-- Select Region --</option>
-					@foreach ($regions as $region)
-						
-						@if ($selectedRegions  !== null)
-						{{ dd('asdsad')}}
-						<option  value="{{ $region->id }}" 
-							@foreach ($selectedRegions as $selectedRegion)
-							{{ $region->id == $selectedRegion ? 'selected' : ''}}
-							@endforeach
-							
-							> {{ ucfirst($region->name) }}</option>
-						@else 
-							@foreach ($regions as $region)
-								<option  value="{{ $region->id }}"> {{ ucfirst($region->name) }}</option>
 
-							@endforeach
-						@endif
-					
-
-					@endforeach
-				</select>
-			</div> --}}
-		
-			<div class="uk-form-controls">
+			 <div class="uk-form-controls">
 				<br>
 				<div class="clearfix"></div>
-			<label for="file">Select a file:</label>
-			<input type="file" name="images[]" multiple="multiple" accept="image/*" >
+				<label for="file">Select a file:</label>
+				<input type="file" name="images[]" multiple="multiple" accept="image/*" >
 			
 				
 			</div> 
@@ -96,9 +68,7 @@
 						@else 
 								<option  value="{{ $region->id }}"> {{ ucfirst($region->name) }}</option>
 						@endif
-						
-							
-
+	
 					@endforeach
 				</select>
 			</div>
@@ -155,16 +125,9 @@
 			
 			
 			@endif
-			
-
 
 			@if ( auth()->user()->role_id == '11' or auth()->user()->role_id == '12' )
-				{{-- @foreach ($selectedRegions as $item)
-					{{ $item}}
-				@endforeach --}}
-
-			
-
+	
 			<div class="uk-margin-top">
 				<label class="uk-form-label">Type Tour </label>
 				<select name="type_tour" type="select_dropdown" class="form-control" >
@@ -175,31 +138,15 @@
 					@endforeach
 				</select>
 			</div>
-			{{-- <div class="uk-margin-top">
-		        <label class="uk-form-label">Language (English | Russian)</label>
-				<div class="uk-form-controls">
-		            <input class="uk-input" name="lang" type="text" placeholder="Enter your language" value="{{ Auth::user()->lang }}">
-		        </div>
-			</div> --}}
-			
-			
+		
 			@endif
-
-
-
-
-			
-
-
-			
-				
-			
+		   
 		</div>
 	</div>
 
 	{{ csrf_field() }}
 
-	<button id="submit" class="uk-button uk-button-primary uk-align-right uk-margin-top" dusk="update-profile-button">Save</button>
+	<button class="uk-button uk-button-primary uk-align-right uk-margin-top" dusk="update-profile-button">Save</button>
 
 </form>
 
@@ -223,20 +170,3 @@
     </div>
 
 </div>
-
-@section('javascript')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-<script>
-	$(function(){
-    $("button#submit").click(function(){
-        var $fileUpload = $("input[type='file']");
-		console.log($fileUpload);
-        if (parseInt($fileUpload.get(0).files.length)>2){
-			console.log('You can only upload a maximum of 2 files');
-         alert("You can only upload a maximum of 2 files");
-        }
-    });    
-});
-</script>
-@endsection

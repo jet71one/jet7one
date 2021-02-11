@@ -46,15 +46,17 @@ class SettingsController extends Controller
             'type_tour' => 'string',
             'lang' => 'string|nullable',
         ]);
-        // dd($request);
+
     	$authed_user = auth()->user();
+
     	$authed_user->name = $request->name;
         $authed_user->email = $request->email;
         $authed_user->phone = $request->phone;
         $authed_user->lang = $request->lang;
         $authed_user->about = $request->about;
-        
-        
+        if($request->avatar){
+    	   $authed_user->avatar = $this->saveAvatar($request->avatar, $authed_user->username);
+        }
         $regions = json_encode($request->region_id);
         $authed_user->region_id = $regions;
         
@@ -93,75 +95,32 @@ class SettingsController extends Controller
             }
             
           
-
-          
-            // else{
-            //     if($authed_user->role_id = '10'){
-            //         $result = array();
-            //         $i = 1;
-            //         for ($i = 1; $i < 3; $i++){
-            //             $patch = $this->saveImage($image, $authed_user->username.'-'.$i);
-            //             $newarray=explode(" ",$patch); 
-                    
-            //             array_push($result, $patch);
-                        
-            //         }
-            //     }else{
-            //         $result = "";
-            //     }
-            // }
-            
-            // foreach($request->images as $image){
-                
-                
-            //     //$//result = array_push($result,$this->saveImage($image, $authed_user->username));
-                
-                
-
-
-            //     $i++;
-            // }
-            //dd($result);
-            $authed_user->images = json_encode($result);
-            
-            // /$authed_user->avatar = $this->saveAvatar($request->avatar, $authed_user->username);
          }
-
-        if($request->avatar){
-    	   $authed_user->avatar = $this->saveAvatar($request->avatar, $authed_user->username);
-        }
+         
     	$authed_user->save();
 
-    	// foreach(config('wave.profile_fields') as $key){
-    	// 	if(isset($request->{$key})){
-        //         //dd($key);
-	    // 		$type = $key . '_type__wave_keyvalue';
-	    // 		if($request->{$type} == 'checkbox'){
-	    //             if(!isset($request->{$key})){
-	    //                 $request->request->add([$key => null]);
-	    //             }
-        //         }
-        //         //dd($type);
-        //         $row = (object)['field' => $key, 'type' => $request->{$type}, 'details' => ''];
-        //         dd($row);
-	    //         $value = $this->getContentBasedOnType($request, 'themes', $row);
-        //        // dd($authed_user->keyValue($key));
-	    // 		if(!is_null($authed_user->keyValue($key))){
+    	foreach(config('wave.profile_fields') as $key){
+    		if(isset($request->{$key})){
+	    		$type = $key . '_type__wave_keyvalue';
+	    		if($request->{$type} == 'checkbox'){
+	                if(!isset($request->{$key})){
+	                    $request->request->add([$key => null]);
+	                }
+	            }
 
-	    // 			$keyValue = KeyValue::where('keyvalue_id', '=', $authed_user->id)->where('keyvalue_type', '=', 'users')->where('key', '=', $key)->first();
-	    // 			$keyValue->value = $value;
-        //             $keyValue->type = $request->{$type};
-        //             $authed_user->keyValue($key);
-        //              dd($keyValue->type);
-                    
-	    // 			$keyValue->save();
-	    // 		} else {
-	    // 			KeyValue::create(['type' => $request->{$type}, 'keyvalue_id' => $authed_user->id, 'keyvalue_type' => 'users', 'key' => $key, 'value' => $value]);
-	    // 		}
-	    // 	}
-        // }
-        // dd(request()->name);
-        request()->user()->notify(new TestNotification(request()->email));
+	            $row = (object)['field' => $key, 'type' => $request->{$type}, 'details' => ''];
+	            $value = $this->getContentBasedOnType($request, 'themes', $row);
+
+	    		if(!is_null($authed_user->keyValue($key))){
+	    			$keyValue = KeyValue::where('keyvalue_id', '=', $authed_user->id)->where('keyvalue_type', '=', 'users')->where('key', '=', $key)->first();
+	    			$keyValue->value = $value;
+	    			$keyValue->type = $request->{$type};
+	    			$keyValue->save();
+	    		} else {
+	    			KeyValue::create(['type' => $request->{$type}, 'keyvalue_id' => $authed_user->id, 'keyvalue_type' => 'users', 'key' => $key, 'value' => $value]);
+	    		}
+	    	}
+    	}
 
     	return back()->with(['message' => 'Successfully updated user profile', 'message_type' => 'success']);
     }
