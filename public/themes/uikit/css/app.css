@@ -1381,12 +1381,12 @@ p {
   border-radius: 50px;
 }
 
-.guide__slider,
 .guide-nav {
   width: 40%;
 }
 
 .guide__slider {
+  width: 450px;
   height: 420px;
   max-height: 420px;
   margin-bottom: 25px;
