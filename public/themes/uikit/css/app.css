@@ -1383,22 +1383,17 @@ p {
 
 .guide__slider,
 .guide-nav {
-  width: 50%;
+  width: 40%;
 }
 
 .guide__slider {
-  max-width: 585px;
   height: 420px;
   max-height: 420px;
   margin-bottom: 25px;
 }
 
 .guide__item img {
-  height: 377px;
-  width: 300px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50%;
+  display: block;
 }
 
 .guide-nav__item {
