@@ -1381,8 +1381,9 @@ p {
   border-radius: 50px;
 }
 
+.guide__slider,
 .guide-nav {
-  width: 40%;
+  width: 50%;
 }
 
 .guide__slider {
@@ -1393,7 +1394,11 @@ p {
 }
 
 .guide__item img {
-  display: block;
+  height: 377px;
+  width: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
 }
 
 .guide-nav__item {
