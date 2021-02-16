@@ -1395,11 +1395,11 @@ p {
 
 .guide__item img {
   height: 377px;
-  max-width: 100%;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  -o-object-position: top;
+     object-position: top;
 }
 
 .guide-nav__item {
