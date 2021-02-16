@@ -1381,13 +1381,13 @@ p {
   border-radius: 50px;
 }
 
-.guide__slider,
 .guide-nav {
   width: 50%;
 }
 
 .guide__slider {
-  width: 450px;
+  max-width: 420px;
+  width: 420px;
   height: 420px;
   max-height: 420px;
   margin-bottom: 25px;
@@ -1395,10 +1395,11 @@ p {
 
 .guide__item img {
   height: 377px;
-  width: 300px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50%;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 
 .guide-nav__item {
@@ -1453,7 +1454,7 @@ p {
 .guide__body {
   margin-left: auto;
   padding-left: 20px;
-  width: 62%;
+  width: 50%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
