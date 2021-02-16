@@ -1264,6 +1264,11 @@ p {
      object-position: top;
 }
 
+.tour-single .guide__img {
+  -o-object-position: center;
+     object-position: center;
+}
+
 .guide__title {
   display: none;
   position: absolute;
