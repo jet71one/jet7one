@@ -10,7 +10,7 @@
     <div class="header__text">
     <h1 class="header__title event-single-title">{{ $guide->name }}</h1>
     </div>
-    <div class="container tour-single">
+    <div class="container one-tour-single">
         <div class="tour__inner">
           
             <div class="guide__inner">
