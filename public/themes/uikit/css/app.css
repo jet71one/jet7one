@@ -1264,7 +1264,7 @@ p {
      object-position: top;
 }
 
-.tour-single .guide__img {
+.tour-single .guide__item img {
   -o-object-position: center;
      object-position: center;
 }
