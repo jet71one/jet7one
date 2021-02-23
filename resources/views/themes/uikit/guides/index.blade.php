@@ -20,25 +20,25 @@
                 @php $TypeTour = App\TypeTour::where('id',"=", $guide->type_tour_id)->value('name'); @endphp
 
                 @if ($collection->contains($regID))
-                    <figure class="single-guide__item">
-                
-                        <a  data-fancybox="cl-group-{{$guide->id}}"  data-caption=" Name:  <a  href='{{ route('region.guide-single',$guide->id ) }}'><strong>{{ $guide->name }}</strong></a> <br> {{ $guide->about}}<br> Guide' tours: {{ $TypeTour }}"  href="/storage/{{ $guide->avatar }}" >
-                            <img src="/storage/{{ $guide->avatar }}" alt="Places" class="guide__img">
+                    
+                       
                             
-                          
                             @if (json_decode($guide->images) !== null && json_decode($guide->images) !== "")
-                            
-                                @foreach (json_decode($guide->images) as $image)
+                            <figure class="single-guide__item">
+                                <a  data-fancybox="cl-group-{{$guide->id}}"  data-caption=" Name:  <a  href='{{ route('region.guide-single',$guide->id ) }}'><strong>{{ $guide->name }}</strong></a> <br> {{ $guide->about}}<br> Guide' tours: {{ $TypeTour }}"  href="/storage/{{ $guide->avatar }}" >
+                                    <img src="/storage/{{ $guide->avatar }}" alt="Places" class="guide__img">
+                                </a>  
                                     <div class="hidden">
-                                        <a data-fancybox="cl-group-{{$guide->id}}"  href="../storage/{{ $image }}"></a>
+                                        @foreach (json_decode($guide->images) as $image)
+                                            <a data-fancybox="cl-group-{{$guide->id}}"  href="../storage/{{ $image }}"></a>
+                                        @endforeach 
                                     </div>
-                                @endforeach
-                                            
+                                <div class="guide__title">{{ $guide->name}}</div> 
+                            
+                            </figure>
+                           
                             @endif
-
-                            <div class="guide__title">{{ $guide->name}}</div> 
-                        </a>    
-                    </figure>
+                           
                 @else
                 @endif
 
