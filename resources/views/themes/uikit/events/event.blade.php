@@ -2,7 +2,7 @@
 
 @section('content')
 
-    
+
     <div class="header__text">
         <h1 class="header__title event-single-title">{{ $event->title }}</h1>
     </div>
@@ -23,11 +23,11 @@
             <div class="register__form">
                 <a href="/register" class="btn btn-blue hot-tour__btn">registration</a>
             </div>
-           
+
         </div>
-        
+
     </div>
 
-   
+
 
 @endsection

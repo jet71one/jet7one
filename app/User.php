@@ -17,7 +17,7 @@ class User extends \Wave\User
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'username', 'password','location_id', 'verification_code', 'verified', 'trial_ends_at'
+        'name', 'email', 'username', 'password','location_id', 'verification_code', 'verified', 'trial_ends_at','gender','interested_in'
     ];
 
     protected $dates = [
@@ -34,6 +34,21 @@ class User extends \Wave\User
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function message()
+    {
+        return $this->hasMany("App\Message");
+    }
+
+    public function isAdmin()
+    {
+        return $this->role_id == 1;
+    }
+
+    public function tours()
+    {
+        return $this->belongsToMany(Tour::class, 'user_tour');
+    }
 
     public function setSettingsAttribute($value) { $this->attributes['settings'] = $value ? $value->toJson() : null; }
 }

@@ -16,6 +16,11 @@
 				<div class="uk-form-controls">
 		            <input class="uk-input" name="name" type="text" placeholder="Name" value="{{ Auth::user()->name }}">
 		        </div>
+				@if ($errors->has('name'))
+					<div class="uk-alert-danger" uk-alert>
+						{{ $errors->first('name') }}
+					</div>
+				@endif
 		    </div>
 		    <div class="uk-margin-top">
 		        <label class="uk-form-label">Email Address</label>
@@ -43,9 +48,13 @@
 				<div class="clearfix"></div>
 				<label for="file">Select a file:</label>
 				<input type="file" name="images[]" multiple="multiple" accept="image/*" >
-			
-				
-			</div> 
+				 @if ($errors->has('images'))
+					 <div class="uk-alert-danger" uk-alert>
+						 {{ $errors->first('images') }}
+					 </div>
+				 @endif
+
+			</div>
 				@if($images <> null)
 					@foreach ($images as $image)
 							<img src="../storage/{{ $image }}" alt=""style="width: 100px; height:100px">
@@ -55,29 +64,29 @@
 			<div class="uk-margin-top">
 				<label class="uk-form-label">Region </label>
 				<select name="region_id[]" type="select_dropdown" multiple class="form-control select_dropdown" >
-					
+
 					<option value="">-- Select Region --</option>
 					@foreach ($regions as $region)
 						@if ($selectedRegions  !== null  )
-						<option  value="{{ $region->id }}" 
+						<option  value="{{ $region->id }}"
 							@foreach ($selectedRegions as $selectedRegion)
 							{{ $region->id == $selectedRegion ? 'selected' : ''}}
 							@endforeach
-							
+
 							> {{ ucfirst($region->name) }}</option>
-						@else 
+						@else
 								<option  value="{{ $region->id }}"> {{ ucfirst($region->name) }}</option>
 						@endif
-	
+
 					@endforeach
 				</select>
 			</div>
 
-			
+
 
 			<div class="uk-margin-top">
 				<label class="uk-form-label">Type Tour </label>
-				<select name="type_tour" type="select_dropdown" class="form-control" >
+				<select name="type_tour[]" multiple type="select_dropdown" class="form-control select_dropdown" >
 
 					<option value="">-- Select Type Tour --</option>
 					@foreach ($typeTours as $tour)
@@ -92,25 +101,25 @@
 		        </div>
 			</div>
 			@else
-			
+
 			<div class="uk-margin-top">
 				<label class="uk-form-label">Region </label>
 				<select name="region_id[]" type="select_dropdown" multiple class="form-control select_dropdown" >
-					
+
 					<option value="">-- Select Region --</option>
 					@foreach ($regions as $region)
 						@if ($selectedRegions  !== null  )
-						<option  value="{{ $region->id }}" 
+						<option  value="{{ $region->id }}"
 							@foreach ($selectedRegions as $selectedRegion)
 							{{ $region->id == $selectedRegion ? 'selected' : ''}}
 							@endforeach
-							
+
 							> {{ ucfirst($region->name) }}</option>
-						@else 
+						@else
 								<option  value="{{ $region->id }}"> {{ ucfirst($region->name) }}</option>
 						@endif
-						
-							
+
+
 
 					@endforeach
 				</select>
@@ -122,15 +131,15 @@
 		            <input class="uk-input" name="lang" type="text" placeholder="Enter your language" value="{{ Auth::user()->lang }}">
 		        </div>
 			</div>
-			
-			
+
+
 			@endif
 
 			@if ( auth()->user()->role_id == '11' or auth()->user()->role_id == '12' )
-	
+
 			<div class="uk-margin-top">
 				<label class="uk-form-label">Type Tour </label>
-				<select name="type_tour" type="select_dropdown" class="form-control" >
+				<select name="type_tour[]" type="select_dropdown" class="form-control select_dropdown" multiple>
 
 					<option value="">-- Select Type Tour --</option>
 					@foreach ($typeTours as $tour)
@@ -138,9 +147,9 @@
 					@endforeach
 				</select>
 			</div>
-		
+
 			@endif
-		   
+
 		</div>
 	</div>
 

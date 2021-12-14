@@ -9,7 +9,7 @@
     "type": "project",
     "require": {
         "php": "^7.2.5",
-        "binarytorch/larecipe": "^2.2",
+        "darryldecode/cart": "^4.2",
         "devdojo/app": "^0.10.0",
         "devdojo/themes": "0.0.3",
         "fideloper/proxy": "^4.2",

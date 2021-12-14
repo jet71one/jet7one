@@ -15,8 +15,13 @@
 // Authentication routes
 Auth::routes();
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Voyager::routes();
+
+    Route::get('/messages', 'Admin\MessageController@index');
+    Route::get('/getMessages/{id}', 'Admin\MessageController@getUserMessage');
+    Route::post('/sendMessage', 'Admin\MessageController@send');
+    Route::get('/getNewMessages', 'Admin\MessageController@getNew');
 });
 
 // Include Wave Routes
@@ -45,3 +50,32 @@ Route::get('/rules-for-clients',   'FrontController@guestInfo')->name('guest-inf
 Route::get('/terms-of-use',   'FrontController@useTerms')->name('use-terms');
 Route::get('/privacy-policy',   'FrontController@privacyPolicy')->name('privacy-policy');
 Route::get('/contact',   'FrontController@contact')->name('contact');
+
+Route::get('/favorites',   'FrontController@favorites')->name('favorites');
+
+
+Route::post('/add/guide/tocart',   'FrontController@addToCart')->name('addtocart');
+Route::post('/clear/remove/guide',   'FrontController@removeCart')->name('removeCart');
+
+Route::group(['prefix' => 'message'], function (){
+    Route::post('/send', 'MessageController@send');
+    Route::post('/makeAllSeen', 'MessageController@makeAllSeen');
+    Route::get('/getNew', 'MessageController@getNew');
+    Route::get('/getAll', 'MessageController@getAll');
+
+});
+
+Route::post('/monthlySubscribe', function (\Illuminate\Http\Request $request){
+
+    $mail = \Mail::to($request->email)->send(new \App\Mail\MonthlyUpdates());
+    $fails = \Mail::failures();
+
+});
+
+Route::POST('/contactForm', function (\Illuminate\Http\Request $request){
+
+    $mail = \Mail::to('jet71one@gmail.com')->send(new \App\Mail\Contact($request));
+    $fails = \Mail::failures();
+});
+
+Route::post('search', 'SearchController@autocomplete');

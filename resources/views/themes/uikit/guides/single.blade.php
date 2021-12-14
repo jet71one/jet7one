@@ -46,7 +46,21 @@
         
             </div>
         </div>
-        
+        @if($guide->tours->count() > 0)
+            <div class="hot-tour__inner">
+
+            @foreach($guide->tours as $tour)
+                <div class="hot-tour__item">
+                    <img src="/storage/{{$tour->image}}" alt="{{$tour->title}}" class="place__img">
+                    <div class="hot-tour__content">
+                        <a href="/tour/{{$tour->slug}}">
+                            <h3 class="hot-tour__title">{{$tour->title}}</h3>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+            </div>>
+        @endif
 
 
         {{-- <div class="register__form">

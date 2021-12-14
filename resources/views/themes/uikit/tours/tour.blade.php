@@ -6,98 +6,60 @@
 @endsection
 @section('content')
 
-    
+
     <div class="header__text">
     <h1 class="header__title event-single-title">{{ $tour->title}}</h1>
     </div>
+    <style media="screen">
+      .tour__inner{
+        display: flex;
+        color: #000;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+      .tour__image{
+        margin-right: 30px;
+        max-width: 320px;
+      }
+      .tour__image img{
+        width: 100%;
+        margin-bottom: 30px;
+      }
+
+    </style>
     <div class="container tour-single">
         <div class="tour__inner">
-            <div class="list-btn">
-                <div class="header__btn btn btn-header">
-                    <a href="#map" class="nav__link">hotels</a>
-                </div>
-                <div class="header__btn btn btn-header">
-                    <a href="#map" class="nav__link">apartments</a>
-                </div>
-                <div class="header__btn btn btn-header">
-                    <a href="#map" class="nav__link">rent a car</a>
-                </div>
-                <div class="header__btn btn btn-header">
-                    <a href="#map" class="nav__link">restaurants</a>
-                </div>
-                <div class="header__btn btn btn-header">
-                    <a href="#map" class="nav__link">strip club</a>
-                </div>
-                <div class="header__btn btn btn-header">
-                    <a href="#map" class="nav__link">night club</a>
-                </div>
-            </div>
+                <div class="tour__image">
+                   <img src="/storage/{{$tour->image}}" alt="{{$tour->title}}">
 
-{{-- 
-            @forelse($place->getCoordinates() as $point)
-            var center = {lat: {{ $point['lat'] }}, lng: {{ $point['lng'] }}};
-        @empty
-            var center = {lat: {{ config('voyager.googlemaps.center.lat') }}, lng: {{ config('voyager.googlemaps.center.lng') }}};
-        @endforelse --}}
-            <div class="guide__inner">
-                <div class="guide__slider">
-                    <div class="guide__item"><img src="../images/guide-img-1.jpg" alt="Guide image"></div>
-                    <div class="guide__item"><img src="../images/guide-img-2.jpg" alt="Guide image"></div>
-                    <div class="guide__item"><img src="../images/guide-img-3.jpg" alt="Guide image"></div>
-                    <div class="guide__item"><img src="../images/guide-img-4.jpg" alt="Guide image"></div>
-                    <div class="guide__item"><img src="../images/guide-img-5.jpg" alt="Guide image"></div>
-                    <div class="guide__item"><img src="../images/guide-img-6.jpg" alt="Guide image"></div>
-                    <div class="guide__item"><img src="../images/guide-img-7.jpg" alt="Guide image"></div>
-                    <div class="guide__item"><img src="../images/guide-img-8.jpg" alt="Guide image"></div>
-        
+                   <div class="header__btn btn btn-header">
+                      <a href="/region/{{$region->slug}}" class="nav__link">{{$region->name}} </a>
+                  </div>
+
                 </div>
-                
-                <div class="guide__content">
-                    <div class="guide__container">
-                        <div class="guide__body">
-                            <p class="guide__text">
+
+                    <div class="tour__container">
+                        <div class="tour__body">
+
                                 <div class="guide__body-title">
-                                    Leading Guide - Katarina
-        
+                                    {{$tour->title}}
                                 </div>
-                                <p class="guide__body__text">
-                                    Leading Guide - Katarina.<br>
-                                    Katarina - prof. model
-                                </p>
-                                <p class="guide__body__text">
-                                    She worked on world-class catwalks, represented world brands.<br>
-        
-                                    Also:
-        
-                                    Fourth vice miss “Miss Ukraine Universe” 2015<br>
-        
-                                    Second runner up “Princess of the Globe” 2016<br>
-        
-                                    Miss photogenic “Photomodel of the World” 2016<br>
-        
-                                    Grand Champion of senior model “World Championship of Perfoming ARTS” WCOPA U.S.A. 2017<br>
-                                </p>
-        
-                            </p>
+                                <div class="">
+                                    {!!$tour->body!!}
+                                </div>
+
                         </div>
                     </div>
-                </div>
-        
-            </div>
-        </div>
 
-        {{-- <div id="map" class="map"></div> --}}
 
-        <iframe id="map" src="https://www.google.com/maps/d/embed?mid=12zmLfYNODRpPhCs6YIL3oxrnODzKb6dE" width="100%" height="480"></iframe>
-
-        <div class="register__form">
-            <a href="/register" class="btn btn-blue hot-tour__btn">registration</a>
 
         </div>
+
+
     </div>
- 
 
-   
+
+
 
 @endsection
 

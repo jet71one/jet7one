@@ -21,10 +21,10 @@ class HomeController extends \App\Http\Controllers\Controller
         $events = Event::orderBy('created_at', 'DESC')->take(3)->get();
         $news = Post::orderBy('created_at', 'DESC')->take(3)->get();
 
-        $blues= Region::where('color', '=','blue')->orderBy('created_at', 'DESC')->take(9)->get(); 
-        $roses= Region::where('color', '=','rose')->orderBy('created_at', 'DESC')->take(9)->get(); 
-        $dark_blues= Region::where('color', '=','dark-blue')->orderBy('created_at', 'DESC')->take(9)->get(); 
-          
+        $blues= Region::where('color', '=','blue')->orderBy('sorting', 'ASC')->take(9)->get(); 
+        $roses= Region::where('color', '=','rose')->orderBy('sorting', 'ASC')->take(9)->get(); 
+        $dark_blues= Region::where('color', '=','dark-blue')->orderBy('sorting', 'ASC')->take(9)->get(); 
+
     	if(setting('auth.dashboard_redirect', true) != "null"){
     		if(!\Auth::guest()){
     			return redirect('dashboard');

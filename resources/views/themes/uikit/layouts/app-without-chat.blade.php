@@ -43,7 +43,7 @@
     @endif
 
     <!-- Styles -->
-    
+
     @yield('css')
     {{-- <link href="{{ asset('css/app.min.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('themes/uikit/css/app.css') }}" rel="stylesheet">
@@ -65,9 +65,14 @@
                         <a href="{{route('events')}}" class="nav__link">Events</a>
                         <a href="{{route('hot-tour')}}" class="nav__link">Hot tour</a>
                         <a href="{{route('contact')}}" class="nav__link">Contact</a>
+                        <a href="{{route('favorites')}}" class="nav__link">
+                          <span uk-icon="icon: star; ratio: 0.9"></span>
+                          Favorites <span class="guide_count"></span>
+                        </a>
+
                     </nav>
 
-                    
+
                     <div class="header__btn btn btn-header animated wobble delay-1s">
                         <a href="/p/guest-info" class="nav__link">guest information</a>
                     </div>
@@ -87,7 +92,7 @@
                 <div class="footer__info animated fadeInRight delay-1s">
                     <p class="footer__text">Guide Administrator </p>
                     <p class="footer__text">Contact us via Telegram:<br>
-    
+
                         JetSetUa<a href="https://t.me/JetSetUa" target="_blank" class="footer-social-icon">
                             <img src="/images/icons/telegram.png" alt="Telegram">
                             {{-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"/></svg> --}}
@@ -128,7 +133,7 @@
     <div class="copyright">
         <div class="container">
             <div class="copyright__inner">
-                © 2019 by PWR. Proudly created with JetSetUa | <a href="/p/term-of-use">Terms of Use</a>   |  <a href="/p/privacy-policy">Privacy Policy</a> 
+                © 2019 by PWR. Proudly created with JetSetUa | <a href="/p/term-of-use">Terms of Use</a>   |  <a href="/p/privacy-policy">Privacy Policy</a>
             </div>
         </div>
     </div>

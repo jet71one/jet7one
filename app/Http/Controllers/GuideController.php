@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\TypeTour;
+use Cart;
 
 class GuideController extends Controller
 {
@@ -16,8 +17,8 @@ class GuideController extends Controller
         $regions = array();
         // $guides = User::all();
        // $regions= json_decode($guides->region_id);
-
-        return view('theme::guides.index', compact('guides','regID','regions'));
+       $cart = Cart::getContent();
+        return view('theme::guides.index', compact('guides','regID','regions', 'cart'));
     }
 
     // public function index($regID){

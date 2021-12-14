@@ -1,14 +1,13 @@
 @extends('theme::layouts.app')
 
-
 @section('css')
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 @endsection
 @section('content')
 
-    
+
     <div class="header__text">
-    <h1 class="header__title event-single-title">{{ $region->name}}</h1>
+    <h1 class="header__title event-single-title">{{ $region->name}} </h1>
     </div>
     <div class="container">
         <div class=" tour-single">
@@ -19,109 +18,140 @@
                             @if( $countPlace >= '1')
                                 <div class="header__btn btn btn-header">
                                     <a href="{{ route('places.index',['id'=> $item->id,'regID' => $region->id]) }}" class="nav__link">{{ $item->name}}  </a>
-                                </div>   
+                                </div>
                             @endif
                     @endforeach
                     <div class="header__btn btn btn-header">
                         <a href="{{ route('region.guides',['regID' => $region->id]) }}" class="nav__link">Guides of region</a>
-                    </div>  
-                    
+                    </div>
+
                 </div>
                 @forelse ($guide as $item)
+
                 <?php  $collection = collect(json_decode($item->region_id)) ?>
                     @if ($collection->contains($region->id))
                         <div class="guide__inner">
                             <div class="guide__slider">
                                 @if( $item->images == null)
                                     <div class="guide__item"><img src="../storage/{{ $item->avatar}}" alt="Avatar image"></div>
-                                @else 
-    
+                                @else
+
                                     @foreach (json_decode($item->images) as $image)
                                         <div class="guide__item"><img src="../storage/{{ $image}}" alt="{{ $item->name}} image"></div>
                                     @endforeach
                                 @endif
-                    
+
                             </div>
-                            
+
                             <div class="guide__content">
                                 <div class="guide__container">
-                                    <div class="guide__body">
-                                        <p class="guide__text">
+                                    <div class="guide__body col-md-5">
+                                        <p class="guide__text  mt-5">
                                             <div class="guide__body-title">
-                                            {{$item->name }} 
+                                            {{$item->name }}
                                             </div>
                                             <h4 class="hot-tour__title guide__type">{{ $TypeTour = App\TypeTour::where('id',"=", $item->type_tour_id)->value('name') }}</h4>
                                             <p>Languages : {{ $item->lang }}</p>
                                             <p class="guide__body__text">{{ $item->about }}</p>
-                                            
+
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                    
+
                         </div>
-                        @break
-                   
+
+                    @else
+                        <div class="container">
+
+                            {{-- <h3 class="franch__title">  Franchise</h2> --}}
+                            <p style="color: black;">
+                                You can make a region franchise request -
+                                the region choice is not related to the
+                                country and city where you are located. The
+                                most important condition is that you must be
+                                well oriented in chosen region. <br/>
+                                The franchise cost depends on the selected
+                                country and region. After three months, a
+                                franchise renewal is required in the
+                                established amount for the next three
+                                months of region franchise using. <br/>
+                                In the selected region, you can attract
+                                advertising projects or partners. After
+                                successful verification from our side, we will
+                                discuss with you partner category where
+                                your partner twill be added on the your
+                                region's website page. You will receive your
+                                commition for attracting them in your
+                                selected region as a region representative.
+                            </p>
+                            <div class="register__form">
+                                <a href="{{route('contact')}}" class="btn btn-blue hot-tour__btn contact_btn">Complete a form</a>
+
+                            </div>
+                        </div>
                     @endif
-                    
+                    @break
                 @empty
                 <p class="guide__body__text">
                     There is no  guide for this region yet
                 </p>
                 @endforelse
+
+
                 {{-- {{ dd($guide) }} --}}
                {{-- @if($guide == 'There is no  guide for this region yet')
                 <p class="guide__body__text">
-                    {{ $guide }} 
+                    {{ $guide }}
                 </p>
-               @else 
+               @else
                         @if ($guide->role_id == '11')
-                            
+
                             @if ($collection->contains($region->id))
                             <div class="guide__inner">
                                 <div class="guide__slider">
                                     @if( $images == null)
                                         <div class="guide__item"><img src="../storage/{{ $guide->avatar}}" alt="Avatar image"></div>
-                                    @else 
+                                    @else
                                         @foreach ($images as $image)
                                             <div class="guide__item"><img src="../storage/{{ $image}}" alt="{{ $guide->name}} image"></div>
                                         @endforeach
                                     @endif
-                        
+
                                 </div>
-                                
+
                                 <div class="guide__content">
                                     <div class="guide__container">
                                         <div class="guide__body">
                                             <p class="guide__text">
                                                 <div class="guide__body-title">
-                                                {{$guide->name }} 
+                                                {{$guide->name }}
                                                 </div>
                                                 <h4 class="hot-tour__title guide__type">{{ $TypeTour }}</h4>
                                                 <p>Languages : {{ $guide->lang }}</p>
                                                 <p class="guide__body__text">{{ $guide->about }}</p>
-                                                
+
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                        
+
                             </div>
                             @endif
-    
-                            
+
+
                         @else
                             <div class="guide__inner">
                                 <div class="guide__slider">
                                     @if( $images == null)
                                         <div class="guide__item"><img src="../storage/{{ $guide->avatar }}" alt="Avatar image"></div>
-                                    @else 
+                                    @else
                                         @foreach ($images as $image)
                                             <div class="guide__item"><img src="../storage/{{ $image}}" alt="{{ $guide->name }} image"></div>
                                         @endforeach
                                     @endif
                                 </div>
-                                
+
                                 <div class="guide__content">
                                     <div class="guide__container">
                                         <div class="guide__body">
@@ -130,35 +160,56 @@
                                                 <h4 class="hot-tour__title guide__type">{{ $TypeTour }}</h4>
                                                 <p>Languages : {{ $guide->lang }}</p>
                                                 <p class="guide__body__text">{{ $guide->about }}</p>
-                                                
+
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                        
+
                             </div>
-                        @endif 
+                        @endif
                @endif --}}
-                
+
             </div>
-            {{-- @php $information = array(); @endphp 
+
+
+
+<div class="container">
+        <div class="hot-tour__inner">
+          @forelse ($tours as $tour)
+            <div class="hot-tour__item">
+                <img src="/storage/{{$tour->image}}" alt="{{$tour->title}}" class="place__img">
+                <div class="hot-tour__content">
+                    <a href="/tour/{{$tour->slug}}">
+                        <h3 class="hot-tour__title">{{$tour->title}}</h3>
+                    </a>
+                </div>
+          </div>
+          @empty
+          @endforelse
+
+    </div>
+    </div>
+
+
+            {{-- @php $information = array(); @endphp
             @forelse ($places as $place)
                 @php array_push($information,"['<a href=>']")
-                @endphp 
-                
+                @endphp
+
             @endforelse --}}
-           
-            <div id="map" class="map"></div>
-    
-          
+
+            <!--<div id="map" class="map"></div>
+
+
             <div class="register__form">
                 <a href="/register" class="btn btn-blue hot-tour__btn">registration</a>
-    
-            </div>
+
+            </div>  -->
         </div>
     </div>
-    
- 
+
+
 @endsection
 
 @section('javascript')
@@ -179,7 +230,7 @@
                 lat: -25.344,
                 lng: 131.036
             };
-           
+
            var markersOnMap =  {{ $pins  }} ;
             // var markersOnMap = [{
             //         placeName: "Australia (Uluru)",
@@ -273,20 +324,21 @@
                 });
                 addMarkerInfo();
             }
-   
+
 </script> --}}
 <script>
+
     function initMap() {
         var map;
         var bounds = new google.maps.LatLngBounds();
         var mapOptions = {
             mapTypeId: 'roadmap'
         };
-                        
+
         // Display a map on the web page
         map = new google.maps.Map(document.getElementById("map"), mapOptions);
         map.setTilt(50);
-            
+
         // Multiple markers location, latitude, and longitude
         var markers = [ {{ $pins }} ];
         // var markers = [
@@ -294,7 +346,7 @@
         //     ['Brooklyn Public Library, NY', 40.672587, -73.968146],
         //     ['Prospect Park Zoo, NY', 40.665588, -73.965336]
         // ];
-                            
+
         // Info window content
         //var infoWindowContent = [ {{ $info }} ];
         var html = "<a>infoWindowContent</h3>";
@@ -311,12 +363,12 @@
         //     '<p>The Prospect Park Zoo is a 12-acre (4.9 ha) zoo located off Flatbush Avenue on the eastern side of Prospect Park, Brooklyn, New York City.</p>' +
         //     '</div>']
         // ];
-        
-            
+
+
         // Add multiple markers to map
         var infoWindow = new google.maps.InfoWindow(), marker, i;
-        
-        // Place each marker on the map  
+
+        // Place each marker on the map
         for( i = 0; i < markers.length; i++ ) {
             var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
             bounds.extend(position);
@@ -325,9 +377,9 @@
                 map: map,
                 title: markers[i][0]
             });
-            
-            
-            // Add info window to marker    
+
+
+            // Add info window to marker
             google.maps.event.addListener(marker, 'click', (function(marker, i) {
                 return function() {
                     var html = "<a href="+markers[i][3] +">"+markers[i][0]+ "</a>"
@@ -335,20 +387,21 @@
                     infoWindow.open(map, marker);
                 }
             })(marker, i));
-    
+
             // Center the map to fit all markers on the screen
             map.fitBounds(bounds);
         }
-    
+
         // Set zoom level
         var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
             this.setZoom(12);
             google.maps.event.removeListener(boundsListener);
         });
-        
+
     }
     // Load initialize function
     google.maps.event.addDomListener(window, 'load', initMap);
+
     </script>
 
 @endsection

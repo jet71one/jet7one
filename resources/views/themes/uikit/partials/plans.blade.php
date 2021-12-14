@@ -1,9 +1,8 @@
 <div id="plans" class="uk-margin-medium-bottom">
     @php $default_plan = ''; @endphp
     @foreach(Wave\Plan::all() as $plan)
-        @php $features = explode(',', $plan->features); @endphp
+        @php $features = explode(',', $plan->features);
 
-        @php
             $plan_active = false;
             if(auth()->guest() && $plan->default){
                 $plan_active = true;
@@ -14,19 +13,19 @@
             }
         @endphp
 
-
-        <div class="plan uk-grid @if($plan_active){{ 'plan-active' }}@endif" data-plan="{{ $plan->plan_id }}">
+        <div class="plan uk-grid @if($plan_active){{ 'plan-active' }}@endif {{($plan->id == 1 || $plan->id == 2 || $plan->id == 3) ? 'belongs-traveler' : 'belongs-guide'}}" data-plan="{{ $plan->plan_id }}">
             <div class="uk-width-1-2 plan-left">
                 <h3 class="uk-card-title uk-text-left uk-margin-remove-bottom">{{ $plan->name }}</h3>
                 <p class="uk-text-left uk-text-muted uk-margin-remove-bottom uk-margin-remove-top">
-                    {{ $plan->price }}
+                    <span {{($plan->id == 5) ? 'style=text-decoration-line:line-through;-webkit-text-decoration-line:line-through;' : ''}} >{{ $plan->price }}</span>
                     <span class="plan-features" id="plan-{{ strtolower(str_slug($plan->name)) . $plan->id }}">Features</span>
-
                 </p>
-
+                @if($plan->id == 5)
+                    <p><h4 class="logo__link">Free until 07.07.2023</h4></p>
+                @endif
             </div>
             <div class="uk-width-1-2 plan-right">
-                <div class="uk-text-right uk-align-right">
+                <div  class="uk-text-right uk-align-right">
                     <div class="uk-button uk-button-primary"><span class="select_plan">@if(!auth()->guest() && auth()->user()->subscribed('main')){{ 'Switch to this Plan' }}@else{{ 'Select Plan' }}@endif</span><span class="selected_plan"><span uk-icon="icon: check; ratio: 0.75"></span> @if(!auth()->guest() && auth()->user()->subscribed('main')){{ 'Your Current Plan' }}@else{{ 'Selected' }}@endif</span></div>
                 </div>
             </div>
@@ -37,10 +36,11 @@
             </ul>
             <div class="col-md-1-1 plan-description">
                 {{ $plan->description }}
+
             </div>
         </div>
 
-        @if($plan->default)@php $default_plan = $plan->plan_id @endphp@endif
+        @if($plan->default)@php $default_plan = $plan->plan_id @endphp @endif
 
     @endforeach
 </div>

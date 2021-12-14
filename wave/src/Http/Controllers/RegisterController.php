@@ -12,7 +12,6 @@ use Wave\Plan;
 
 class RegisterController extends \App\Http\Controllers\Auth\RegisterController
 {
-
     /**
      * Register a new user and subscribe
      *
@@ -20,9 +19,10 @@ class RegisterController extends \App\Http\Controllers\Auth\RegisterController
      */
     public function register(Request $request)
     {
-
+//$plan = Plan::all();
+//dd($plan);
         $this->validator($request->all())->validate();
-        
+
         DB::beginTransaction();
 
         event(new Registered($user = $this->create($request->all())));
@@ -30,28 +30,29 @@ class RegisterController extends \App\Http\Controllers\Auth\RegisterController
         try{
             try {
 
-                $plan = Plan::where('plan_id', '=', $request->plan)->first();
+//dd($request->plan);
+                $plan = Plan::where('plan_id', $request->plan)->first();
+                //dump($plan);
                 if(!isset($plan->id)){
                     DB::rollBack();
                     return back()->withInput($request->all())->with(['message' => 'Invalid Plan Selected', 'message_type' => 'danger']);;
                 }
-
-                
-
                 $userSubscription = $user->newSubscription('main', $request->plan);
+
+              //  dd($userSubscription);
 
                 if(intval($plan->trial_days) > 0){
                     $userSubscription = $userSubscription->trialUntil(Carbon::now()->addDays($plan->trial_days));
                     $user->trial_ends_at = now()->addDays($plan->trial_days);
+
                 } else {
                     $user->trial_ends_at = NULL;
                 }
-
-                
                 $userSubscription->create($request->paymentMethod, ['email' => $user->email]);
-                
+
             } catch(\Stripe\Error\Card $e) {
-                
+
+
                 DB::rollBack();
                 $error_message = 'Something went wrong with your card. Please make sure you are entering it correctly';
                 if(isset($e->getJsonBody()['error']['message'])){
@@ -60,7 +61,8 @@ class RegisterController extends \App\Http\Controllers\Auth\RegisterController
                 return back()->with(array('message' => $error_message, 'message_type' => 'danger'));
             }
         } catch(\Exception $e){
-            return back()->with(array('message' => $e->getMessage(), 'message_type' => 'danger'));
+        
+            return back()->with(array('message' => 'dsdsd'.$e->getMessage() .'fjsdhfjsdhf', 'message_type' => 'danger'));
         }
 
         $user->role_id = $plan->role_id;

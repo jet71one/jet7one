@@ -25,6 +25,8 @@
 		var stripe = Stripe('{{ env('STRIPE_TEST_KEY') }}');
 	@endif
 
+	//alert('{{ env('STRIPE_TEST_KEY') }}')
+
 	// Create an instance of Elements.
 	var elements = stripe.elements();
 	var cardholderName = document.getElementById('cardholder-name');

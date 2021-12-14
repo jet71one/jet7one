@@ -14,16 +14,23 @@
 <div class="about-us">
     <div class="container">
         <div class="about-us__text">
-            We greet you, our foreign friends! Our company came to the conclusion that you lack our unique service.
-            Now professional top model can be your guide on a guided tour. The tour will be held personally for you,
-            it can be planned specially according to your preference. Our top models will communicate with you in
-            English. Excursions can be different: historical walk around the city; gastronomic tour; the best clubs
-            visiting; extreme entertainment (underground city, skydiving and others); yachting; riding a car or
-            limousine. We can organize everything that you can imagine. Just contact our manager and make a
-            pre-order!
+            We greet you, our friends! <br/>
+            Jet7One helps traveler to find local guide in
+selected region and make a travel tour
+requests as basic or individual tour based
+on traveler wishes. <br/>
+We offer a unique tourist experience for
+traveler with like-minded person and tour
+planning for our guide based on personal
+experience such as boating, yachting,
+extreme sports and others. <br/>
+Jet7One is alternative form of entertainment
+during COVID pandemic travel restrictions
+and extra job opportunities at guide's location.
             <!-- <svg  xmlns="http://www.w3.org/2000/svg" viewBox="11 2.88 156 177.116"><path d="M11 49.399c0 1.625.843 3.139 2.212 4.015l65.275 41.757c.781.5 1.734.752 2.629.752.786 0 1.572-.194 2.286-.585 1.529-.837 2.598-2.44 2.598-4.182V54h27.227C138.477 54 157 74.406 157 101.246v73.983c0 2.633 2.368 4.767 5 4.767s5-2.134 5-4.767v-73.983c0-15.237-5.323-29.223-15.033-39.714C141.99 50.753 128.248 45 113.227 45H86V7.647c0-1.742-1.069-3.345-2.597-4.181-1.527-.837-3.569-.773-5.037.167L13.152 45.385C11.783 46.261 11 47.774 11 49.399zm13.364.001L76 16.356v66.09L24.364 49.4z"/></svg> -->
             <h4 class="about-us__title">
-                Watch a video and you'll understand everything
+                Watch a video about tour types that our guides provide!
+
             </h4>
             <video class="video-bg" src="/video/about-us.mp4" controls></video>
         </div>

@@ -69,7 +69,31 @@
         @endif
     </li>
 @endforeach
+        <li><a href="" class="nav__link chat_btn" >Chat</a></li>
+        <div class="dsa">
+            <div class="asd">
+                <div class="chat-container">
+                    <div class="chat_box">
+                        <div class="chat-head">
+                            <a href="" class="nav__link close_btn" >Close</a>
+                            <div class="user">
+                                <div class="avatar">
+                                    <img src="{{url('images/icons/7.png')}}" />
+                                </div>
+                                <div class="name" style="color: black">Admin</div>
+                            </div>
 
+                        </div>
+                        <div class="chat-body" style="overflow-y:auto">
+                        </div>
+                        <div class="chat-foot">
+                            <input id="chatInput" type="text" class="msg" placeholder="Type a message..." />
+                            <a href="" class="nav__link send_btn" style="color: black">Send</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 @if(isset($innerLoop))
     </ul>
 </div>

@@ -23,6 +23,8 @@
 		var stripe = Stripe('{{ env('STRIPE_LIVE_KEY') }}');
 	@else
 		var stripe = Stripe('{{ env('STRIPE_TEST_KEY') }}');
+
+		alert({{ env('STRIPE_TEST_KEY') }})
 	@endif
 
 	// Create an instance of Elements.

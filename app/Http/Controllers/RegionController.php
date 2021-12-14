@@ -7,6 +7,7 @@ use App\Region;
 use Wave\Category;
 use Wave\User;
 use App\Place;
+use App\Tour;
 use App\TypeTour;
 use Illuminate\Support\Arr;
 use Namshi\JOSE\Signer\OpenSSL\HS512;
@@ -17,7 +18,10 @@ class RegionController extends Controller
 
         $region = Region::where('slug', '=', $slug)->firstOrFail();
         $categories = Category::orderBy('order','asc')->get();
-        
+
+        $tours = Tour::where('type', 10)->where('location_id', $region->id)->orderBy('created_at', 'DESC')->get();
+
+
         $places = Place::where('location_id', '=', $region->id)->get();
         $user = User::firstOrFail();
         $regions= json_decode($user->region_id);
@@ -26,14 +30,14 @@ class RegionController extends Controller
         //Якщо у нас є Супергідв Регіоні
         $guide = User::where('role_id', '=', '11')->get();
         // dd($guide);
-       
-        
+
+
 
         // if($guide == null){
         //     //Якщо у нас в регіоні немає СуперГіда тоді ми беремо звичайного
         //     //гіда але з цього регіону
         //     $guide = User::where([['region_id', '=', $region->id]])->first();
-        //         //Якщо у нас немає гідів в цьому регіоні тоді видаємо 
+        //         //Якщо у нас немає гідів в цьому регіоні тоді видаємо
         //         //повідомлення Немає гідів
         //         if($guide == null){
         //             $guide ='There is no  guide for this region yet';
@@ -44,13 +48,13 @@ class RegionController extends Controller
         //             $images = json_decode($guide->images);
         //             $TypeTour = TypeTour::where('id',"=", $guide->type_tour_id)->value('name');
         //         }
-           
+
         // }
         // else{
         //     $images = json_decode($guide->images);
         //     $TypeTour = TypeTour::where('id',"=", $guide->type_tour_id)->value('name');
         // }
-        
+
 
 
 
@@ -78,7 +82,7 @@ class RegionController extends Controller
         // $info =implode(',', $info);
         // dd($pins);
         // $names =implode('""', $names);
-        
+
         $center = '';
         if($locations == null){
             $center = '{ lat: 50.024, lng: 30.887 }';
@@ -86,17 +90,17 @@ class RegionController extends Controller
         }else{
             $center = $locations[0];
         }
-        
+
         $seo = [
             'seo_title' => $region->title,
             'seo_description' => $region->seo_description,
         ];
-        
-    	return view('theme::regions.region', compact('region','categories','pins','places','info','guide', 'seo','center'));
+
+    	return view('theme::regions.region', compact('region','categories','pins','places','info','guide', 'seo','center', 'tours'));
     }
-    
+
     public function category($slug){
-        
+
         $category = Category::where('slug', '=', $slug)->firstOrFail();
         $posts = $category->posts()->orderBy('created_at', 'DESC')->paginate(6);
         $categories = Category::all();

@@ -4,6 +4,7 @@ namespace Wave\Http\Controllers;
 
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Validator;
@@ -36,18 +37,36 @@ class SettingsController extends Controller
     }
 
     public function profilePut(Request $request){
-       
+
+
         $request->validate([
             'name' => 'required|string',
             'email' => 'sometimes|required|email|unique:users,email,' . Auth::user()->id,
             'username' => 'sometimes|required|unique:users,username,' . Auth::user()->id,
             'phone' => 'string|nullable',
             'region_id' => 'array',
-            'type_tour' => 'string',
+            'type_tour' => 'array',
             'lang' => 'string|nullable',
         ]);
 
+        $request->validate([
+            'images' => 'max:2'
+        ],[
+            'images.max' => 'You cannot upload more images'
+        ]);
+
     	$authed_user = auth()->user();
+        
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::table('user_tour')->where('user_id', $authed_user->id)->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
+        
+    	if(!empty($request->type_tour)){
+            foreach ($request->type_tour as $tour) {
+
+                DB::table('user_tour')->insert(['user_id' => $authed_user->id, 'tour_id' => (int)$tour]);
+            }    
+        }
 
     	$authed_user->name = $request->name;
         $authed_user->email = $request->email;
@@ -60,9 +79,8 @@ class SettingsController extends Controller
         $regions = json_encode($request->region_id);
         $authed_user->region_id = $regions;
         
-        
-    	$authed_user->type_tour_id = $request->type_tour;
-        if($request->images){
+    
+    	if($request->images){
             if($authed_user->role_id == '11'){
                 
                 $result = array();
@@ -80,7 +98,7 @@ class SettingsController extends Controller
                     $authed_user->images = $result;
             }
             if($authed_user->role_id == '10'){
-              
+
                 $result = array();
                 $i = 0;
                 $count = count($request->images);
@@ -88,15 +106,15 @@ class SettingsController extends Controller
                         foreach($request->images as $image){
 
                             $patch = $this->saveImage($image, $authed_user->username.'-'.$i);
-                            $newarray=explode(" ",$patch); 
+                            $newarray=explode(" ",$patch);
                             array_push($result, $patch);
                             $i++;
                         }
                     }
                     $authed_user->images = $result;
             }
-            
-          
+
+
          }
         
     	$authed_user->save();

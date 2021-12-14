@@ -115,7 +115,7 @@ class RegisterController extends \App\Http\Controllers\Controller
             $counter += 1;
         }
 
-        $user = User::create([
+        $userData = [
             'name' => $data['name'],
             'email' => $data['email'],
             'username' => $username,
@@ -124,7 +124,20 @@ class RegisterController extends \App\Http\Controllers\Controller
             'verification_code' => $verification_code,
             'verified' => $verified,
             'trial_ends_at' => now()->addDays(setting('billing.trial_days', 14))
-        ]);
+        ];
+
+        if(isset($data['gender'])) {
+            $userData['gender'] = $data['gender'];
+        }elseif (isset($data['interested_in'])) {
+
+            $interestedIn = '';
+
+            $interestedIn = isset($data['interested_in']['M']) ? 'M' : '';
+            $interestedIn = $interestedIn . isset($data['interested_in']['F']) ? 'F' : '';
+            $userData['interested_in'] = $interestedIn;
+        }
+
+        $user = User::create($userData);
 
         if(setting('auth.verify_email', false)){
             $this->sendVerificationEmail($user);
